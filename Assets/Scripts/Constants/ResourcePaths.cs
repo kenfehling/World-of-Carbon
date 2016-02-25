@@ -8,9 +8,9 @@ using System.Collections;
 public class ResourcePaths : MonoBehaviour {
 
 	public static string ArtRoot = "Art/";
-	public static string WorldObjectsRoot = "World Objects/";
+	public static string WorldObjectsRoot = "worldobjects/";
 	public static string MoleculesRoot = "Molecules/";
 
 	public static string SampleMolecule = WorldObjectsRoot + "Sample Molecule";
-
+	public static string SampleObstacle = WorldObjectsRoot + "sampleobstacle";
 }

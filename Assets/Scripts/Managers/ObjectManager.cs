@@ -55,7 +55,7 @@ public class ObjectManager : MonoBehaviour {
 		if (!stacks.ContainsKey (path)) {
 			//return;
 			// for debugging, just create new stack
-			stacks[obj] = new Stack<GameObject>();
+			stacks[path] = new Stack<GameObject>();
 		}
 
 		obj.SetActive (false);

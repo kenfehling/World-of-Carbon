@@ -55,9 +55,10 @@ public class LevelGenerator : MonoBehaviour {
 		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
 		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
 */
-		GameManager.state.SetInitialParams (800,600,600,200);
-		//var player = Resources.Load (ResourcePaths.Player);
-		//Instantiate (player, Vector3.zero, Quaternion.identity);
+		GameManager.state.SetInitialParams (800, 600, 600, 200);
+		Debug.Log (ResourcePaths.SampleObstacle);
+		var obstacle = Resources.Load (ResourcePaths.SampleObstacle);
+		Instantiate (obstacle, Vector3.zero, Quaternion.identity);
 	}
 
 	public void SwitchLevel(string newLevelFilePath, Action onLoad) {
