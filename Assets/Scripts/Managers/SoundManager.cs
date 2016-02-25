@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour {
 
-	enum Sounds {
+	public enum Sounds {
 		Flick,
 		Reaction
 	}

@@ -9,6 +9,7 @@ public class Resources : MonoBehaviour {
 
 	public static string ArtRoot = "Art/";
 	public static string WorldObjectsRoot = "World Objects/";
+	public static string MoleculesRoot = "Molecules/";
 
 	public static string SampleMolecule = WorldObjectsRoot + "Sample Molecule";
 
