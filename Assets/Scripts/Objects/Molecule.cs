@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SampleMolecule : WorldObject {
+public class Molecule : MonoBehaviour {
 
-	public string element;
+	public int standardEnthalpyChange;
 
 	// Use this for initialization
 	void Start () {
@@ -13,5 +13,9 @@ public class SampleMolecule : WorldObject {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	Molecule() {
+
 	}
 }

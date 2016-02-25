@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Factory : MonoBehaviour {
+public class ArtManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
