@@ -6,118 +6,59 @@ using System.Collections.Generic;
  */
 public class ObjectManager : MonoBehaviour {
 
+	// keeps an object recylcing stack for each type of object needed for this level
+	private Dictionary<string, Stack<GameObject>> stacks;
 
-
-	// Let's redo how this class works slightly
-	// Instead of this paradigm, the stacks will be dynamically generated based on the prefabs we want to load
-	// Designers will need to make specific prefabs for each object (for collision boxes, art, whatever)
-
-
-
-
-
-
-	//TODO: Have base object for each object type that will serve as folder
-	//		This will make it easier to return objects to their proper recycling stacks
-	//		Should replace specific destroy methods with one general one that uses this
-
-
-	// Each of these public GameObjects will be assigned a prefab base model
-	//  for the type of object they represent
-	public GameObject reactionObjectModel;
-	public GameObject obstacleModel;
-	public GameObject particleModel;
-	public GameObject terrainModel;
-
-	// Each of these Stacks will hold onto objects that have been "Destroyed"
-	//  so we can reuse them when needed
-	private Stack<GameObject> reactionObjectStack;
-	private Stack<GameObject> obstacleStack;
-	private Stack<GameObject> particleStack;
-	private Stack<GameObject> terrainStack;
-
-	// Called at initialization
-	void Start () {
-		// Create Stacks, which will handle recycling of game world objects
-		reactionObjectStack = new Stack<GameObject>();
-		obstacleStack = new Stack<GameObject>();
-		particleStack = new Stack<GameObject>();
-		terrainStack = new Stack<GameObject>();
+	void Start() {
+		stacks = new Dictionary<string, Stack<GameObject>> ();
 	}
 
-	public GameObject CreateReactionObject(Vector3 t, Quaternion q) {
-		GameObject newObj;
-		if (reactionObjectStack.Count == 0) {
-			newObj = (GameObject)Instantiate (reactionObjectModel, t, q);
-		} else {
-			newObj = reactionObjectStack.Pop ();
-			newObj.transform.position = t;
-			newObj.transform.rotation = q;
+	// initializes a stack for each type in resources
+	public void Initialize(List<string> resources) {
+		// TODO: delete all entries in stacks that are not in resources
+
+		// create a new stack for each resource, or recycle one if it existed previously
+		foreach (string s in resources) {
+			if (stacks.ContainsKey (s))
+				stacks [s].Clear ();
+			else
+				stacks [s] = new Stack<GameObject> ();
 		}
-		newObj.SetActive (true);
-		return newObj;
 	}
 
-	public GameObject CreateObstacle(Vector3 t, Quaternion q) {
-		GameObject newObj;
-		if (obstacleStack.Count == 0) {
-			newObj = (GameObject)Instantiate (obstacleModel, t, q);
-		} else {
-			newObj = obstacleStack.Pop ();
-			newObj.transform.position = t;
-			newObj.transform.rotation = q;
+	public GameObject Create(string obj, Vector3 position, Quaternion rotation) {
+		// only can create objects already specified for this level
+		if (!stacks.ContainsKey (obj)) {
+			//return null;
+			// for debugging, just create new stack
+			stacks[obj] = new Stack<GameObject>();
 		}
-		newObj.SetActive (true);
-		return newObj;
-	}
 
-	public GameObject CreateParticle(Vector3 t, Quaternion q) {
-		GameObject newObj;
-		if (particleStack.Count == 0) {
-			newObj = (GameObject)Instantiate (particleModel, t, q);
-		} else {
-			newObj = particleStack.Pop ();
-			newObj.transform.position = t;
-			newObj.transform.rotation = q;
+		if (stacks [obj].Count > 0) {
+			var newObj = stacks [obj].Pop ();
+			newObj.SetActive (true);
+			return newObj;
 		}
-		newObj.SetActive (true);
-		return newObj;
-	}
-
-	public GameObject CreateTerrain(Vector3 t, Quaternion q) {
-		GameObject newObj;
-		if (terrainStack.Count == 0) {
-			newObj = (GameObject)Instantiate (terrainModel, t, q);
-		} else {
-			newObj = terrainStack.Pop ();
-			newObj.transform.position = t;
-			newObj.transform.rotation = q;
+		else {
+			// TODO: have each world object extend some WorldObject class or whatever to keep track of its relative path
+			var prefab = Resources.Load (obj);
+			var newObj = (GameObject)Instantiate (prefab, position, rotation);
+			newObj.SetActive (true);
+			return newObj;
 		}
-		newObj.SetActive (true);
-		return newObj;
 	}
 
-	public void DestroyReactionObject(GameObject reactionObject) {
-		// TODO: Reset object so it has default properties
-		reactionObject.SetActive(false);
-		reactionObjectStack.Push(reactionObject);
-	}
+	public void Destroy(GameObject obj) {
+		// TODO: get path attribute from obj, probably from WorldObject class
+		string path = "";
+		// only can create objects already specified for this level
+		if (!stacks.ContainsKey (path)) {
+			//return;
+			// for debugging, just create new stack
+			stacks[obj] = new Stack<GameObject>();
+		}
 
-	public void DestroyObstacle(GameObject obstacle) {
-		// TODO: Reset object so it has default properties
-		obstacle.SetActive(false);
-		obstacleStack.Push(obstacle);
-	}
-
-	public void DestroyParticle(GameObject particle) {
-		// TODO: Reset object so it has default properties
-		particle.SetActive(false);
-		particleStack.Push(particle);
-	}
-
-	public void DestroyTerrain(GameObject terrain) {
-		// TODO: Reset object so it has default properties
-		terrain.SetActive(false);
-		terrainStack.Push(terrain);
+		obj.SetActive (false);
+		stacks [path].Push (obj);
 	}
 }
