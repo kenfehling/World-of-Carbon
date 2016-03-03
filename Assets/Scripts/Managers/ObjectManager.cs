@@ -9,7 +9,7 @@ public class ObjectManager : MonoBehaviour {
 	// keeps an object recylcing stack for each type of object needed for this level
 	private Dictionary<string, Stack<GameObject>> stacks;
 
-	void Start() {
+	public ObjectManager() {
 		stacks = new Dictionary<string, Stack<GameObject>> ();
 	}
 
@@ -17,9 +17,10 @@ public class ObjectManager : MonoBehaviour {
 	public void Initialize(List<string> resources) {
 		// TODO: delete all entries in stacks that are not in resources
 
-		// create a new stack for each resource, or recycle one if it existed previously
+		// create a new stack for each resource, or reuse one if it existed previously
 		foreach (string s in resources) {
 			if (stacks.ContainsKey (s))
+				//TODO: destroy each object on this stack
 				stacks [s].Clear ();
 			else
 				stacks [s] = new Stack<GameObject> ();

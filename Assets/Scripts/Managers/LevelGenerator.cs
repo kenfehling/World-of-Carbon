@@ -2,20 +2,74 @@
 using System.Collections;
 using System;
 
-public class LevelGenerator : MonoBehaviour {
+public class LevelGenerator {
 
-	//TODO: To keep track of all objects generated:
-	//		 create base object that will parent the terrains
-	//		 and the terrain will parent the other objects
-
-	// Use this for initialization
-	void Start () {
-	
+	/**
+	 * This method places an obstacle in the game world.
+	 * params - obstacle: the obstacle to place - PLACEHOLDER
+	 * 			dynamic: if this obstacle should be dynamically placed
+	 * 					(contrary, has static position to be placed at)
+	 * returns - true if the object could be placed, false otherwise
+	 */
+	bool PlaceObstacle(GameObject obstacle, bool dynamic) {
+		bool objectPlaced = false;
+		/*
+		 // In dynamic placement, find all cells where obstacle could be placed,
+		 //  and then randomly pick one and instantiate it
+		 if (dynamic) {
+		 	 List<Cell> availableSpots;
+			 foreach (cell in grid) {
+				 if (CanPlaceObject(object, cell) {
+					availableSpots.add(cell);
+				 }
+			 }
+			 if (availableSpots.Count > 0) {
+				int spotToPlace = rand(0, availableSpots.Count);
+				GameManager.objects.Create(object.path, new Vector2(availableSpots[spotToPlace].x, availableSpots[spotToPlace].y), Quaternion.identity);
+				CalculateAvailableCells(obstacle, availableSpots[spotToPlace]);
+				objectPlaced = true;
+			 }
+			 else
+			 	objectPlaced = false;
+		 }
+		 else {
+			 GameManager.objects.Create(object.path, new Vector2(obstacle.defaultcell.x, obstacle.defaultcell.y), Quaternion.identity);
+			 CalculateAvailableCells(obstacle, obstacle.defaultcell);
+			 objectPlaced = true;
+		 }
+		 */
+		return objectPlaced;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	/*
+	 * This method returns if the obstacle can be placed at the cell in the gameworld
+	 * Params - obstacle: the obstacle to place - PLACEHOLDER
+	 * 			cell: the cell to test placement on - PLACEHOLDER
+	 */
+	bool CanPlaceObject(GameObject obstacle, int cell) {
+		/*
+		 // Go through obstacle's placement grid and make sure that each spot
+		 // it needs is available, starting at cell
+		 for (int r = 0; r < obstacle.grid.height; r++) {
+			for (int c = 0; c < obstacle.grid.width; c++) {
+				if (obstacle.grid.NeedsSpace(r, c)
+					&& !grid.cells[cell.r + r][cell.c + c].available) {
+					return false;
+				}
+			}
+		 }
+		 */
+		return true;
+	}
+
+	/*
+	 * This method calculates the new spots that are no longer available after object placement
+	 * Params - obstacle: the obstacle placed - PLACEHOLDER
+	 * 			cell: the cell the obstacle was placed on - PLACEHOLDER
+	 */
+	void CalculateAvailableCells(GameObject obstacle, int cell) {
+		/*
+		 */
 	}
 
 	/**
@@ -30,6 +84,8 @@ public class LevelGenerator : MonoBehaviour {
 			// - All artwork needed
 			// - All different elements/objects needed
 			// - Rules for how objects should be generated
+			// - Initial game state parameters
+
 
 		// Use ObjectManager to create necessary objects for the level
 
@@ -42,23 +98,9 @@ public class LevelGenerator : MonoBehaviour {
 	 */
 	public void CreateSampleLevel() {
 		// Use ObjectManager to create necessary objects for the level
-		/*
-		GameManager.objects.CreateTerrain(new Vector3(0,0,0), Quaternion.identity);
-
-		GameManager.objects.CreateObstacle(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateObstacle(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateObstacle(new Vector3(0,0,0), Quaternion.identity);
-
-		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
-		GameManager.objects.CreateReactionObject(new Vector3(0,0,0), Quaternion.identity);
-*/
 		GameManager.state.SetInitialParams (800, 600, 600, 200);
-		Debug.Log (ResourcePaths.SampleObstacle);
-		var obstacle = Resources.Load (ResourcePaths.SampleObstacle);
-		Instantiate (obstacle, Vector3.zero, Quaternion.identity);
+
+		GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
 	}
 
 	public void SwitchLevel(string newLevelFilePath, Action onLoad) {

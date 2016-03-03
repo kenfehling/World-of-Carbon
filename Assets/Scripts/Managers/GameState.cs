@@ -7,7 +7,7 @@ using System.Collections;
  * TODO: Should it also handle high level control functions like switching levels?
  * 
  */
-public class GameState : MonoBehaviour {
+public class GameState {
 
 	private bool loading;
 
