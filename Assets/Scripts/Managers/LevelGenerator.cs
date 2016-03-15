@@ -1,75 +1,96 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
-public class LevelGenerator {
+public class LevelGenerator : MonoBehaviour {
+
+	// Used to keep track of where we can place objects when generating a level
+	private PlacementGrid grid;
 
 	/**
-	 * This method places an obstacle in the game world.
-	 * params - obstacle: the obstacle to place - PLACEHOLDER
-	 * 			dynamic: if this obstacle should be dynamically placed
-	 * 					(contrary, has static position to be placed at)
+	 * This method places an obstacle at the given cell location in the game world.
+	 * params - obstacle: the obstacle to place
+	 * 			r, c: the row, column pair of the cell to place the object at
 	 * returns - true if the object could be placed, false otherwise
 	 */
-	bool PlaceObstacle(GameObject obstacle, bool dynamic) {
-		bool objectPlaced = false;
-		/*
-		 // In dynamic placement, find all cells where obstacle could be placed,
-		 //  and then randomly pick one and instantiate it
-		 if (dynamic) {
-		 	 List<Cell> availableSpots;
-			 foreach (cell in grid) {
-				 if (CanPlaceObject(object, cell) {
-					availableSpots.add(cell);
-				 }
-			 }
-			 if (availableSpots.Count > 0) {
-				int spotToPlace = rand(0, availableSpots.Count);
-				GameManager.objects.Create(object.path, new Vector2(availableSpots[spotToPlace].x, availableSpots[spotToPlace].y), Quaternion.identity);
-				CalculateAvailableCells(obstacle, availableSpots[spotToPlace]);
-				objectPlaced = true;
-			 }
-			 else
-			 	objectPlaced = false;
-		 }
-		 else {
-			 GameManager.objects.Create(object.path, new Vector2(obstacle.defaultcell.x, obstacle.defaultcell.y), Quaternion.identity);
-			 CalculateAvailableCells(obstacle, obstacle.defaultcell);
-			 objectPlaced = true;
-		 }
-		 */
-		return objectPlaced;
+	bool PlaceObstacleAtLocation(GameObject obstacle, int r, int c) {
+		obstacle.transform.Translate(new Vector3(c, -r, 0));
+		PlacementGrid obstacleGrid = obstacle.GetComponent<PlacementGridComponent> ().Grid;
+		CalculateAvailableCells (obstacleGrid, r, c);
+		return true;
+	}
+
+	/**
+	 * This method places an obstacle randomly somewhere in the game world.
+	 * params - obstacle: the obstacle to place
+	 * returns - true if the object could be placed, false otherwise
+	 */
+	bool PlaceObstacleRandomly(GameObject obstacle) {
+		// Find all cells where obstacle could be placed
+		List<PGridCell> availableSpots = new List<PGridCell> ();
+		PlacementGrid obstacleGrid = obstacle.GetComponent<PlacementGridComponent> ().Grid;
+		foreach(PGridCell cell in grid.Cells()) {
+			if (CanPlaceObject(obstacleGrid, cell)) {
+				availableSpots.Add(cell);
+			}
+		}
+		// Then randomly pick one, place it, and recalculate grid
+		if (availableSpots.Count > 0) {
+			int spotToPlace = UnityEngine.Random.Range(0, availableSpots.Count);
+			Debug.Log ("Spot: " + spotToPlace);
+			obstacle.transform.Translate(new Vector3 (availableSpots[spotToPlace].Col, -availableSpots[spotToPlace].Row, 0));
+			CalculateAvailableCells(obstacleGrid, availableSpots[spotToPlace].Row, availableSpots[spotToPlace].Col);
+			return true;
+		}
+		Debug.Log ("No spots");
+		return false;
 	}
 
 	/*
-	 * This method returns if the obstacle can be placed at the cell in the gameworld
-	 * Params - obstacle: the obstacle to place - PLACEHOLDER
-	 * 			cell: the cell to test placement on - PLACEHOLDER
+	 * This method returns if the obstacle can be placed at the given cell in the gameworld.
+	 * Params - obstacleGrid: the PlacementGrid of the obstacle you are testing
+	 * 			cell: the cell to test placement on
 	 */
-	bool CanPlaceObject(GameObject obstacle, int cell) {
-		/*
-		 // Go through obstacle's placement grid and make sure that each spot
-		 // it needs is available, starting at cell
-		 for (int r = 0; r < obstacle.grid.height; r++) {
-			for (int c = 0; c < obstacle.grid.width; c++) {
-				if (obstacle.grid.NeedsSpace(r, c)
-					&& !grid.cells[cell.r + r][cell.c + c].available) {
+	bool CanPlaceObject(PlacementGrid obstacleGrid, PGridCell cell) {
+		// False if grid bounding box goes outside bounds of level
+		if (obstacleGrid.Height + cell.Row >= grid.Height
+		    || obstacleGrid.Width + cell.Col >= grid.Width)
+			return false;
+		
+		// Go through obstacle's placement grid and make sure that each spot
+		// it needs is available, starting at cell
+		for (int r = 0; r < obstacleGrid.Height; r++) {
+			for (int c = 0; c < obstacleGrid.Width; c++) {
+				// If a cell is closed on the obstacle then it is occupied
+				// If a cell is closed on the main grid, it is occpupied or adjacent to an occupied spot
+				if (obstacleGrid.Closed(r, c)
+					&& grid.Closed(cell.Row + r, cell.Col + c)) {
 					return false;
 				}
 			}
 		 }
-		 */
 		return true;
 	}
 
 	/*
 	 * This method calculates the new spots that are no longer available after object placement
-	 * Params - obstacle: the obstacle placed - PLACEHOLDER
-	 * 			cell: the cell the obstacle was placed on - PLACEHOLDER
+	 * Params - obstacleGrid: the PlacementGrid for the obstacle just placed
+	 * 			r, c: the row and column the obstacle was placed
 	 */
-	void CalculateAvailableCells(GameObject obstacle, int cell) {
-		/*
-		 */
+	void CalculateAvailableCells(PlacementGrid obstacleGrid, int r, int c) {
+		// Every cell around a closed cell in obstacleGrid is no longer available
+		foreach(PGridCell cell in obstacleGrid.Cells()) {
+			if (cell.Closed) {
+				for (int i = r + cell.Row - 1; i <= r + cell.Row + 1; i++) {
+					for (int j = c + cell.Col - 1; j <= c + cell.Col + 1; j++) {
+						if (i >= 0 && i < grid.Height
+						   && j >= 0 && j < grid.Width)
+							grid.SetCell (i, j, true);
+					}
+				}
+			}
+		}
 	}
 
 	/**
@@ -77,7 +98,7 @@ public class LevelGenerator {
 	 * It handles creating the world of the level
 	 * Should it handle other duties called at load time? (give/take player control, loading transitions, etc.)
 	 */
-	public void CreateLevel(string levelFilePath, Action onLoad) {
+	public void CreateLevel(string levelFilePath) {
 		
 		// Open levelFile
 			// Different attributes of levelFile:
@@ -88,9 +109,6 @@ public class LevelGenerator {
 
 
 		// Use ObjectManager to create necessary objects for the level
-
-		// Call load callback function
-		onLoad();
 	}
 
 	/**
@@ -98,15 +116,34 @@ public class LevelGenerator {
 	 */
 	public void CreateSampleLevel() {
 		// Use ObjectManager to create necessary objects for the level
-		GameManager.state.SetInitialParams (800, 600, 600, 200);
+		int levelWidth = 9, levelHeight = 5;
+		int levelPressure = 600;
+		int levelTemperature = 200;
 
-		GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
+		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
+
+		bool[] gridSpots = new bool[levelWidth * levelHeight];
+		Array.Clear (gridSpots, 0, gridSpots.Length);
+		grid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
+
+		var border = GameManager.objects.Create(ResourcePaths.SampleBorder, Vector3.zero, Quaternion.identity);
+		PlaceObstacleAtLocation (border, 0, 0);
+		Debug.Log ("placed border");
+		var obstacle = GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
+		if (!PlaceObstacleRandomly (obstacle))
+			obstacle.SetActive (false);
+		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
+		if (!PlaceObstacleRandomly (obstacle))
+			obstacle.SetActive (false);
+		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
+		if (!PlaceObstacleRandomly (obstacle))
+			obstacle.SetActive (false);
 	}
 
-	public void SwitchLevel(string newLevelFilePath, Action onLoad) {
+	public void SwitchLevel(string newLevelFilePath) {
 		// Use ObjectManager to "destroy" all objects in the level
 
 		// Then create the new level
-		CreateLevel (newLevelFilePath, onLoad);
+		CreateLevel (newLevelFilePath);
 	}
 }

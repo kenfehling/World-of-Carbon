@@ -39,11 +39,16 @@ public class SlingShotSprite : MonoBehaviour {
 		if (moving) {
 			//TODO: use timeDelta
 
-			float scale = .8f;
-			rb.velocity = new Vector2 (rb.velocity.x * scale, rb.velocity.y * scale);
+			float transScale = .8f, rotScale = .8f;
+			rb.velocity = new Vector2 (rb.velocity.x * transScale, rb.velocity.y * transScale);
 			if (rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y < .1f) {
 				moving = false;
 				rb.velocity = new Vector2 (0, 0);
+			}
+
+			rb.angularVelocity = rb.angularVelocity * rotScale;
+			if (rb.angularVelocity < .1f) {
+				rb.angularVelocity = 0;
 			}
 		}
 	}
