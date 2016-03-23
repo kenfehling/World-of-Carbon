@@ -6,6 +6,11 @@ using System.Collections;
  */
 public class PlacementGrid {
 
+	private int rotation;
+	public int Rotation {
+		get { return rotation; }
+	}
+
 	private int width;
 	public int Width {
 		get { return width; }
@@ -24,6 +29,7 @@ public class PlacementGrid {
 		if (width * height != closedSpots.Length) {
 			throw new UnityException ("Invalid size of array given width and height.");
 		}
+		this.rotation = 0;
 		this.width = width;
 		this.height = height;
 		// Create internal array
@@ -52,5 +58,24 @@ public class PlacementGrid {
 			internalCells [CellIndex (r, c)].Closed = closed;
 		else
 			throw new UnityException ("Cell access out of range.");
+	}
+
+	// Rotate this grid left, recalculate internalCells and swap width and height
+	public void RotateLeft() {
+		PGridCell[] newInternalCells = new PGridCell[width * height];
+		for (int i = 0; i < internalCells.Length; i++) {
+			// new index is [numCols - 1 - col][row]
+			int newRow = (width - 1) - (i % width);
+			int newCol = i / width;
+			int index = height * newRow + newCol;
+			newInternalCells [index] = new PGridCell (newRow, newCol, internalCells [i].Closed);
+		}
+
+		internalCells = newInternalCells;
+		int newHeight = width;
+		width = height;
+		height = newHeight;
+
+		rotation = (rotation + 90) % 360;
 	}
 }

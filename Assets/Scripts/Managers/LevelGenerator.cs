@@ -54,8 +54,8 @@ public class LevelGenerator : MonoBehaviour {
 	 */
 	bool CanPlaceObject(PlacementGrid obstacleGrid, PGridCell cell) {
 		// False if grid bounding box goes outside bounds of level
-		if (obstacleGrid.Height + cell.Row >= grid.Height
-		    || obstacleGrid.Width + cell.Col >= grid.Width)
+		if (obstacleGrid.Height + cell.Row > grid.Height
+		    || obstacleGrid.Width + cell.Col > grid.Width)
 			return false;
 		
 		// Go through obstacle's placement grid and make sure that each spot
@@ -85,11 +85,34 @@ public class LevelGenerator : MonoBehaviour {
 				for (int i = r + cell.Row - 1; i <= r + cell.Row + 1; i++) {
 					for (int j = c + cell.Col - 1; j <= c + cell.Col + 1; j++) {
 						if (i >= 0 && i < grid.Height
-						   && j >= 0 && j < grid.Width)
+						    && j >= 0 && j < grid.Width) {
 							grid.SetCell (i, j, true);
+							GameManager.objects.Create (ResourcePaths.SpotMarker, new Vector3 (j+.5f, -i-.5f, 0), Quaternion.identity);
+						}
 					}
 				}
 			}
+		}
+	}
+
+	void RotateObjectLeft(GameObject obj) {
+		PlacementGrid objGrid = obj.GetComponent<PlacementGridComponent> ().Grid;
+		objGrid.RotateLeft ();	// rotate the grid
+		obj.transform.Rotate (new Vector3 (0, 0, 90));	// rotate the transform
+		// move to keep top of grid in upper left
+		switch (objGrid.Rotation) {
+			case 90:
+				obj.transform.Translate(new Vector3(-objGrid.Height, 0, 0));
+					break;
+			case 180:
+				//obj.transform.Translate(new Vector3(-objGrid.Width, objGrid.Height-objGrid.Width, 0));
+					break;
+			case 270:
+				obj.transform.Translate (new Vector3 (-objGrid.Width, objGrid.Height-objGrid.Width, 0));
+					break;
+			case 0:
+				obj.transform.Translate (new Vector3 (-objGrid.Height, 0, 0));
+					break;
 		}
 	}
 
@@ -129,7 +152,11 @@ public class LevelGenerator : MonoBehaviour {
 		var border = GameManager.objects.Create(ResourcePaths.SampleBorder, Vector3.zero, Quaternion.identity);
 		PlaceObstacleAtLocation (border, 0, 0);
 		Debug.Log ("placed border");
+
 		var obstacle = GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
+		//RotateObjectLeft (obstacle);
+		//RotateObjectLeft (obstacle);
+
 		if (!PlaceObstacleRandomly (obstacle))
 			obstacle.SetActive (false);
 		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
