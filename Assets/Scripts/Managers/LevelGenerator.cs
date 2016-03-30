@@ -6,7 +6,9 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour {
 
 	// Used to keep track of where we can place objects when generating a level
-	private PlacementGrid grid;
+	private PlacementGrid levelPGrid;
+	// Used to keep track of what spots actually have objects in them
+	private PlacementGrid occupiedGrid;
 
 	/**
 	 * This method places an obstacle at the given cell location in the game world.
@@ -30,7 +32,7 @@ public class LevelGenerator : MonoBehaviour {
 		// Find all cells where obstacle could be placed
 		List<PGridCell> availableSpots = new List<PGridCell> ();
 		PlacementGrid obstacleGrid = obstacle.GetComponent<PlacementGridComponent> ().Grid;
-		foreach(PGridCell cell in grid.Cells()) {
+		foreach(PGridCell cell in levelPGrid.Cells()) {
 			if (CanPlaceObject(obstacleGrid, cell)) {
 				availableSpots.Add(cell);
 			}
@@ -54,8 +56,8 @@ public class LevelGenerator : MonoBehaviour {
 	 */
 	bool CanPlaceObject(PlacementGrid obstacleGrid, PGridCell cell) {
 		// False if grid bounding box goes outside bounds of level
-		if (obstacleGrid.Height + cell.Row > grid.Height
-		    || obstacleGrid.Width + cell.Col > grid.Width)
+		if (obstacleGrid.Height + cell.Row > levelPGrid.Height
+			|| obstacleGrid.Width + cell.Col > levelPGrid.Width)
 			return false;
 		
 		// Go through obstacle's placement grid and make sure that each spot
@@ -65,7 +67,7 @@ public class LevelGenerator : MonoBehaviour {
 				// If a cell is closed on the obstacle then it is occupied
 				// If a cell is closed on the main grid, it is occpupied or adjacent to an occupied spot
 				if (obstacleGrid.Closed(r, c)
-					&& grid.Closed(cell.Row + r, cell.Col + c)) {
+					&& levelPGrid.Closed(cell.Row + r, cell.Col + c)) {
 					return false;
 				}
 			}
@@ -82,12 +84,15 @@ public class LevelGenerator : MonoBehaviour {
 		// Every cell around a closed cell in obstacleGrid is no longer available
 		foreach(PGridCell cell in obstacleGrid.Cells()) {
 			if (cell.Closed) {
+				// remember that there is actually an obstacle at this cell
+				occupiedGrid.SetCell (r + cell.Row, c + cell.Col, true);
+
 				for (int i = r + cell.Row - 1; i <= r + cell.Row + 1; i++) {
 					for (int j = c + cell.Col - 1; j <= c + cell.Col + 1; j++) {
-						if (i >= 0 && i < grid.Height
-						    && j >= 0 && j < grid.Width) {
-							grid.SetCell (i, j, true);
-							GameManager.objects.Create (ResourcePaths.SpotMarker, new Vector3 (j+.5f, -i-.5f, 0), Quaternion.identity);
+						if (i >= 0 && i < levelPGrid.Height
+							&& j >= 0 && j < levelPGrid.Width) {
+							levelPGrid.SetCell (i, j, true);
+							//GameManager.objects.Create (ResourcePaths.SpotMarker, new Vector3 (j+.5f, -i-.5f, 0), Quaternion.identity);
 						}
 					}
 				}
@@ -116,6 +121,28 @@ public class LevelGenerator : MonoBehaviour {
 		}
 	}
 
+	bool PlaceMoleculeRandomly(GameObject molecule) {
+		
+		// For now, assume that molecule takes up one cell
+
+		// Find available spots to place molecule
+		List<PGridCell> availableSpots = new List<PGridCell> ();
+		foreach (PGridCell cell in occupiedGrid.Cells()) {
+			if (!cell.Closed)
+				availableSpots.Add (cell);
+		}
+
+		// Then randomly pick one, place it, and recalculate grid
+		if (availableSpots.Count > 0) {
+			int spotToPlace = UnityEngine.Random.Range(0, availableSpots.Count);
+			molecule.transform.Translate(new Vector3 (availableSpots[spotToPlace].Col+.5f, -availableSpots[spotToPlace].Row-.5f, 0));
+			// set chosen spot to be closed
+			return true;
+		}
+
+		return false;
+	}
+
 	/**
 	 * This method is called whenever you are loading a new level
 	 * It handles creating the world of the level
@@ -138,21 +165,25 @@ public class LevelGenerator : MonoBehaviour {
 	 * Just testing out using this class before we have level loading implemented
 	 */
 	public void CreateSampleLevel() {
-		// Use ObjectManager to create necessary objects for the level
+		// Get level parameters
 		int levelWidth = 9, levelHeight = 5;
 		int levelPressure = 600;
 		int levelTemperature = 200;
 
 		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
 
+		// Create grids for level generator
 		bool[] gridSpots = new bool[levelWidth * levelHeight];
 		Array.Clear (gridSpots, 0, gridSpots.Length);
-		grid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
+		levelPGrid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
+		occupiedGrid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
 
+		// Place level border
 		var border = GameManager.objects.Create(ResourcePaths.SampleBorder, Vector3.zero, Quaternion.identity);
 		PlaceObstacleAtLocation (border, 0, 0);
 		Debug.Log ("placed border");
 
+		// Place level obstacles
 		var obstacle = GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
 		//RotateObjectLeft (obstacle);
 		//RotateObjectLeft (obstacle);
@@ -165,6 +196,13 @@ public class LevelGenerator : MonoBehaviour {
 		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
 		if (!PlaceObstacleRandomly (obstacle))
 			obstacle.SetActive (false);
+
+		// Place level molecules
+
+		// Place player
+		var player = GameManager.objects.Create(ResourcePaths.Player, Vector3.zero, Quaternion.identity);
+		if (!PlaceMoleculeRandomly (player))
+			player.SetActive (false);
 	}
 
 	public void SwitchLevel(string newLevelFilePath) {

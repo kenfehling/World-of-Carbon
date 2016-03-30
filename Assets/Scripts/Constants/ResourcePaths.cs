@@ -11,9 +11,12 @@ public class ResourcePaths {
 	public static string WorldObjectsRoot = "World Objects/";
 	public static string MoleculesRoot = "Molecules/";
 
+	public static string Player = "Player";
+
 	public static string SampleMolecule = WorldObjectsRoot + "Sample Molecule";
 	public static string SampleObstacle = WorldObjectsRoot + "Sample Obstacle Group";
 	public static string SmallSampleObstacle = WorldObjectsRoot + "Small Sample Obstacle";
 	public static string SampleBorder = WorldObjectsRoot + "Sample Game Border";
 	public static string SpotMarker = WorldObjectsRoot + "Spot Marker";
+
 }

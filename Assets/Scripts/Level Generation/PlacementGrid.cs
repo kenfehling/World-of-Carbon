@@ -68,7 +68,7 @@ public class PlacementGrid {
 			int newRow = (width - 1) - (i % width);
 			int newCol = i / width;
 			int index = height * newRow + newCol;
-			newInternalCells [index] = new PGridCell (newRow, newCol, internalCells [i].Closed);
+			newInternalCells [index] = new PGridCell (newRow, newCol, internalCells[i].Closed);
 		}
 
 		internalCells = newInternalCells;

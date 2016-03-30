@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Molecule : MonoBehaviour {
 
-	public int standardEnthalpyChange;
+	public float standardEnthalpyChange;
+	public string formula;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +14,5 @@ public class Molecule : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	Molecule() {
-
 	}
 }
