@@ -6,13 +6,10 @@ public class Molecule : MonoBehaviour {
 	public float standardEnthalpyChange;
 	public string formula;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	// Sets up a molecule with a designated name
+	public Molecule(string formula, float stadardEnthalpyChange){
+		this.formula = formula;
+		this.standardEnthalpyChange = standardEnthalpyChange;
 	}
 }
