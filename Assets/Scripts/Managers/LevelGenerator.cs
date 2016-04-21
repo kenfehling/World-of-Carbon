@@ -121,6 +121,10 @@ public class LevelGenerator : MonoBehaviour {
 		}
 	}
 
+	/*
+	 * Randomly place a molecule or one cell size object in the game world
+	 * Params - molecule: the GameObject to place
+	 */
 	bool PlaceMoleculeRandomly(GameObject molecule) {
 		
 		// For now, assume that molecule takes up one cell
@@ -136,7 +140,7 @@ public class LevelGenerator : MonoBehaviour {
 		if (availableSpots.Count > 0) {
 			int spotToPlace = UnityEngine.Random.Range(0, availableSpots.Count);
 			molecule.transform.Translate(new Vector3 (availableSpots[spotToPlace].Col+.5f, -availableSpots[spotToPlace].Row-.5f, 0));
-			// set chosen spot to be closed
+			occupiedGrid.SetCell (availableSpots [spotToPlace].Row, availableSpots [spotToPlace].Col, true);
 			return true;
 		}
 
@@ -199,8 +203,12 @@ public class LevelGenerator : MonoBehaviour {
 
 		// Place level molecules
 
-		// Place player
+
+		// Get player molecule
+		string playerMoleculeString = ResourcePaths.CarbonMolecule;
+		var playerMolecule = GameManager.objects.Create (playerMoleculeString, Vector3.zero, Quaternion.identity);
 		var player = GameManager.objects.Create(ResourcePaths.Player, Vector3.zero, Quaternion.identity);
+		playerMolecule.transform.SetParent (player.transform);
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
 	}

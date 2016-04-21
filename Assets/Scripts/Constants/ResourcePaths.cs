@@ -8,8 +8,8 @@ using System.Collections;
 public class ResourcePaths {
 
 	public static string ArtRoot = "Art/";
-	public static string WorldObjectsRoot = "World Objects/";
-	public static string MoleculesRoot = "Molecules/";
+	private static string WorldObjectsRoot = "World Objects/";
+	private static string MoleculesRoot = "Molecules/";
 
 	public static string Player = "Player";
 
@@ -19,4 +19,7 @@ public class ResourcePaths {
 	public static string SampleBorder = WorldObjectsRoot + "Sample Game Border";
 	public static string SpotMarker = WorldObjectsRoot + "Spot Marker";
 
+	public static string CarbonMolecule = MoleculesRoot + "Carbon";
+	public static string OxygenMolecule = MoleculesRoot + "Oxygen";
+	public static string NitrogenMolecule = MoleculesRoot + "Nitrogen";
 }
