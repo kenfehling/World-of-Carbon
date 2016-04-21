@@ -40,7 +40,6 @@ public class LevelGenerator : MonoBehaviour {
 		// Then randomly pick one, place it, and recalculate grid
 		if (availableSpots.Count > 0) {
 			int spotToPlace = UnityEngine.Random.Range(0, availableSpots.Count);
-			Debug.Log ("Spot: " + spotToPlace);
 			obstacle.transform.Translate(new Vector3 (availableSpots[spotToPlace].Col, -availableSpots[spotToPlace].Row, 0));
 			CalculateAvailableCells(obstacleGrid, availableSpots[spotToPlace].Row, availableSpots[spotToPlace].Col);
 			return true;
@@ -100,6 +99,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 	}
 
+	// NOT FINISHED (is there a better way to do this?)
 	void RotateObjectLeft(GameObject obj) {
 		PlacementGrid objGrid = obj.GetComponent<PlacementGridComponent> ().Grid;
 		objGrid.RotateLeft ();	// rotate the grid
@@ -183,31 +183,37 @@ public class LevelGenerator : MonoBehaviour {
 		occupiedGrid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
 
 		// Place level border
-		var border = GameManager.objects.Create(ResourcePaths.SampleBorder, Vector3.zero, Quaternion.identity);
+		var border = GameManager.objects.Create(ResourcePaths.SampleBorder);
 		PlaceObstacleAtLocation (border, 0, 0);
-		Debug.Log ("placed border");
 
 		// Place level obstacles
-		var obstacle = GameManager.objects.Create(ResourcePaths.SampleObstacle, Vector3.zero, Quaternion.identity);
-		//RotateObjectLeft (obstacle);
-		//RotateObjectLeft (obstacle);
+		string[] levelObstacles = { ResourcePaths.SampleObstacle, ResourcePaths.SmallSampleObstacle };
+		int[] levelObstacleAmounts = { 1, 2 };
 
-		if (!PlaceObstacleRandomly (obstacle))
-			obstacle.SetActive (false);
-		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
-		if (!PlaceObstacleRandomly (obstacle))
-			obstacle.SetActive (false);
-		obstacle = GameManager.objects.Create(ResourcePaths.SmallSampleObstacle, Vector3.zero, Quaternion.identity);
-		if (!PlaceObstacleRandomly (obstacle))
-			obstacle.SetActive (false);
+		for (int i = 0; i < levelObstacles.Length; i++) {
+			for (int o = 0; o < levelObstacleAmounts [i]; o++) {
+				var obstacle = GameManager.objects.Create (levelObstacles [i]);
+				if (!PlaceObstacleRandomly (obstacle))
+					obstacle.SetActive (false);
+			}
+		}
 
 		// Place level molecules
+		string[] levelMolecules = {ResourcePaths.OxygenMolecule, ResourcePaths.NitrogenMolecule};
+		int[] levelMoleculeAmounts = { 2, 1 };
 
+		for (int i = 0; i < levelMolecules.Length; i++) {
+			for (int m = 0; m < levelMoleculeAmounts [i]; m++) {
+				var molecule = GameManager.objects.Create (levelMolecules [i]);
+				if (!PlaceMoleculeRandomly (molecule))
+					molecule.SetActive (false);
+			}
+		}
 
-		// Get player molecule
+		// Place player
 		string playerMoleculeString = ResourcePaths.CarbonMolecule;
-		var playerMolecule = GameManager.objects.Create (playerMoleculeString, Vector3.zero, Quaternion.identity);
-		var player = GameManager.objects.Create(ResourcePaths.Player, Vector3.zero, Quaternion.identity);
+		var playerMolecule = GameManager.objects.Create (playerMoleculeString);
+		var player = GameManager.objects.Create(ResourcePaths.Player);
 		playerMolecule.transform.SetParent (player.transform);
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);

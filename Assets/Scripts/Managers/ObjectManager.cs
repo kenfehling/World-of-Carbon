@@ -27,6 +27,10 @@ public class ObjectManager : MonoBehaviour {
 		}
 	}
 
+	public GameObject Create(string obj) {
+		return Create (obj, Vector3.zero, Quaternion.identity);
+	}
+
 	public GameObject Create(string obj, Vector3 position, Quaternion rotation) {
 		// only can create objects already specified for this level
 		if (!stacks.ContainsKey (obj)) {
