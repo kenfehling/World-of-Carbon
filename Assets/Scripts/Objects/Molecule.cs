@@ -12,4 +12,13 @@ public class Molecule : MonoBehaviour {
 		this.formula = formula;
 		this.standardEnthalpyChange = standardEnthalpyChange;
 	}
+
+	void OnTriggerEnter (Collider obj)
+	{
+		var molecule = obj.gameObject.GetComponent<Molecule> ();
+		if(molecule != null)
+		{
+			Debug.Log ("Hit a " + molecule.formula + " molecule.");
+		}
+	}
 }

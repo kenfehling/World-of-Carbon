@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21242984}
   - 58: {fileID: 5807064}
   - 114: {fileID: 11401168}
+  - 58: {fileID: 5818372}
   m_Layer: 0
   m_Name: Carbon
   m_TagString: Untagged
@@ -44,6 +45,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!58 &5818372
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.61
 --- !u!114 &11401168
 MonoBehaviour:
   m_ObjectHideFlags: 1

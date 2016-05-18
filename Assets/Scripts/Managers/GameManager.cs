@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
 	public static LevelGenerator levels;
 	public static ArtManager art;
 
+	// Will be set in game world before everything is run
+	public GameObject mainCamera;
+
 	// Use this for initialization
 	void Start () {
 		// Instantiate internal managers
@@ -27,6 +30,9 @@ public class GameManager : MonoBehaviour {
 		state.SetLoading(true);
 		//levels.CreateLevel("firstLevel.xml", ShowLevel);
 		levels.CreateSampleLevel();
+
+		// Set the camera to follow the game's player
+		mainCamera.GetComponent<CameraFollow> ().SetPlayer (ref state.player);
 	}
 
 	// where should this functionality really go?

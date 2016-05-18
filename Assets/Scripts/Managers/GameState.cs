@@ -19,6 +19,8 @@ public class GameState {
 	private int worldWidth;
 	private int worldHeight;
 
+	public GameObject player;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -35,6 +37,10 @@ public class GameState {
 		worldHeight = height;
 		pressure = initialPressure;
 		temperature = initialTemp;
+	}
+
+	public void SetPlayer(ref GameObject p) {
+		player = p;
 	}
 
 	public bool Loading() {

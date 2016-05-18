@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21265102}
   - 60: {fileID: 6016406}
   - 114: {fileID: 11452894}
+  - 58: {fileID: 5827564}
   m_Layer: 0
   m_Name: Oxygen
   m_TagString: Untagged
@@ -30,6 +31,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5827564
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146786}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
 --- !u!60 &6016406
 PolygonCollider2D:
   m_ObjectHideFlags: 1
