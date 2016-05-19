@@ -2,10 +2,10 @@
 using System.Collections;
 
 /**
- * This class keeps track of gameplay variables and overall game state
+ * This class keeps track of gameplay variables and overall game state.
  * 
- * TODO: Should it also handle high level control functions like switching levels?
- * 
+ * author: Alex Scarlatos
+ * February 2016
  */
 public class GameState {
 
@@ -19,7 +19,7 @@ public class GameState {
 	private int worldWidth;
 	private int worldHeight;
 
-	public GameObject player;
+	public GameObject player = null;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +39,7 @@ public class GameState {
 		temperature = initialTemp;
 	}
 
+	// Sets the reference to the player, must be called when player is created by level generator
 	public void SetPlayer(ref GameObject p) {
 		player = p;
 	}

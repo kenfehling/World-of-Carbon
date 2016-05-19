@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * This is the launching point for the application and should be attached to a game manager world object.
+ * You access the necessary game objects statically from here.
+ * 
+ * author: Alex Scarlatos
+ * February 2016
+ */
 public class GameManager : MonoBehaviour {
 
 	public static GameState state;
@@ -9,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	public static ObjectManager objects;
 	public static LevelGenerator levels;
 	public static ArtManager art;
+	public static ReactionTable reactionTable;
 
 	// Will be set in game world before everything is run
 	public GameObject mainCamera;
@@ -25,6 +33,7 @@ public class GameManager : MonoBehaviour {
 		sound = new SoundManager();
 		objects = new ObjectManager();
 		levels = new LevelGenerator();
+		reactionTable = new ReactionTable();
 
 		// Start first level
 		state.SetLoading(true);

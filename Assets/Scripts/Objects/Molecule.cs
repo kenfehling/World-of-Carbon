@@ -3,22 +3,19 @@ using System.Collections;
 
 public class Molecule : MonoBehaviour {
 
+	// To be set by designer in object inspector of molecule prefabs
 	public float standardEnthalpyChange;
 	public string formula;
 
-
-	// Sets up a molecule with a designated name
-	public Molecule(string formula, float stadardEnthalpyChange){
-		this.formula = formula;
-		this.standardEnthalpyChange = standardEnthalpyChange;
-	}
-
-	void OnTriggerEnter (Collider obj)
-	{
+	void OnCollisionEnter2D (Collision2D obj) {
 		var molecule = obj.gameObject.GetComponent<Molecule> ();
 		if(molecule != null)
 		{
-			Debug.Log ("Hit a " + molecule.formula + " molecule.");
+			var reaction = GameManager.reactionTable.GetReaction (this.formula, molecule.formula);
+			if (reaction != null) {
+				foreach (string s in reaction.products)
+					Debug.Log ("Create " + s);
+			}
 		}
 	}
 }

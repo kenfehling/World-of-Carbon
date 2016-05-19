@@ -3,6 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+ * This class handles creating a level at loadtime.
+ * Loads level from xml file and then sets up other necessary classes and places objects in the level.
+ * 
+ * author: Alex Scarlatos
+ * March 2016
+ */
 public class LevelGenerator : MonoBehaviour {
 
 	// Used to keep track of where we can place objects when generating a level
@@ -165,16 +172,26 @@ public class LevelGenerator : MonoBehaviour {
 		// Use ObjectManager to create necessary objects for the level
 	}
 
-	/**
+	/*
 	 * Just testing out using this class before we have level loading implemented
 	 */
 	public void CreateSampleLevel() {
-		// Get level parameters
+		// Level parameters, all to be loaded from an xml file
 		int levelWidth = 9, levelHeight = 5;
 		int levelPressure = 600;
 		int levelTemperature = 200;
+		string levelBorder = ResourcePaths.SampleBorder;
+		string[] levelObstacles = { ResourcePaths.SampleObstacle, ResourcePaths.SmallSampleObstacle };
+		int[] levelObstacleAmounts = { 1, 2 };
+		string[] levelMolecules = { ResourcePaths.OxygenMolecule, ResourcePaths.NitrogenMolecule, ResourcePaths.CarbonMolecule, ResourcePaths.CarbonDioxideMolecule };
+		int[] levelMoleculeAmounts = { 2, 1, 0, 0 };
+		string playerMoleculeString = ResourcePaths.CarbonMolecule;
 
 		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
+
+		GameManager.reactionTable.SetUpTable (new string[]{"C", "O2", "N2", "CO2"});
+		ReactionTableEntry reaction1 = new ReactionTableEntry (new string[] { "CO2" });
+		GameManager.reactionTable.RegisterReaction("C", "O2", reaction1);
 
 		// Create grids for level generator
 		bool[] gridSpots = new bool[levelWidth * levelHeight];
@@ -183,13 +200,10 @@ public class LevelGenerator : MonoBehaviour {
 		occupiedGrid = new PlacementGrid (levelWidth, levelHeight, gridSpots);
 
 		// Place level border
-		var border = GameManager.objects.Create(ResourcePaths.SampleBorder);
+		var border = GameManager.objects.Create(levelBorder);
 		PlaceObstacleAtLocation (border, 0, 0);
 
 		// Place level obstacles
-		string[] levelObstacles = { ResourcePaths.SampleObstacle, ResourcePaths.SmallSampleObstacle };
-		int[] levelObstacleAmounts = { 1, 2 };
-
 		for (int i = 0; i < levelObstacles.Length; i++) {
 			for (int o = 0; o < levelObstacleAmounts [i]; o++) {
 				var obstacle = GameManager.objects.Create (levelObstacles [i]);
@@ -199,9 +213,6 @@ public class LevelGenerator : MonoBehaviour {
 		}
 
 		// Place level molecules
-		string[] levelMolecules = {ResourcePaths.OxygenMolecule, ResourcePaths.NitrogenMolecule};
-		int[] levelMoleculeAmounts = { 2, 1 };
-
 		for (int i = 0; i < levelMolecules.Length; i++) {
 			for (int m = 0; m < levelMoleculeAmounts [i]; m++) {
 				var molecule = GameManager.objects.Create (levelMolecules [i]);
@@ -211,12 +222,12 @@ public class LevelGenerator : MonoBehaviour {
 		}
 
 		// Place player
-		string playerMoleculeString = ResourcePaths.CarbonMolecule;
 		var playerMolecule = GameManager.objects.Create (playerMoleculeString);
 		var player = GameManager.objects.Create(ResourcePaths.Player);
 		playerMolecule.transform.SetParent (player.transform);
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
+		
 		GameManager.state.SetPlayer (ref player);
 	}
 

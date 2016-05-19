@@ -21,7 +21,8 @@ public class ResourcePaths {
 	public static string SpotMarker = WorldObjectsRoot + "Spot Marker";
 
 	// Molecules
-	public static string CarbonMolecule = MoleculesRoot + "Carbon";
-	public static string OxygenMolecule = MoleculesRoot + "Oxygen";
-	public static string NitrogenMolecule = MoleculesRoot + "Nitrogen";
+	public static string CarbonMolecule = MoleculesRoot + "C";
+	public static string OxygenMolecule = MoleculesRoot + "O2";
+	public static string NitrogenMolecule = MoleculesRoot + "N2";
+	public static string CarbonDioxideMolecule = MoleculesRoot + "CO2";
 }

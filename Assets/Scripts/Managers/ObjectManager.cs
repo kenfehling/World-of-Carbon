@@ -13,7 +13,7 @@ public class ObjectManager : MonoBehaviour {
 		stacks = new Dictionary<string, Stack<GameObject>> ();
 	}
 
-	// initializes a stack for each type in resources
+	// Initializes a stack for each type in resources
 	public void Initialize(List<string> resources) {
 		// TODO: delete all entries in stacks that are not in resources
 
