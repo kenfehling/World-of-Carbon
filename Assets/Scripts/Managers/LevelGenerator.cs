@@ -225,6 +225,8 @@ public class LevelGenerator : MonoBehaviour {
 		var playerMolecule = GameManager.objects.Create (playerMoleculeString);
 		var player = GameManager.objects.Create(ResourcePaths.Player);
 		playerMolecule.transform.SetParent (player.transform);
+        //Removes the child rigidbody from the player's molecule
+        Destroy(playerMolecule.GetComponent<Rigidbody2D>());
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
 		

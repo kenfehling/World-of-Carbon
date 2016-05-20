@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class SlingShotSprite : MonoBehaviour {
-	bool clicked = false;
-	bool released = false;
-
-	bool moving = false;
+    public float forceScale = 1.0f;
+    public float decelerationCoefficient = 1.0f;
+    public float angularDecelerationCoefficient = 1.0f;
 
 	private Vector3 clickPoint;
 	private Vector3 releasePoint;
@@ -21,8 +20,8 @@ public class SlingShotSprite : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 	}
 
-	void Update () {
-		/*
+	void FixedUpdate () {
+        /*
 		if (clicked) {
 			//makes the smaller sprite follow the mouse
 			//spriteRender.sprite = Arrow;
@@ -36,30 +35,16 @@ public class SlingShotSprite : MonoBehaviour {
 			//this.transform.Translate(clickPoint.x,clickPoint.y, Time.deltaTime);
 		}
 		*/
-		if (moving) {
-			//TODO: use timeDelta
 
-			float transScale = .8f, rotScale = .8f;
-			rb.velocity = new Vector2 (rb.velocity.x * transScale, rb.velocity.y * transScale);
-			if (rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y < .1f) {
-				moving = false;
-				rb.velocity = new Vector2 (0, 0);
-			}
-
-			rb.angularVelocity = rb.angularVelocity * rotScale;
-			if (rb.angularVelocity < .1f) {
-				rb.angularVelocity = 0;
-			}
-		}
-	}
+        //We need to simulate drag here.
+        float fixedDecelCoeff = decelerationCoefficient * Time.fixedDeltaTime;
+        rb.velocity = rb.velocity.normalized * Mathf.Lerp(rb.velocity.magnitude, 0.0f, fixedDecelCoeff);
+        //rb.angularVelocity = rb.angularVelocity;
+    }
 
 	void OnMouseDown(){
-		if (!clicked) {
-			clicked = true;
-			released = false;
-			clickPoint = Input.mousePosition;//the place where you first click
-			clickPoint.z = 5f; 
-		} 
+		clickPoint = Input.mousePosition;//the place where you first click
+		clickPoint.z = 5f; 
 	}
 
 	void setMovementCoef(){
@@ -72,19 +57,15 @@ public class SlingShotSprite : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-		clicked = false;
-		released = true;
 		releasePoint = Input.mousePosition;
 		difference.x = clickPoint.x - releasePoint.x;
 		difference.y = clickPoint.y - releasePoint.y;
 		difference.z = 5f;
 
-		float scale = .3f;
-
-		rb.velocity = new Vector2 (difference.x * scale, difference.y * scale);
-		moving = true;
+		rb.AddForce(new Vector2 (difference.x * forceScale, difference.y * forceScale));
 		return;
 
+        /*
 		angle = Mathf.Atan (difference.y / difference.x);
 		if (difference.x > 100f) {
 			if (difference.y == 0) {
@@ -130,14 +111,14 @@ public class SlingShotSprite : MonoBehaviour {
 			}
 
 		}
-		//startPoint.x = clickPoint.x;
-		//startPoint.y = clickPoint.y;
-		//startPoint.z = 5f;
-		//startTime = Time.time;
+		startPoint.x = clickPoint.x;
+		startPoint.y = clickPoint.y;
+		startPoint.z = 5f;
+		startTime = Time.time;
 
 		//find pressure and temperarture to see distance the object will go. 
 		//raycast object to find collisions, angles, reactions and so on.
-		/*
+		
 		setMovementCoef();
 		clickPoint.x += difference.x * movementCoef;
 		clickPoint.y += difference.y * movementCoef; 

@@ -29,10 +29,10 @@ public class GameManager : MonoBehaviour {
 		// Or with game objects?
 		// Or with prefabs?
 		state = new GameState();
-		gui = new GUIManager();
-		sound = new SoundManager();
-		objects = new ObjectManager();
-		levels = new LevelGenerator();
+		gui = gameObject.AddComponent<GUIManager>();
+		sound = gameObject.AddComponent<SoundManager>();
+		objects = gameObject.AddComponent<ObjectManager>();
+		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
 
 		// Start first level
