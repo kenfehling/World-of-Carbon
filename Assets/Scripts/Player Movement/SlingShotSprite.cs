@@ -4,23 +4,18 @@ using System.Collections;
 public class SlingShotSprite : MonoBehaviour {
     public float forceScale = 1.0f;
     public float decelerationCoefficient = 1.0f;
-    public float angularDecelerationCoefficient = 1.0f;
 
 	private Vector3 clickPoint;
 	private Vector3 releasePoint;
 	private Vector3 difference;
 	private Rigidbody2D rb;
 
-	private float angle;
-	private float movementCoef;
-	//private Vector3 startPoint;
-	//private float startTime;
-
 	void Start() {
 		rb = GetComponent<Rigidbody2D> ();
 	}
 
 	void FixedUpdate () {
+        //TODO: Draw graphic between the player's character and the mouse/touch point
         /*
 		if (clicked) {
 			//makes the smaller sprite follow the mouse
@@ -37,23 +32,14 @@ public class SlingShotSprite : MonoBehaviour {
 		*/
 
         //We need to simulate drag here.
+        //This might be affected by heat or other environmental hazards
         float fixedDecelCoeff = decelerationCoefficient * Time.fixedDeltaTime;
         rb.velocity = rb.velocity.normalized * Mathf.Lerp(rb.velocity.magnitude, 0.0f, fixedDecelCoeff);
-        //rb.angularVelocity = rb.angularVelocity;
     }
 
 	void OnMouseDown(){
 		clickPoint = Input.mousePosition;//the place where you first click
 		clickPoint.z = 5f; 
-	}
-
-	void setMovementCoef(){
-		movementCoef = 3f;
-	}
-
-	void setMovementCoef(string initEnvInfo){
-		//do some other things
-		movementCoef = 3f;
 	}
 
 	void OnMouseUp(){
@@ -64,66 +50,66 @@ public class SlingShotSprite : MonoBehaviour {
 
 		rb.AddForce(new Vector2 (difference.x * forceScale, difference.y * forceScale));
 		return;
-
-        /*
-		angle = Mathf.Atan (difference.y / difference.x);
-		if (difference.x > 100f) {
-			if (difference.y == 0) {
-				difference.x = 100f;
-			} else if(difference.y > 0){
-				difference.x = 100f * Mathf.Cos (angle);
-				difference.y = 100f * Mathf.Sin (angle); 
-			} else if(difference.y < 0){
-				difference.x = 100f * Mathf.Cos (angle);
-				difference.y = 100f * Mathf.Sin (angle); 
-			}
-		} else if (difference.x < -100f) {
-			if (difference.y == 0) {
-				difference.x = -100f;
-			} else if(difference.y > 0){
-				difference.x = -100f * Mathf.Cos (angle);
-				difference.y = -100f * Mathf.Sin (angle); 
-			} else if(difference.y < 0){
-				difference.x = -100f * Mathf.Cos (angle);
-				difference.y = -100f * Mathf.Sin (angle); 
-			}
-
-		} else if (difference.y > 100f) {	
-			if (difference.x == 0) {
-				difference.y = 100f;
-			} else if (difference.x > 0) {
-				difference.x = 100f * Mathf.Cos (angle);
-				difference.y = 100f * Mathf.Sin (angle); 
-
-			}else if (difference.x < 0){
-				difference.x = -100f * Mathf.Cos (angle);
-				difference.y = -100f * Mathf.Sin (angle); 
-			}
-		} else if (difference.y < -100f) {	
-			if (difference.x == 0) {
-				difference.y = -100f;
-			} else if (difference.x > 0) {
-				difference.x = 100f * Mathf.Cos (angle);
-				difference.y = 100f * Mathf.Sin (angle); 
-			} else if (difference.x < 0){
-				difference.x = -100f * Mathf.Cos (angle);
-				difference.y = -100f * Mathf.Sin (angle); 
-			}
-
-		}
-		startPoint.x = clickPoint.x;
-		startPoint.y = clickPoint.y;
-		startPoint.z = 5f;
-		startTime = Time.time;
-
-		//find pressure and temperarture to see distance the object will go. 
-		//raycast object to find collisions, angles, reactions and so on.
-		
-		setMovementCoef();
-		clickPoint.x += difference.x * movementCoef;
-		clickPoint.y += difference.y * movementCoef; 
-		clickPoint.z = 5f;
-		*/
-
-	}
+    }
 }
+
+//Some old code that was never reached and wasn't doing anything, leaving it here just in case
+/*
+angle = Mathf.Atan (difference.y / difference.x);
+if (difference.x > 100f) {
+    if (difference.y == 0) {
+        difference.x = 100f;
+    } else if(difference.y > 0){
+        difference.x = 100f * Mathf.Cos (angle);
+        difference.y = 100f * Mathf.Sin (angle); 
+    } else if(difference.y < 0){
+        difference.x = 100f * Mathf.Cos (angle);
+        difference.y = 100f * Mathf.Sin (angle); 
+    }
+} else if (difference.x < -100f) {
+    if (difference.y == 0) {
+        difference.x = -100f;
+    } else if(difference.y > 0){
+        difference.x = -100f * Mathf.Cos (angle);
+        difference.y = -100f * Mathf.Sin (angle); 
+    } else if(difference.y < 0){
+        difference.x = -100f * Mathf.Cos (angle);
+        difference.y = -100f * Mathf.Sin (angle); 
+    }
+
+} else if (difference.y > 100f) {	
+    if (difference.x == 0) {
+        difference.y = 100f;
+    } else if (difference.x > 0) {
+        difference.x = 100f * Mathf.Cos (angle);
+        difference.y = 100f * Mathf.Sin (angle); 
+
+    }else if (difference.x < 0){
+        difference.x = -100f * Mathf.Cos (angle);
+        difference.y = -100f * Mathf.Sin (angle); 
+    }
+} else if (difference.y < -100f) {	
+    if (difference.x == 0) {
+        difference.y = -100f;
+    } else if (difference.x > 0) {
+        difference.x = 100f * Mathf.Cos (angle);
+        difference.y = 100f * Mathf.Sin (angle); 
+    } else if (difference.x < 0){
+        difference.x = -100f * Mathf.Cos (angle);
+        difference.y = -100f * Mathf.Sin (angle); 
+    }
+
+}
+startPoint.x = clickPoint.x;
+startPoint.y = clickPoint.y;
+startPoint.z = 5f;
+startTime = Time.time;
+
+//find pressure and temperarture to see distance the object will go. 
+//raycast object to find collisions, angles, reactions and so on.
+
+setMovementCoef();
+clickPoint.x += difference.x * movementCoef;
+clickPoint.y += difference.y * movementCoef; 
+clickPoint.z = 5f;
+*/

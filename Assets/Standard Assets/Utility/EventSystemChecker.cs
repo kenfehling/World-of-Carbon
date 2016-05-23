@@ -16,7 +16,9 @@ public class EventSystemChecker : MonoBehaviour
             GameObject obj = new GameObject("EventSystem");
             obj.AddComponent<EventSystem>();
             obj.AddComponent<StandaloneInputModule>().forceModuleActive = true;
+            #pragma warning disable CS0618
             obj.AddComponent<TouchInputModule>();
+            #pragma warning restore CS0618
         }
 	}
 }

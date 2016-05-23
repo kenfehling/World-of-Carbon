@@ -79,7 +79,9 @@ namespace UnityStandardAssets.Utility
         private IEnumerator ReloadLevel(Entry entry)
         {
             yield return new WaitForSeconds(entry.delay);
+            #pragma warning disable CS0618
             Application.LoadLevel(Application.loadedLevel);
+            #pragma warning restore CS0618
         }
     }
 }
