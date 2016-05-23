@@ -51,11 +51,4 @@ public class GameManager : MonoBehaviour {
 		// give player control?
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-
 }
