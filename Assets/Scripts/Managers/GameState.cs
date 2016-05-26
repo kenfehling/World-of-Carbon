@@ -13,7 +13,7 @@ public class GameState {
 
 	// world pressure in torr
 	private int pressure;
-	// wordl temperature in Kelvin
+	// world temperature in Kelvin
 	private int temperature;
 
 	private int worldWidth;

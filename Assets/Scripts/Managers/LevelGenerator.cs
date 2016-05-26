@@ -189,10 +189,6 @@ public class LevelGenerator : MonoBehaviour {
 
 		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
 
-		GameManager.reactionTable.SetUpTable (new string[]{"C", "O2", "N2", "CO2"});
-		ReactionTableEntry reaction1 = new ReactionTableEntry (new string[] { "CO2" });
-		GameManager.reactionTable.RegisterReaction("C", "O2", reaction1);
-
 		// Create grids for level generator
 		bool[] gridSpots = new bool[levelWidth * levelHeight];
 		Array.Clear (gridSpots, 0, gridSpots.Length);

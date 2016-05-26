@@ -37,18 +37,26 @@ public class GameManager : MonoBehaviour {
 
 		// Start first level
 		state.SetLoading(true);
-		//levels.CreateLevel("firstLevel.xml", ShowLevel);
-		levels.CreateSampleLevel();
+        //levels.CreateLevel("firstLevel.xml", ShowLevel); <-- Unnecessary.. Unity's scenes make level loading such as this obsolete
+        PopulateReactionTable();
+        levels.CreateSampleLevel();
 
 		// Set the camera to follow the game's player
 		mainCamera.GetComponent<CameraFollow> ().SetPlayer (ref state.player);
 	}
 
+    //All of the reaction data and entries will be initialized and populated here
+    private void PopulateReactionTable()
+    {
+        reactionTable.SetUpTable(new string[] { "C", "O2", "N2", "CO2"});
+        ReactionTableEntry reaction1 = new ReactionTableEntry(new string[] { "CO2" });
+        reactionTable.RegisterReaction("C", "O2", reaction1);
+    }
+
 	// where should this functionality really go?
-	void ShowLevel() {
+	private void ShowLevel() {
 		state.SetLoading (false);
 		// art . transition from loading to world view
 		// give player control?
-
 	}
 }
