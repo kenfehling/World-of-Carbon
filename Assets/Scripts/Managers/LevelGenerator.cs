@@ -187,7 +187,7 @@ public class LevelGenerator : MonoBehaviour {
 		int[] levelMoleculeAmounts = { 2, 1, 0, 0 };
 		string playerMoleculeString = ResourcePaths.CarbonMolecule;
 
-		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
+		GameManager.worldProperties.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
 
 		// Create grids for level generator
 		bool[] gridSpots = new bool[levelWidth * levelHeight];

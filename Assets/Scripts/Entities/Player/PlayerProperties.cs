@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerProperties : MonoBehaviour {
+public class PlayerProperties {
 
     private float temperature;
     private float pressure;
@@ -13,32 +13,32 @@ public class PlayerProperties : MonoBehaviour {
     }
 
     //Getters and setters
-    public float getTemperature()
+    public float GetTemperature()
     {
         return temperature;
     }
 
-    public void setTemperature(float temperature)
+    public void SetTemperature(float temperature)
     {
         this.temperature = temperature;
     }
 
-    public float getPressure()
+    public float GetPressure()
     {
         return pressure;
     }
 
-    public void setPressure(float pressure)
+    public void SetPressure(float pressure)
     {
         this.pressure = pressure;
     }
 
-    public string getComposition()
+    public string GetComposition()
     {
         return composition;
     }
 
-    public void setComposition(string composition)
+    public void SetComposition(string composition)
     {
         this.composition = composition;
     }

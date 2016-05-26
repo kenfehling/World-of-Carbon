@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	public static LevelGenerator levels;
 	public static ArtManager art;
 	public static ReactionTable reactionTable;
+    public static WorldProperties worldProperties;
 
 	// Will be set in game world before everything is run
 	public GameObject mainCamera;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour {
 		objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
+        worldProperties = new WorldProperties();
 
 		// Start first level
 		state.SetLoading(true);

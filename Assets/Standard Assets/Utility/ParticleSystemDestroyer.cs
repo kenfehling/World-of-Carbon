@@ -41,9 +41,9 @@ namespace UnityStandardAssets.Utility
             // turn off emission
             foreach (var system in systems)
             {
-                #pragma warning disable CS0618
+                #pragma warning disable 0618
                 system.enableEmission = false;
-                #pragma warning restore CS0618
+                #pragma warning restore 0618
             }
             BroadcastMessage("Extinguish", SendMessageOptions.DontRequireReceiver);
 
