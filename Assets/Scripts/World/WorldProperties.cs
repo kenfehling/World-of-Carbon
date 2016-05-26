@@ -11,6 +11,7 @@ public class WorldProperties {
     private int worldWidth;
     private int worldHeight;
 
+    public GameObject player = null;
 
     // called on level load to set the initial parameters for this level
     public void SetInitialParams(int width, int height, int initialPressure, int initialTemp)
@@ -19,6 +20,12 @@ public class WorldProperties {
         worldHeight = height;
         pressure = initialPressure;
         temperature = initialTemp;
+    }
+
+    // Sets the reference to the player, must be called when player is created by level generator
+    public void SetPlayer(ref GameObject p)
+    {
+        player = p;
     }
 
     public float GetTemperature()

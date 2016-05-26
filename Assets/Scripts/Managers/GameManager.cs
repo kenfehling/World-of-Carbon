@@ -10,7 +10,6 @@ using System.Collections;
  */
 public class GameManager : MonoBehaviour {
 
-	public static GameState state;
 	public static GUIManager gui;
 	public static SoundManager sound;
 	public static ObjectManager objects;
@@ -18,9 +17,12 @@ public class GameManager : MonoBehaviour {
 	public static ArtManager art;
 	public static ReactionTable reactionTable;
     public static WorldProperties worldProperties;
+    public static GameState state;
 
-	// Will be set in game world before everything is run
-	public GameObject mainCamera;
+    public enum GameState { loading, active };
+
+    // Will be set in game world before everything is run
+    public GameObject mainCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +31,6 @@ public class GameManager : MonoBehaviour {
 		// Should I instantiate them this way?
 		// Or with game objects?
 		// Or with prefabs?
-		state = new GameState();
 		gui = gameObject.AddComponent<GUIManager>();
 		sound = gameObject.AddComponent<SoundManager>();
 		objects = gameObject.AddComponent<ObjectManager>();
@@ -37,14 +38,14 @@ public class GameManager : MonoBehaviour {
 		reactionTable = new ReactionTable();
         worldProperties = new WorldProperties();
 
-		// Start first level
-		state.SetLoading(true);
+        // Start first level
+        state = GameState.loading;
         //levels.CreateLevel("firstLevel.xml", ShowLevel); <-- Unnecessary.. Unity's scenes make level loading such as this obsolete
         PopulateReactionTable();
         levels.CreateSampleLevel();
 
 		// Set the camera to follow the game's player
-		mainCamera.GetComponent<CameraFollow> ().SetPlayer (ref state.player);
+		mainCamera.GetComponent<CameraFollow> ().SetPlayer (ref worldProperties.player);
 	}
 
     //All of the reaction data and entries will be initialized and populated here
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour {
 
 	// where should this functionality really go?
 	private void ShowLevel() {
-		state.SetLoading (false);
+		state = GameState.active;
 		// art . transition from loading to world view
 		// give player control?
 	}

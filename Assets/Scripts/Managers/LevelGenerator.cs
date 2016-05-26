@@ -227,7 +227,7 @@ public class LevelGenerator : MonoBehaviour {
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
 		
-		GameManager.state.SetPlayer (ref player);
+		GameManager.worldProperties.SetPlayer (ref player);
 	}
 
 	public void SwitchLevel(string newLevelFilePath) {
