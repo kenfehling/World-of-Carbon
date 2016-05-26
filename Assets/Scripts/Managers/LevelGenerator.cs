@@ -187,11 +187,7 @@ public class LevelGenerator : MonoBehaviour {
 		int[] levelMoleculeAmounts = { 2, 1, 0, 0 };
 		string playerMoleculeString = ResourcePaths.CarbonMolecule;
 
-		GameManager.state.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
-
-		GameManager.reactionTable.SetUpTable (new string[]{"C", "O2", "N2", "CO2"});
-		ReactionTableEntry reaction1 = new ReactionTableEntry (new string[] { "CO2" });
-		GameManager.reactionTable.RegisterReaction("C", "O2", reaction1);
+		GameManager.worldProperties.SetInitialParams (levelWidth, levelHeight, levelPressure, levelTemperature);
 
 		// Create grids for level generator
 		bool[] gridSpots = new bool[levelWidth * levelHeight];
@@ -231,7 +227,7 @@ public class LevelGenerator : MonoBehaviour {
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
 		
-		GameManager.state.SetPlayer (ref player);
+		GameManager.worldProperties.SetPlayer (ref player);
 	}
 
 	public void SwitchLevel(string newLevelFilePath) {

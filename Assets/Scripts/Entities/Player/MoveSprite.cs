@@ -5,7 +5,7 @@ public class MoveSprite : MonoBehaviour {
 	bool clicked = false;
 	public Transform target;
 	public float smoothTime = 0.3F;
-	private Vector3 velocity = Vector3.zero;
+	//private Vector3 velocity = Vector3.zero;
 	//Vector3 targetPosition
 	//find coords of mouse when last update happened. compare to current update
 	void Update () {
