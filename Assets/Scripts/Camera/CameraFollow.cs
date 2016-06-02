@@ -3,7 +3,15 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-    GameObject player;
+    public GameObject player;
+
+    void Start()
+    {
+        if (!player)
+        {
+            player = GameObject.Find("Player");
+        }
+    }
 
     void LateUpdate () {
 		if (player != null) {
@@ -11,7 +19,7 @@ public class CameraFollow : MonoBehaviour {
 		}
 	}    
 
-	public void SetPlayer(ref GameObject p) {
-		player = p;
+	public void SetPlayer(ref PlayerManager p) {
+		player = p.gameObject;
 	}
 }
