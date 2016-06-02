@@ -10,10 +10,11 @@ public class PlayerManager : MonoBehaviour {
 
     void Start()
     {
+        //Stores reference to default child, destroys the child's rigidbody
         if (!child)
         {
-            //child = GetComponentInChildren<Rigidbody2D>().gameObject;
-            //Destroy(child.GetComponent<Rigidbody2D>());
+            child = transform.GetChild(0).gameObject;
+            Destroy(child.GetComponent<Rigidbody2D>());
         }
     }
 
