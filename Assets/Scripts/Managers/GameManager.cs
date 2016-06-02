@@ -27,25 +27,31 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Instantiate internal managers
-
-		// Should I instantiate them this way?
-		// Or with game objects?
-		// Or with prefabs?
 		gui = gameObject.AddComponent<GUIManager>();
 		sound = gameObject.AddComponent<SoundManager>();
 		objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
-        worldProperties = new WorldProperties();
+
+        //Find camera if not explicitly done in the Editor (this is a failsafe.. shouldn't rely on this)
+        if (!mainCamera)
+        {
+            mainCamera = GameObject.Find("Main Camera");
+        }
 
         // Start first level
         state = GameState.loading;
-        //levels.CreateLevel("firstLevel.xml", ShowLevel); <-- Unnecessary.. Unity's scenes make level loading such as this obsolete
         PopulateReactionTable();
-        levels.CreateSampleLevel();
 
-		// Set the camera to follow the game's player
-		mainCamera.GetComponent<CameraFollow> ().SetPlayer (ref worldProperties.player);
+        //This is just so the old "Gameplay" scene doesn't break
+        if(Application.loadedLevelName == "Gameplay")
+        {
+            worldProperties = gameObject.AddComponent<WorldProperties>();
+            levels.CreateSampleLevel();
+
+            // Set the camera to follow the game's player
+            mainCamera.GetComponent<CameraFollow>().SetPlayer(ref worldProperties.player);
+        }
 	}
 
     //All of the reaction data and entries will be initialized and populated here

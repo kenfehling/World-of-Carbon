@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WorldProperties {
+public class WorldProperties : MonoBehaviour {
 
     // world temperature in Kelvin
-    private float temperature;
+    [SerializeField] private float temperature;
     // world pressure in torr
-    private float pressure;
+    [SerializeField] private float pressure;
 
-    private int worldWidth;
-    private int worldHeight;
+    [SerializeField] private int worldWidth;
+    [SerializeField] private int worldHeight;
 
-    public GameObject player = null;
+    public PlayerManager player = null;
+
+    void Start()
+    {
+        if (!player)
+        {
+            player = GameObject.Find("Player").GetComponent<PlayerManager>();
+        }
+    }
 
     // called on level load to set the initial parameters for this level
     public void SetInitialParams(int width, int height, int initialPressure, int initialTemp)
@@ -23,7 +31,7 @@ public class WorldProperties {
     }
 
     // Sets the reference to the player, must be called when player is created by level generator
-    public void SetPlayer(ref GameObject p)
+    public void SetPlayer(ref PlayerManager p)
     {
         player = p;
     }

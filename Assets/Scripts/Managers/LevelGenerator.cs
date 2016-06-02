@@ -226,8 +226,10 @@ public class LevelGenerator : MonoBehaviour {
         Destroy(playerMolecule.GetComponent<Rigidbody2D>());
 		if (!PlaceMoleculeRandomly (player))
 			player.SetActive (false);
-		
-		GameManager.worldProperties.SetPlayer (ref player);
+
+        PlayerManager playerM = player.GetComponent<PlayerManager>();
+
+		GameManager.worldProperties.SetPlayer (ref playerM);
 	}
 
 	public void SwitchLevel(string newLevelFilePath) {
