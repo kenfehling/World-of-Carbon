@@ -2,52 +2,47 @@
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
+		_MainTex("Base (RGB)", 2D) = "white" {}
+		_SpeedX("SpeedX", float) = 3.0
+		_SpeedY("SpeedY", float) = 3.0
+		_Scale("Scale", range(0.005, 0.2)) = 0.03
+		_TileX("TileX", float) = 5
+		_TileY("TileY", float) = 5
 	}
 	SubShader
 	{
+		Lighting Off
 		Tags { "RenderType"="Opaque" }
-		LOD 100
+		LOD 200
 
-		Pass
-		{
 			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			// make fog work
-			#pragma multi_compile_fog
-			
-			#include "UnityCG.cginc"
-
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-			};
-
-			struct v2f
-			{
-				float4 pos : POSITION;
-				float3 color: COLOR0;
-			};
+			#pragma surface surf Lambert
 
 			sampler2D _MainTex;
-			float4 _MainTex_ST;
-			
-			v2f vert (inout appdata_full v)
+			float4 uv_MainTex_ST;
+
+			float _SpeedX;
+			float _SpeedY;
+			float _Scale;
+			float _TileX;
+			float _TileY;
+
+			struct Input
 			{
-				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				float sPhase = _Time * 20.0;
-				o.pos.y += sin(sPhase + v.vertex.y) * 0.2;
-				return o;
-			}
-			
-			half4 frag (v2f i) : COLOR
+				float2 uv_MainTex;
+			};
+
+			void surf(Input IN, inout SurfaceOutput o)
 			{
-				return half4(i.color, 1);
+				float2 uv = IN.uv_MainTex;
+				uv.x += sin((uv.x + uv.y)*_TileX + _Time.g * _SpeedX)* _Scale;
+				uv.x += cos(uv.y * _TileY + _Time.g * _SpeedY) * _Scale;
+
+				half4 c = tex2D (_MainTex, uv);
+				o.Albedo = c.rgb;
+				o.Alpha = c.a;
 			}
 			ENDCG
-		}
 	}
+	FallBack "Diffuse"
 }

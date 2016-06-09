@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Lava
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 6231bded16841b749909d479a638ee5f, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
@@ -82,6 +82,10 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Scale
+        second: 0.005
+      data:
+        first:
           name: _SrcBlend
         second: 1
       data:
@@ -92,6 +96,10 @@ Material:
         first:
           name: _Cutoff
         second: 0.5
+      data:
+        first:
+          name: PixelSnap
+        second: 0
       data:
         first:
           name: _Parallax
@@ -128,6 +136,22 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _SpeedX
+        second: 3
+      data:
+        first:
+          name: _SpeedY
+        second: 3
+      data:
+        first:
+          name: _TileX
+        second: 5
+      data:
+        first:
+          name: _TileY
+        second: 5
     m_Colors:
       data:
         first:
