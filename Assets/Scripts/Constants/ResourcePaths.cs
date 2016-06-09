@@ -8,7 +8,7 @@ using System.Collections;
 public class ResourcePaths {
 
 	public static string ArtRoot = "Art/";
-	private static string WorldObjectsRoot = "World Objects/";
+	private static string WorldObjectsRoot = "World Objects/Old";
 	private static string MoleculesRoot = "Molecules/";
 
 	public static string Player = "Player";
