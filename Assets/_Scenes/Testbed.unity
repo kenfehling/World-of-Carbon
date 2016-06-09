@@ -531,7 +531,7 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   moveWithTransform: 0
   scalingMode: 1
@@ -844,7 +844,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 1
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 1200
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -1990,10 +1990,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111875901}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7044161, y: -0.061628427, z: -0.061628416, w: 0.704416}
   m_LocalPosition: {x: -0.2, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: -1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2204,6 +2204,7 @@ GameObject:
   - 4: {fileID: 1996406099}
   - 114: {fileID: 1996406098}
   - 114: {fileID: 1996406100}
+  - 114: {fileID: 1996406101}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2252,6 +2253,21 @@ MonoBehaviour:
   worldWidth: 0
   worldHeight: 0
   player: {fileID: 0}
+--- !u!114 &1996406101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996406097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c41526721a2432ebb2b0b2c423fda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &2023076454
 Prefab:
   m_ObjectHideFlags: 0
