@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour {
     private string composition;
     private float temperature;
     private float pressure;
+    private int numOfOxides;
+    private int numOfCarbons;
 
     void Start()
     {
@@ -27,6 +29,11 @@ public class PlayerManager : MonoBehaviour {
         Destroy(child.GetComponent<Rigidbody2D>());
         //Store the reference to the new child
         this.child = child;
+    }
+
+    public bool IsOxidePresent()
+    {
+        return numOfOxides > 0 ? true : false;
     }
 
     //Basic getters and setters
@@ -58,5 +65,30 @@ public class PlayerManager : MonoBehaviour {
     public void SetPressure(float pressure)
     {
         this.pressure = pressure;
+    }
+
+    public void IncrementOxides()
+    {
+        ++numOfOxides;
+    }
+
+    public void DecrementOxides()
+    {
+        --numOfOxides;
+    }
+
+    public void IncrementCarbons()
+    {
+        ++numOfCarbons;
+    }
+
+    public void DecrementCarbons()
+    {
+        --numOfCarbons;
+    }
+
+    public int GetNumOfCarbons()
+    {
+        return numOfCarbons;
     }
 }
