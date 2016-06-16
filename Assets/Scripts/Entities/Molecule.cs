@@ -23,7 +23,9 @@ public class Molecule : MonoBehaviour {
 
     void Explosion()
     {
-        GameObject.Instantiate(ps).Play();
+        ParticleSystem p = GameObject.Instantiate(ps);
+        p.transform.position = this.transform.position;
+        p.Play();
 
     }
 }
