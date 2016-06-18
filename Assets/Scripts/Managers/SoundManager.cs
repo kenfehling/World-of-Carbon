@@ -4,28 +4,22 @@ using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour {
 
-	public enum Sounds {
-		Flick,
-		Reaction
-	}
+    public AudioClip[] clackSounds;
+    public AudioClip levelUp;
+    public AudioClip levelDown;
 
-	private Dictionary<Sounds, AudioClip> soundSamples;
-	// private Dictionary<Sounds, Effect> soundEffects;
+    public void playClackSound(AudioSource source)
+    {
+        source.PlayOneShot(clackSounds[Random.Range(0, clackSounds.Length)]);
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void playLevelUpSound(AudioSource source)
+    {
+        source.PlayOneShot(levelUp);
+    }
 
-	public void PlaySound(Sounds index) {
-		//source = soundSamples[index];
-		//effects = soundEffects[index];
-		//source.apply(effects);
-		//source.playOnce();
-	}
+    public void playLevelDownSound(AudioSource source)
+    {
+        source.PlayOneShot(levelDown);
+    }
 }

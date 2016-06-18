@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
-public class MusicHandler : MonoBehaviour {
+public class MusicManager : MonoBehaviour {
 
     public bool debugControls;
     public AudioClip[] clips;
@@ -10,7 +11,8 @@ public class MusicHandler : MonoBehaviour {
     private int currentClipIndex;
     
 	void Start () {
-	    source1 = gameObject.AddComponent<AudioSource>();
+        //Audio sources
+        source1 = gameObject.AddComponent<AudioSource>();
         source2 = gameObject.AddComponent<AudioSource>();
 
         source1.clip = clips[0];
@@ -24,33 +26,16 @@ public class MusicHandler : MonoBehaviour {
     }
 	
 	void Update () {
-        Debug.Log(source1.time + " " + source2.time);
         if (debugControls)
         {
             if (Input.GetKeyDown(KeyCode.N))
             {
-                if (currentClipIndex == clips.Length - 1)
-                {
-                    currentClipIndex = 0;
-                }
-                else
-                {
-                    ++currentClipIndex;
-                }
-                updateQueuedClip();
+                moveDownLayer();
             }
 
             if (Input.GetKeyDown(KeyCode.M))
             {
-                if (currentClipIndex == 0)
-                {
-                    currentClipIndex = clips.Length-1;
-                }
-                else
-                {
-                    --currentClipIndex;
-                }
-                updateQueuedClip();
+                moveUpLayer();
             }
         }
 
@@ -79,5 +64,31 @@ public class MusicHandler : MonoBehaviour {
             source2.clip = clips[currentClipIndex];
             source2.PlayDelayed(source1.clip.length - source1.time);
         }
+    }
+
+    public void moveDownLayer()
+    {
+        if (currentClipIndex == clips.Length - 1)
+        {
+            currentClipIndex = 0;
+        }
+        else
+        {
+            ++currentClipIndex;
+        }
+        updateQueuedClip();
+    }
+
+    public void moveUpLayer()
+    {
+        if (currentClipIndex == 0)
+        {
+            currentClipIndex = clips.Length - 1;
+        }
+        else
+        {
+            --currentClipIndex;
+        }
+        updateQueuedClip();
     }
 }

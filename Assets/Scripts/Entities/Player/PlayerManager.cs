@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 
     private GameObject child;
+    private SoundManager soundManager;
+    private AudioSource source;
     private string composition;
     private float temperature;
     private float pressure;
@@ -17,6 +19,22 @@ public class PlayerManager : MonoBehaviour {
         {
             child = transform.GetChild(0).gameObject;
             Destroy(child.GetComponent<Rigidbody2D>());
+        }
+
+        source = gameObject.AddComponent<AudioSource>();
+        source.loop = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        try
+        {
+            soundManager.playClackSound(source);
+        }
+        catch
+        {
+            soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().soundHandler.GetComponent<SoundManager>();
+            soundManager.playClackSound(source);
         }
     }
 

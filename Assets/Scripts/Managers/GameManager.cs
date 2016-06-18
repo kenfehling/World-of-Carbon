@@ -10,7 +10,9 @@ using System.Collections;
  */
 public class GameManager : MonoBehaviour {
 
+    public GameObject musicHandler, soundHandler;
 	public static GUIManager gui;
+    public static MusicManager music;
 	public static SoundManager sound;
 	public static ObjectManager objects;
 	public static LevelGenerator levels;
@@ -28,8 +30,11 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		// Instantiate internal managers
 		gui = gameObject.AddComponent<GUIManager>();
-		sound = gameObject.AddComponent<SoundManager>();
-		objects = gameObject.AddComponent<ObjectManager>();
+        musicHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.musicManager), Vector3.zero, Quaternion.identity);
+        soundHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.soundManager), Vector3.zero, Quaternion.identity);
+        music = musicHandler.GetComponent<MusicManager>();
+        sound = soundHandler.GetComponent<SoundManager>();
+        objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
 
@@ -44,6 +49,7 @@ public class GameManager : MonoBehaviour {
         PopulateReactionTable();
 
         //This is just so the old "Gameplay" scene doesn't break
+        #pragma warning disable 0618 // Type or member is obsolete
         if(Application.loadedLevelName == "Gameplay")
         {
             worldProperties = gameObject.AddComponent<WorldProperties>();
@@ -52,7 +58,8 @@ public class GameManager : MonoBehaviour {
             // Set the camera to follow the game's player
             mainCamera.GetComponent<CameraFollow>().SetPlayer(ref worldProperties.player);
         }
-	}
+        #pragma warning restore 0618 // Type or member is obsolete
+    }
 
     //All of the reaction data and entries will be initialized and populated here
     private void PopulateReactionTable()
