@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class MusicManager : MonoBehaviour {
 
     public bool debugControls;
-    public AudioClip[] clips;
 
+    private AudioClip[] clips = new AudioClip[3];
     private AudioSource source1, source2;
     private int currentClipIndex;
     
 	void Start () {
-	    source1 = gameObject.AddComponent<AudioSource>();
+        //Music clips
+        clips[0] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song1, typeof(AudioClip));
+        clips[1] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song2, typeof(AudioClip));
+        clips[2] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song3, typeof(AudioClip));
+
+        //Audio sources
+        source1 = gameObject.AddComponent<AudioSource>();
         source2 = gameObject.AddComponent<AudioSource>();
 
         source1.clip = clips[0];
@@ -24,33 +31,16 @@ public class MusicManager : MonoBehaviour {
     }
 	
 	void Update () {
-        Debug.Log(source1.time + " " + source2.time);
         if (debugControls)
         {
             if (Input.GetKeyDown(KeyCode.N))
             {
-                if (currentClipIndex == clips.Length - 1)
-                {
-                    currentClipIndex = 0;
-                }
-                else
-                {
-                    ++currentClipIndex;
-                }
-                updateQueuedClip();
+                moveDownLayer();
             }
 
             if (Input.GetKeyDown(KeyCode.M))
             {
-                if (currentClipIndex == 0)
-                {
-                    currentClipIndex = clips.Length-1;
-                }
-                else
-                {
-                    --currentClipIndex;
-                }
-                updateQueuedClip();
+                moveUpLayer();
             }
         }
 
@@ -79,5 +69,31 @@ public class MusicManager : MonoBehaviour {
             source2.clip = clips[currentClipIndex];
             source2.PlayDelayed(source1.clip.length - source1.time);
         }
+    }
+
+    public void moveDownLayer()
+    {
+        if (currentClipIndex == clips.Length - 1)
+        {
+            currentClipIndex = 0;
+        }
+        else
+        {
+            ++currentClipIndex;
+        }
+        updateQueuedClip();
+    }
+
+    public void moveUpLayer()
+    {
+        if (currentClipIndex == 0)
+        {
+            currentClipIndex = clips.Length - 1;
+        }
+        else
+        {
+            --currentClipIndex;
+        }
+        updateQueuedClip();
     }
 }

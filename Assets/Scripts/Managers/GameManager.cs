@@ -11,6 +11,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public static GUIManager gui;
+    public static MusicManager music;
 	public static SoundManager sound;
 	public static ObjectManager objects;
 	public static LevelGenerator levels;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		// Instantiate internal managers
 		gui = gameObject.AddComponent<GUIManager>();
+        music = gameObject.AddComponent<MusicManager>();
 		sound = gameObject.AddComponent<SoundManager>();
 		objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
         PopulateReactionTable();
 
         //This is just so the old "Gameplay" scene doesn't break
+        #pragma warning disable 0618 // Type or member is obsolete
         if(Application.loadedLevelName == "Gameplay")
         {
             worldProperties = gameObject.AddComponent<WorldProperties>();
@@ -52,7 +55,8 @@ public class GameManager : MonoBehaviour {
             // Set the camera to follow the game's player
             mainCamera.GetComponent<CameraFollow>().SetPlayer(ref worldProperties.player);
         }
-	}
+        #pragma warning restore 0618 // Type or member is obsolete
+    }
 
     //All of the reaction data and entries will be initialized and populated here
     private void PopulateReactionTable()
