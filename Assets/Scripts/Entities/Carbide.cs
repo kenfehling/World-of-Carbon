@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CarbonHolding : MonoBehaviour {
+public class Carbide : MonoBehaviour {
 
-    PlayerManager player;
+    private GameObject product;
+    private PlayerManager player;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,9 +22,15 @@ public class CarbonHolding : MonoBehaviour {
             {
                 player = other.GetComponent<PlayerManager>();
             }
+
             if (player.IsOxidePresent())
             {
-                player.IncrementCarbons();
+                //Spawn a lone carbon and send it flying to the player
+                product = (GameObject)Instantiate(Resources.Load(ResourcePaths.FreeCarbonMolecule), transform.position, Quaternion.identity);
+                product.GetComponent<FlyTo>().setTarget(player.transform);
+
+                //Spawn other products and send them flying in a random direction
+
                 Destroy(gameObject);
             }   
         }
