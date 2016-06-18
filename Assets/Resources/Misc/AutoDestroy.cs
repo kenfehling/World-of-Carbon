@@ -13,6 +13,8 @@ public class AutoDestroy : MonoBehaviour
 	void Update () {
 
         if (!p.IsAlive())
+        {
             Destroy(gameObject);
+        }
 	}
 }

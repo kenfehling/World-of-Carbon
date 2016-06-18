@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	public static SoundManager sound;
 	public static ObjectManager objects;
 	public static LevelGenerator levels;
-	public static ArtManager art;
+	public static LayerManager art;
 	public static ReactionTable reactionTable;
     public static WorldProperties worldProperties;
     public static GameState state;
