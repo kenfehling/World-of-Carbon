@@ -46,4 +46,5 @@ public class ResourcePaths {
 	public static string OxygenMolecule = MoleculesRoot + "O2";
 	public static string NitrogenMolecule = MoleculesRoot + "N2";
 	public static string CarbonDioxideMolecule = MoleculesRoot + "CO2";
+    public static string FreeCarbonMolecule = MoleculesRoot + "Free Carbon";
 }
