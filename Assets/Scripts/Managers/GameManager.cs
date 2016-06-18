@@ -10,6 +10,7 @@ using System.Collections;
  */
 public class GameManager : MonoBehaviour {
 
+    public GameObject musicHandler, soundHandler;
 	public static GUIManager gui;
     public static MusicManager music;
 	public static SoundManager sound;
@@ -29,9 +30,11 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		// Instantiate internal managers
 		gui = gameObject.AddComponent<GUIManager>();
-        music = gameObject.AddComponent<MusicManager>();
-		sound = gameObject.AddComponent<SoundManager>();
-		objects = gameObject.AddComponent<ObjectManager>();
+        musicHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.musicManager), Vector3.zero, Quaternion.identity);
+        soundHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.soundManager), Vector3.zero, Quaternion.identity);
+        music = musicHandler.GetComponent<MusicManager>();
+        sound = soundHandler.GetComponent<SoundManager>();
+        objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
 

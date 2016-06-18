@@ -5,17 +5,12 @@ using System.Collections;
 public class MusicManager : MonoBehaviour {
 
     public bool debugControls;
+    public AudioClip[] clips;
 
-    private AudioClip[] clips = new AudioClip[3];
     private AudioSource source1, source2;
     private int currentClipIndex;
     
 	void Start () {
-        //Music clips
-        clips[0] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song1, typeof(AudioClip));
-        clips[1] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song2, typeof(AudioClip));
-        clips[2] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.song3, typeof(AudioClip));
-
         //Audio sources
         source1 = gameObject.AddComponent<AudioSource>();
         source2 = gameObject.AddComponent<AudioSource>();

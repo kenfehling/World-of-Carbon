@@ -17,9 +17,10 @@ public class ResourcePaths {
     public static string SoundsRoot = AudioRoot + "Sounds/";
 
     //Music
-    public static string song1 = MusicRoot + "magma 1 temp";
+    public static string song1 = MusicRoot + "magma 1 temp.wav";
     public static string song2 = MusicRoot + "magma 2 temp";
     public static string song3 = MusicRoot + "magma 3 temp";
+    public static string musicManager = MusicRoot + "MusicManager";
 
     //Sound effects
     public static string clack1 = SoundsRoot + "Clack1";
@@ -28,6 +29,7 @@ public class ResourcePaths {
     public static string clack4 = SoundsRoot + "Clack4";
     public static string levelUp = SoundsRoot + "levelDown";
     public static string levelDown = SoundsRoot + "levelUp";
+    public static string soundManager = SoundsRoot + "SoundManager";
 
     //Player
     public static string Player = "Player";

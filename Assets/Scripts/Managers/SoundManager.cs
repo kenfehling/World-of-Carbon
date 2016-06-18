@@ -1,25 +1,12 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
-
 public class SoundManager : MonoBehaviour {
 
-    public AudioClip[] clackSounds = new AudioClip[4];
-    public AudioClip levelUpSound;
-    public AudioClip levelDownSound;
-
-    void Start()
-    {
-        clackSounds[0] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.clack1, typeof(AudioClip));
-        clackSounds[1] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.clack2, typeof(AudioClip));
-        clackSounds[2] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.clack3, typeof(AudioClip));
-        clackSounds[3] = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.clack4, typeof(AudioClip));
-
-        levelUpSound = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.levelUp, typeof(AudioClip));
-        levelDownSound = (AudioClip)AssetDatabase.LoadAssetAtPath(ResourcePaths.levelDown, typeof(AudioClip));
-    }
+    public AudioClip[] clackSounds;
+    public AudioClip levelUp;
+    public AudioClip levelDown;
 
     public void playClackSound(AudioSource source)
     {
@@ -28,11 +15,11 @@ public class SoundManager : MonoBehaviour {
 
     public void playLevelUpSound(AudioSource source)
     {
-        source.PlayOneShot(levelUpSound);
+        source.PlayOneShot(levelUp);
     }
 
     public void playLevelDownSound(AudioSource source)
     {
-        source.PlayOneShot(levelDownSound);
+        source.PlayOneShot(levelDown);
     }
 }

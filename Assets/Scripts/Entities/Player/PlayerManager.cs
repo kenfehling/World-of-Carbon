@@ -23,8 +23,6 @@ public class PlayerManager : MonoBehaviour {
 
         source = gameObject.AddComponent<AudioSource>();
         source.loop = false;
-
-        soundManager = GameObject.Find("GameManager").GetComponent<SoundManager>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -35,7 +33,7 @@ public class PlayerManager : MonoBehaviour {
         }
         catch
         {
-            soundManager = GameObject.Find("GameManager").GetComponent<SoundManager>();
+            soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().soundHandler.GetComponent<SoundManager>();
             soundManager.playClackSound(source);
         }
     }
