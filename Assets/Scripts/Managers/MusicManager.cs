@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicHandler : MonoBehaviour {
+public class MusicManager : MonoBehaviour {
 
     public bool debugControls;
     public AudioClip[] clips;
