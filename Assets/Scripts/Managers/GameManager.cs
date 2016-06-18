@@ -10,7 +10,6 @@ using System.Collections;
  */
 public class GameManager : MonoBehaviour {
 
-    public GameObject musicHandler, soundHandler;
 	public static GUIManager gui;
     public static MusicManager music;
 	public static SoundManager sound;
@@ -23,6 +22,8 @@ public class GameManager : MonoBehaviour {
 
     public enum GameState { loading, active };
 
+    private GameObject musicManager, soundManager;
+
     // Will be set in game world before everything is run
     public GameObject mainCamera;
 
@@ -30,10 +31,10 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		// Instantiate internal managers
 		gui = gameObject.AddComponent<GUIManager>();
-        musicHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.musicManager), Vector3.zero, Quaternion.identity);
-        soundHandler = (GameObject) Instantiate(Resources.Load(ResourcePaths.soundManager), Vector3.zero, Quaternion.identity);
-        music = musicHandler.GetComponent<MusicManager>();
-        sound = soundHandler.GetComponent<SoundManager>();
+        musicManager = (GameObject) Instantiate(Resources.Load(ResourcePaths.musicManager), Vector3.zero, Quaternion.identity);
+        soundManager = (GameObject) Instantiate(Resources.Load(ResourcePaths.soundManager), Vector3.zero, Quaternion.identity);
+        music = musicManager.GetComponent<MusicManager>();
+        sound = soundManager.GetComponent<SoundManager>();
         objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
 		reactionTable = new ReactionTable();
@@ -59,6 +60,16 @@ public class GameManager : MonoBehaviour {
             mainCamera.GetComponent<CameraFollow>().SetPlayer(ref worldProperties.player);
         }
         #pragma warning restore 0618 // Type or member is obsolete
+    }
+
+    public MusicManager getMusicManager()
+    {
+        return musicManager.GetComponent<MusicManager>();
+    }
+
+    public SoundManager getSoundManager()
+    {
+        return soundManager.GetComponent<SoundManager>();
     }
 
     //All of the reaction data and entries will be initialized and populated here

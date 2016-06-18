@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour {
         }
         catch
         {
-            soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().soundHandler.GetComponent<SoundManager>();
+            soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
             soundManager.playClackSound(source);
         }
     }
