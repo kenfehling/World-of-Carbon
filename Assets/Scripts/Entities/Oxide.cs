@@ -12,7 +12,7 @@ public class Oxide : MonoBehaviour
             if (!player)
             {
                 player = other.GetComponent<PlayerManager>();
-                ParticleSystem ps = player.GetComponent<ParticleSystem>();
+                ParticleSystem ps = player.GetComponentInChildren<ParticleSystem>();
                 ps.Play();
             }
             player.IncrementOxides();
