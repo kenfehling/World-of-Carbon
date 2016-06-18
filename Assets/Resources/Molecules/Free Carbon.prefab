@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 459320}
   - 212: {fileID: 21244674}
   - 114: {fileID: 11432410}
+  - 114: {fileID: 11481294}
   m_Layer: 0
   m_Name: Free Carbon
   m_TagString: Untagged
@@ -42,6 +43,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 500
+--- !u!114 &11481294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38030d5a8befe6499de6ea6fa6ba143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flySpeed: 2
 --- !u!212 &21244674
 SpriteRenderer:
   m_ObjectHideFlags: 1

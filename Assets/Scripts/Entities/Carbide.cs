@@ -25,12 +25,16 @@ public class Carbide : MonoBehaviour {
 
             if (player.IsOxidePresent())
             {
+                //Spawn the explosion particle effect
+                Instantiate(Resources.Load(ResourcePaths.transExplosion), transform.position, Quaternion.identity);
+
                 //Spawn a lone carbon and send it flying to the player
                 product = (GameObject)Instantiate(Resources.Load(ResourcePaths.FreeCarbonMolecule), transform.position, Quaternion.identity);
                 product.GetComponent<FlyTo>().setTarget(player.transform);
 
                 //Spawn other products and send them flying in a random direction
 
+                //Destroy the carbide
                 Destroy(gameObject);
             }   
         }

@@ -10,11 +10,12 @@ public class ResourcePaths {
 	public static string ArtRoot = "Art/";
 	private static string WorldObjectsRoot = "World Objects/Old";
 	private static string MoleculesRoot = "Molecules/";
+    private static string MiscRoot = "Misc/";
 
     //Audio roots
-    public static string AudioRoot = "Audio/";
-    public static string MusicRoot = AudioRoot + "Music/";
-    public static string SoundsRoot = AudioRoot + "Sounds/";
+    private static string AudioRoot = "Audio/";
+    private static string MusicRoot = AudioRoot + "Music/";
+    private static string SoundsRoot = AudioRoot + "Sounds/";
 
     //Music
     public static string song1 = MusicRoot + "magma 1 temp";
@@ -47,4 +48,7 @@ public class ResourcePaths {
 	public static string NitrogenMolecule = MoleculesRoot + "N2";
 	public static string CarbonDioxideMolecule = MoleculesRoot + "CO2";
     public static string FreeCarbonMolecule = MoleculesRoot + "Free Carbon";
+
+    //Effects
+    public static string transExplosion = MiscRoot + "TransExplosion";
 }

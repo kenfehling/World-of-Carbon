@@ -10,7 +10,7 @@ public class FlyTo : MonoBehaviour {
 	void FixedUpdate () {
         transform.position = Vector3.Lerp(transform.position, target.position, flySpeed * Time.fixedDeltaTime);
 
-        if(Vector3.Distance(transform.position, target.position) < 0.1f)
+        if(Vector3.Distance(transform.position, target.position) < 0.4f)
         {
             target.gameObject.GetComponent<PlayerManager>().IncrementCarbons();
             Destroy(gameObject);
