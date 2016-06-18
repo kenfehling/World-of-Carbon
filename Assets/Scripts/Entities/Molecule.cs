@@ -6,9 +6,8 @@ public class Molecule : MonoBehaviour {
 	// To be set by designer in object inspector of molecule prefabs
 	public float standardEnthalpyChange;
 	public string formula;
-    public ParticleSystem ps;
 
-	void OnCollisionEnter2D (Collision2D obj) {
+	void OnTriggerEnter2D (Collider2D obj) {
 		var molecule = obj.gameObject.GetComponent<Molecule> ();
 		if(molecule != null)
 		{
@@ -16,16 +15,7 @@ public class Molecule : MonoBehaviour {
 			if (reaction != null) {
 				foreach (string s in reaction.products)
 					Debug.Log ("Create " + s);
-                Explosion();
 			}
 		}
 	}
-
-    void Explosion()
-    {
-        ParticleSystem p = GameObject.Instantiate(ps);
-        p.transform.position = this.transform.position;
-        p.Play();
-
-    }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class Oxide : MonoBehaviour
 {
     PlayerManager player;
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerManager>())
@@ -12,6 +12,8 @@ public class Oxide : MonoBehaviour
             if (!player)
             {
                 player = other.GetComponent<PlayerManager>();
+                ParticleSystem ps = player.GetComponent<ParticleSystem>();
+                ps.Play();
             }
             player.IncrementOxides();
         }
@@ -24,4 +26,5 @@ public class Oxide : MonoBehaviour
             player.DecrementOxides();
         }
     }
+
 }
