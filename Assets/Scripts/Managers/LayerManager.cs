@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LayerManager : MonoBehaviour {
 
+    public bool DebugControls = true;
+    public uint lnum = 0;
     public GameObject[] layers = new GameObject[3];
     private GameObject currentLayer;
 	// Use this for initialization
@@ -18,14 +20,22 @@ public class LayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetKey(KeyCode.A))
+        if (DebugControls)
         {
-            SwitchLayer(0);
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                SwitchLayer(0);
+            }
 
-        if(Input.GetKey(KeyCode.B))
-        {
-            SwitchLayer(1);
+            if (Input.GetKey(KeyCode.S))
+            {
+                SwitchLayer(1);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                SwitchLayer(2);
+            }
         }
 	}
 

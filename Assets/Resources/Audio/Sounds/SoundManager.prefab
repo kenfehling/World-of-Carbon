@@ -47,6 +47,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0865775dc06bdaf4ea70afdc62b28ad8, type: 3}
   levelUp: {fileID: 8300000, guid: 0dfb92fe0428f0a40b408594b114bd05, type: 3}
   levelDown: {fileID: 8300000, guid: 1716ec91634464c45b0455c76e323e22, type: 3}
+  combine: {fileID: 8300000, guid: 052cb87ab9778134981274e9111da6cf, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
