@@ -109,4 +109,9 @@ public class PlayerManager : MonoBehaviour {
     {
         return numOfCarbons;
     }
+
+    public AudioSource GetAudioSource()
+    {
+        return source;
+    }
 }

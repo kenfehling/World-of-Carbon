@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip[] clackSounds;
     public AudioClip levelUp;
     public AudioClip levelDown;
+    public AudioClip combine;
 
     public void playClackSound(AudioSource source)
     {
@@ -21,5 +22,10 @@ public class SoundManager : MonoBehaviour {
     public void playLevelDownSound(AudioSource source)
     {
         source.PlayOneShot(levelDown);
+    }
+
+    public void playCombineSound(AudioSource source)
+    {
+        source.PlayOneShot(combine);
     }
 }

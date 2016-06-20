@@ -34,6 +34,12 @@ public class Carbide : MonoBehaviour {
 
                 //Spawn other products and send them flying in a random direction
 
+
+                //Play combine sound
+                AudioSource aSrc = player.GetAudioSource();
+                SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
+                soundManager.playCombineSound(aSrc);
+
                 //Destroy the carbide
                 Destroy(gameObject);
             }   
