@@ -13,18 +13,10 @@ public class LayerManager : MonoBehaviour {
         currentLayer = layers[0];
 
         currentLayer.SetActive(true);
-        foreach (Transform child in currentLayer.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
 
         for(int i=1; i<layers.Length; i++)
         {
             layers[i].SetActive(false);
-            foreach (Transform child in layers[i].transform)
-            {
-                child.gameObject.SetActive(false);
-            }
         }
 	}
 	
@@ -52,22 +44,20 @@ public class LayerManager : MonoBehaviour {
     // Switches the active layer.
     public void SwitchLayer(uint nextLayer)
     {
-        currentLayer.SetActive(false);
-        foreach (Transform child in currentLayer.transform)
+        if(currentLayer != layers[nextLayer] && !currentLayer.transform.GetChild(0).GetComponent<FaderScript>().isFading()
+            && !layers[nextLayer].transform.GetChild(0).GetComponent<FaderScript>().isFading())
         {
-            child.gameObject.SetActive(false);
+            foreach (Transform child in currentLayer.transform)
+            {
+                child.GetComponent<FaderScript>().BeginFadeOut();
+            }
+
+            currentLayer = layers[nextLayer];
+            currentLayer.SetActive(true);
+            foreach (Transform child in currentLayer.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
-
-        currentLayer = layers[nextLayer];
-        currentLayer.SetActive(true);
-        foreach (Transform child in currentLayer.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
-        
-
-        currentLayer = layers[nextLayer];
-
-        
     }
 }
