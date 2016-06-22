@@ -7,7 +7,6 @@ public class LayerManager : MonoBehaviour {
     public uint lnum = 0;
     public GameObject[] layers = new GameObject[3];
     private GameObject currentLayer;
-    private FaderScript fader;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +47,7 @@ public class LayerManager : MonoBehaviour {
         if(currentLayer != layers[nextLayer] && !currentLayer.transform.GetChild(0).GetComponent<FaderScript>().isFading()
             && !layers[nextLayer].transform.GetChild(0).GetComponent<FaderScript>().isFading())
         {
+            FaderScript fader;
             foreach (Transform child in currentLayer.transform)
             {
                 fader = child.GetComponent<FaderScript>();
