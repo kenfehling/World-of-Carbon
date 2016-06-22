@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
         sound = soundManager.GetComponent<SoundManager>();
         objects = gameObject.AddComponent<ObjectManager>();
 		levels = gameObject.AddComponent<LevelGenerator>();
+        art = gameObject.GetComponent<LayerManager>();
 		reactionTable = new ReactionTable();
 
         //Find camera if not explicitly done in the Editor (this is a failsafe.. shouldn't rely on this)
