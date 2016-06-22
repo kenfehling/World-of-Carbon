@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour {
 	public static ReactionTable reactionTable;
     public static WorldProperties worldProperties;
     public static GameState state;
-
     public enum GameState { loading, active };
 
     private GameObject musicManager, soundManager;
@@ -32,7 +31,9 @@ public class GameManager : MonoBehaviour {
 		// Instantiate internal managers
 		gui = gameObject.AddComponent<GUIManager>();
         musicManager = (GameObject) Instantiate(Resources.Load(ResourcePaths.musicManager), Vector3.zero, Quaternion.identity);
+        musicManager.transform.SetParent(transform);
         soundManager = (GameObject) Instantiate(Resources.Load(ResourcePaths.soundManager), Vector3.zero, Quaternion.identity);
+        soundManager.transform.SetParent(transform);
         music = musicManager.GetComponent<MusicManager>();
         sound = soundManager.GetComponent<SoundManager>();
         objects = gameObject.AddComponent<ObjectManager>();

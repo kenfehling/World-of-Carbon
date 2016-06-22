@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21274454}
   - 60: {fileID: 6008924}
   - 50: {fileID: 5023968}
+  - 114: {fileID: 11422928}
   m_Layer: 0
   m_Name: Obstacle3
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143760}
   m_UseAutoMass: 0
-  m_Mass: 125
+  m_Mass: 250
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -401,6 +402,17 @@ PolygonCollider2D:
       - {x: 1.995, y: -4.64}
       - {x: 2.085, y: -4.5099998}
       - {x: 2.075, y: -4.45}
+--- !u!114 &11422928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21274454
 SpriteRenderer:
   m_ObjectHideFlags: 1
