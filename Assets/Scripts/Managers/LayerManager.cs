@@ -7,32 +7,34 @@ public class LayerManager : MonoBehaviour {
     public uint lnum = 0;
     public GameObject[] layers = new GameObject[3];
     private GameObject currentLayer;
+
 	// Use this for initialization
 	void Start () {
         currentLayer = layers[0];
 
-        if(layers[1])
-            layers[1].SetActive(false);
+        currentLayer.SetActive(true);
 
-        if(layers[2])
-            layers[2].SetActive(false);
+        for(int i=1; i<layers.Length; i++)
+        {
+            layers[i].SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (DebugControls)
         {
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 SwitchLayer(0);
             }
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 SwitchLayer(1);
             }
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 SwitchLayer(2);
             }
@@ -42,31 +44,20 @@ public class LayerManager : MonoBehaviour {
     // Switches the active layer.
     public void SwitchLayer(uint nextLayer)
     {
-        switch(nextLayer)
+        if(currentLayer != layers[nextLayer] && !currentLayer.transform.GetChild(0).GetComponent<FaderScript>().isFading()
+            && !layers[nextLayer].transform.GetChild(0).GetComponent<FaderScript>().isFading())
         {
-            case 0:
-                layers[0].SetActive(true);
-                layers[1].SetActive(false);
-                if (layers[2])
-                    layers[2].SetActive(false);
-                break;
+            foreach (Transform child in currentLayer.transform)
+            {
+                child.GetComponent<FaderScript>().BeginFadeOut();
+            }
 
-            case 1:
-                layers[0].SetActive(false);
-                layers[1].SetActive(true);
-                if (layers[2])
-                    layers[2].SetActive(false);
-                break;
-
-            case 2:
-                layers[0].SetActive(false);
-                layers[1].SetActive(false);
-                if (layers[2])
-                    layers[2].SetActive(true);
-                break;
+            currentLayer = layers[nextLayer];
+            currentLayer.SetActive(true);
+            foreach (Transform child in currentLayer.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
-        currentLayer = layers[nextLayer];
-
-        
     }
 }
