@@ -49,7 +49,8 @@ public class LayerManager : MonoBehaviour {
         {
             foreach (Transform child in currentLayer.transform)
             {
-                child.GetComponent<FaderScript>().BeginFadeOut();
+                if(!child.tag.Equals("HPZone"))
+                    child.GetComponent<FaderScript>().BeginFadeOut();
             }
 
             currentLayer = layers[nextLayer];
