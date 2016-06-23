@@ -55,6 +55,20 @@ public class LayerManager : MonoBehaviour {
                 {
                     fader.BeginFadeOut();
                 }
+                else
+                {
+                    if (child.gameObject.name == "Entities")
+                    {
+                        foreach (Transform grandChild in child)
+                        {
+                            fader = grandChild.GetComponent<FaderScript>();
+                            if (fader)
+                            {
+                                fader.BeginFadeOut();
+                            }
+                        }
+                    }
+                }
             }
 
             currentLayer = layers[nextLayer];
@@ -62,6 +76,13 @@ public class LayerManager : MonoBehaviour {
             foreach (Transform child in currentLayer.transform)
             {
                 child.gameObject.SetActive(true);
+                if(child.gameObject.name == "Entities")
+                {
+                    foreach (Transform grandchild in child)
+                    {
+                        grandchild.gameObject.SetActive(true);
+                    }
+                }
             }
         }
     }

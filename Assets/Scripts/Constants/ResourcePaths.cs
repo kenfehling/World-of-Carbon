@@ -10,6 +10,7 @@ public class ResourcePaths {
 	public static string ArtRoot = "Art/";
 	private static string WorldObjectsRoot = "World Objects/Old";
 	private static string MoleculesRoot = "Molecules/";
+    private static string ParticleEffectsRoot = "Particle Effects/";
     private static string MiscRoot = "Misc/";
 
     //Audio roots
@@ -50,5 +51,5 @@ public class ResourcePaths {
     public static string FreeCarbonMolecule = MoleculesRoot + "Free Carbon";
 
     //Effects
-    public static string transExplosion = MiscRoot + "TransExplosion";
+    public static string transExplosion = ParticleEffectsRoot + "TransExplosion";
 }
