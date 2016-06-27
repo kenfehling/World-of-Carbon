@@ -2485,6 +2485,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 18229864, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_WindTurbulence
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 18229864, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_WindMain
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11403064, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
