@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLayer: 1
+  carbonsNeeded: 0
 --- !u!182 &18229864
 WindZone:
   m_ObjectHideFlags: 1

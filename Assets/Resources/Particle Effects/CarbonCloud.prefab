@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfCarbons: 0
-  cloudFactor: 20
+  cloudFactor: 5
 --- !u!198 &19899174
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -98,7 +98,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 3
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:

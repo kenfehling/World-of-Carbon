@@ -5,6 +5,7 @@ public class PressureZone : MonoBehaviour {
 
     private PlayerManager player;
     public uint nextLayer;
+    public int carbonsNeeded;
 	// Use this for initialization
 	void Start () {
 	
@@ -24,7 +25,7 @@ public class PressureZone : MonoBehaviour {
                 player = other.GetComponent<PlayerManager>();
             }
 
-            if(player.GetNumOfCarbons() > 0)
+            if(player.GetNumOfCarbons() >= carbonsNeeded)
             {
                 GameManager.art.SwitchLayer(nextLayer);
             }
