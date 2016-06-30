@@ -5,6 +5,7 @@ public class FlyTo : MonoBehaviour {
 
     public float flySpeed;
 
+    private GameObject player;
     private SpriteRenderer rend;
     private Vector3 target;
     private float fadeOutSpeed = 2.0f;
@@ -22,6 +23,10 @@ public class FlyTo : MonoBehaviour {
         {
             rend.color = Color.Lerp(rend.color, Color.clear, Time.fixedDeltaTime * fadeOutSpeed);
         }
+        else
+        {
+            target = player.transform.position;
+        }
 
         if(Vector3.Distance(transform.position, target) < 0.4f)
         {
@@ -37,11 +42,21 @@ public class FlyTo : MonoBehaviour {
     {
         this.target = target.position;
         this.isToPlayer = isToPlayer;
+
+        if (isToPlayer)
+        {
+            player = GameObject.Find("Player");
+        }
     }
 
     public void setTarget(Vector3 target, bool isToPlayer)
     {
         this.target = target;
         this.isToPlayer = isToPlayer;
+
+        if (isToPlayer)
+        {
+            player = GameObject.Find("Player");
+        }
     }
 }

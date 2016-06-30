@@ -3,22 +3,36 @@ using System.Collections;
 
 public class LoseCarbons : MonoBehaviour {
 
-    private PlayerManager player;
+    public float invincibilityTime = 2.0f;
 
-	void Start () {
+    private PlayerManager player;
+    private float timer;
+
+	void Start ()
+    {
         player = gameObject.GetComponent<PlayerManager>();
 	}
+
+    void Update()
+    {
+        timer -= Time.deltaTime;
+    }
 	
 	void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Wall"))
+        if(timer < 0.0f)
         {
-            if(player.GetNumOfCarbons() > 1)
+            if (col.gameObject.CompareTag("Wall"))
             {
-                player.DecrementCarbons();
-                Vector3 randomDirection = new Vector3(Random.value, Random.value, Random.value);
-                GameObject lostCarbon = (GameObject)Instantiate(Resources.Load(ResourcePaths.FreeCarbonMolecule), transform.position, Quaternion.identity);
-                lostCarbon.GetComponent<FlyTo>().setTarget(transform.position + randomDirection * 2.5f, false);
+                if (player.GetNumOfCarbons() > 1)
+                {
+                    player.DecrementCarbons();
+                    Vector3 randomDirection = new Vector3(Random.value, Random.value, Random.value);
+                    GameObject lostCarbon = (GameObject)Instantiate(Resources.Load(ResourcePaths.FreeCarbonMolecule), transform.position, Quaternion.identity);
+                    lostCarbon.GetComponent<FlyTo>().setTarget(transform.position + randomDirection * 2.5f, false);
+
+                    timer = invincibilityTime;
+                }
             }
         }
     }

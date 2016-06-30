@@ -88,6 +88,12 @@ public class LayerManager : MonoBehaviour {
                     }
                 }
             }
+            lnum = nextLayer;
         }
+    }
+
+    public uint GetCurrentLayer()
+    {
+        return lnum;
     }
 }
