@@ -124,4 +124,11 @@ public class PlayerManager : MonoBehaviour {
     {
         return source;
     }
+
+    public void BecomeDiamond()
+    {
+        SpriteRenderer sRend = GetComponentInChildren<SpriteRenderer>();
+        Sprite diamond = Resources.Load<Sprite>(ResourcePaths.DiamondMol);
+        sRend.sprite = diamond;
+    }
 }
