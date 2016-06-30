@@ -911,6 +911,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 777636540}
+  - 114: {fileID: 777636541}
   m_Layer: 0
   m_Name: Layer1
   m_TagString: Untagged
@@ -938,6 +939,18 @@ Transform:
   - {fileID: 1295603466}
   m_Father: {fileID: 1677606668}
   m_RootOrder: 0
+--- !u!114 &777636541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777636539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91afe013faaa93240bd44631928bb8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumCarbons: 0
 --- !u!4 &786158591 stripped
 Transform:
   m_PrefabParentObject: {fileID: 475108, guid: 6748d4d995e2adf4c87b4769bdaddd64, type: 2}
@@ -1004,6 +1017,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 947033924}
+  - 114: {fileID: 947033925}
   m_Layer: 0
   m_Name: Layer2
   m_TagString: Untagged
@@ -1029,6 +1043,18 @@ Transform:
   - {fileID: 1483262501}
   m_Father: {fileID: 1677606668}
   m_RootOrder: 1
+--- !u!114 &947033925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947033923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91afe013faaa93240bd44631928bb8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumCarbons: 8
 --- !u!4 &956012902 stripped
 Transform:
   m_PrefabParentObject: {fileID: 467046, guid: 87515f0b430bd474caee117511858b18, type: 2}
@@ -1101,6 +1127,7 @@ GameObject:
   - 4: {fileID: 1111875904}
   - 198: {fileID: 1111875903}
   - 199: {fileID: 1111875902}
+  - 114: {fileID: 1111875905}
   m_Layer: 0
   m_Name: ParticleBG
   m_TagString: Untagged
@@ -2661,6 +2688,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1111875905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111875901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83927c3208cf60745be8fee1339f26cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSprites:
+  - {fileID: 2100000, guid: 5e43430e41a3e6a478de96a178ef406a, type: 2}
+  - {fileID: 2100000, guid: f2878b1842122d44086e3e5343088168, type: 2}
+  - {fileID: 2100000, guid: 55a89df8216fede48bf418e5b20f9ae8, type: 2}
+  - {fileID: 2100000, guid: f4ec36d1a32073841804d5d74d6fb601, type: 2}
+  - {fileID: 2100000, guid: 13daa9bc12d703a428e4b7d32b0b28c6, type: 2}
 --- !u!1 &1122428146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2713,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1122428147}
+  - 114: {fileID: 1122428148}
   m_Layer: 0
   m_Name: Layer3
   m_TagString: Untagged
@@ -2692,6 +2737,18 @@ Transform:
   - {fileID: 2071795438}
   m_Father: {fileID: 1677606668}
   m_RootOrder: 2
+--- !u!114 &1122428148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1122428146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91afe013faaa93240bd44631928bb8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumCarbons: 18
 --- !u!4 &1126462620 stripped
 Transform:
   m_PrefabParentObject: {fileID: 475108, guid: 6748d4d995e2adf4c87b4769bdaddd64, type: 2}
@@ -2738,7 +2795,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: c9bb2e719afd02545a1a61a55d9dcc73, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16470836457b35644bc888b572260982, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2749,8 +2806,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1133443943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: 0.08, z: 0}
-  m_LocalScale: {x: 2.492337, y: 2.7880764, z: 1}
+  m_LocalPosition: {x: -0.09, y: 0.16, z: 0}
+  m_LocalScale: {x: 3.8639169, y: 2.8890512, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
