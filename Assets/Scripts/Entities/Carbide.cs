@@ -40,6 +40,7 @@ public class Carbide : MonoBehaviour {
                 SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
                 soundManager.playCombineSound(aSrc);
 
+                player.GetCloud().IncNumOfCarbons();
                 if (carbonYield == 0)
                 {
                     //Destroy the carbide

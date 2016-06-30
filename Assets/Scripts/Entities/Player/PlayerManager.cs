@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     private float pressure;
     private int numOfOxides;
     private int numOfCarbons;
-
+    private CloudCollector cloud;
     void Start()
     {
         //Stores reference to default child, destroys the child's rigidbody
@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour {
         }
 
         source = gameObject.AddComponent<AudioSource>();
+        cloud = gameObject.GetComponentInChildren<CloudCollector>();
         source.loop = false;
     }
 
@@ -63,6 +64,11 @@ public class PlayerManager : MonoBehaviour {
     public void SetComposition(string composition)
     {
         this.composition = composition;
+    }
+
+    public CloudCollector GetCloud()
+    {
+        return cloud;
     }
 
     public float GetTemperature()

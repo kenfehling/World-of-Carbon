@@ -15,5 +15,16 @@ public class CloudCollector : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         cloud.maxParticles = baseNumber + (numberOfCarbons * cloudFactor);
+        cloud.startLifetime = 1 + (0.5f * numberOfCarbons);
 	}
+
+    public void IncNumOfCarbons()
+    {
+        ++numberOfCarbons;
+    }
+
+    public void DecNumOfCarbons()
+    {
+        --numberOfCarbons;
+    }
 }
