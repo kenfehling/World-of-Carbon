@@ -307,6 +307,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1504800237}
+  - {fileID: 2092059127}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &432714228
@@ -436,7 +437,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1504800237}
+    m_TransformParent: {fileID: 323137443}
     m_Modifications:
     - target: {fileID: 422266, guid: 884bffb079a96414aa46b69802c3912c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -468,11 +469,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 422266, guid: 884bffb079a96414aa46b69802c3912c, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 422266, guid: 884bffb079a96414aa46b69802c3912c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1111112
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19899174, guid: 884bffb079a96414aa46b69802c3912c, type: 2}
       propertyPath: InitialModule.startLifetime.scalar
@@ -741,7 +742,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -799,7 +800,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 30
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -834,7 +835,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 1
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -963,7 +964,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 2
+      scalar: 1.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1104,7 +1105,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 1
     gravityModifier: 0
-    maxNumParticles: 1200
+    maxNumParticles: 3000
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -1719,7 +1720,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 1
-    multiplier: 0.4
+    multiplier: 40
   ClampVelocityModule:
     enabled: 0
     x:
@@ -2021,7 +2022,7 @@ ParticleSystem:
           rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 4284403967
+          rgba: 4278919679
         key2:
           serializedVersion: 2
           rgba: 0
@@ -2108,7 +2109,7 @@ ParticleSystem:
         serializedVersion: 2
         rgba: 4294967295
       minMaxState: 1
-    range: {x: 0, y: 3}
+    range: {x: 0, y: 6}
   CollisionModule:
     enabled: 1
     serializedVersion: 2
@@ -2537,16 +2538,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 18229864, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
-      propertyPath: m_WindTurbulence
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 18229864, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
-      propertyPath: m_WindMain
-      value: 0.25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11403064, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1621636032
@@ -2974,6 +2966,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91de4be43e85a10479de67be6a1754ae, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2092059127 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 422266, guid: 884bffb079a96414aa46b69802c3912c, type: 2}
+  m_PrefabInternal: {fileID: 750576399}
 --- !u!4 &2127204292 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
