@@ -104,12 +104,14 @@ public class PlayerManager : MonoBehaviour {
     public void IncrementCarbons()
     {
         ++numOfCarbons;
+        cloud.IncNumOfCarbons();
         GameObject.Find("Carbon Display").GetComponent<CarbonDisplay>().setNumOfCarbons(numOfCarbons);
     }
 
     public void DecrementCarbons()
     {
         --numOfCarbons;
+        cloud.DecNumOfCarbons();
         GameObject.Find("Carbon Display").GetComponent<CarbonDisplay>().setNumOfCarbons(numOfCarbons);
     }
 
