@@ -68,6 +68,10 @@ public class LayerManager : MonoBehaviour {
                             }
                         }
                     }
+                    else
+                    {
+                        child.gameObject.SetActive(false);
+                    }
                 }
             }
 
