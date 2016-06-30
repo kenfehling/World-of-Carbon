@@ -28,6 +28,7 @@ public class PressureZone : MonoBehaviour {
             if(player.GetNumOfCarbons() >= carbonsNeeded)
             {
                 GameManager.art.SwitchLayer(nextLayer);
+                GameManager.music.moveDownLayer();
             }
         }
     }
