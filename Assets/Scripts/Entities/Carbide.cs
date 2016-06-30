@@ -31,7 +31,7 @@ public class Carbide : MonoBehaviour {
 
                 //Spawn a lone carbon and send it flying to the player
                 product = (GameObject)Instantiate(Resources.Load(ResourcePaths.FreeCarbonMolecule), transform.position, Quaternion.identity);
-                product.GetComponent<FlyTo>().setTarget(player.transform);
+                product.GetComponent<FlyTo>().setTarget(player.transform, true);
 
                 //Spawn other products and send them flying in a random direction
 
