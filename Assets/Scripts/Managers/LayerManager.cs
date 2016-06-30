@@ -4,7 +4,7 @@ using System.Collections;
 public class LayerManager : MonoBehaviour {
 
     public bool DebugControls = true;
-    public uint lnum = 0;
+    public uint currentLayerNumber = 0;
     public GameObject[] layers = new GameObject[3];
     private GameObject currentLayer;
 
@@ -47,53 +47,119 @@ public class LayerManager : MonoBehaviour {
         if(currentLayer != layers[nextLayer] && !currentLayer.transform.GetChild(0).GetComponent<FaderScript>().isFading()
             && !layers[nextLayer].transform.GetChild(0).GetComponent<FaderScript>().isFading())
         {
-            FaderScript fader;
-            foreach (Transform child in currentLayer.transform)
+            if(nextLayer > currentLayerNumber)
             {
-                fader = child.GetComponent<FaderScript>();
-                if (fader)
+                DescendLayer(nextLayer);
+            }
+            else
+            {
+                AscendLayer(nextLayer);
+            }
+            currentLayerNumber = nextLayer;
+        }
+    }
+
+    private void AscendLayer(uint nextLayer)
+    {
+        FaderScript fader;
+        foreach (Transform child in currentLayer.transform)
+        {
+            fader = child.GetComponent<FaderScript>();
+            if (fader)
+            {
+                fader.BeginFadeOut(false);
+            }
+            else
+            {
+                if (child.gameObject.name == "Entities")
                 {
-                    fader.BeginFadeOut();
+                    foreach (Transform grandChild in child)
+                    {
+                        fader = grandChild.GetComponent<FaderScript>();
+                        if (fader)
+                        {
+                            fader.BeginFadeOut(false);
+                        }
+                    }
                 }
                 else
                 {
-                    if (child.gameObject.name == "Entities")
-                    {
-                        foreach (Transform grandChild in child)
-                        {
-                            fader = grandChild.GetComponent<FaderScript>();
-                            if (fader)
-                            {
-                                fader.BeginFadeOut();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        child.gameObject.SetActive(false);
-                    }
+                    child.gameObject.SetActive(false);
                 }
+            }
+        }
+
+        currentLayer = layers[nextLayer];
+        currentLayer.SetActive(true);
+        foreach (Transform child in currentLayer.transform)
+        {
+            child.gameObject.SetActive(true);
+            fader = child.gameObject.GetComponent<FaderScript>();
+
+            if (fader)
+            {
+                fader.SetDescending(false);
             }
 
-            currentLayer = layers[nextLayer];
-            currentLayer.SetActive(true);
-            foreach (Transform child in currentLayer.transform)
+            if (child.gameObject.name == "Entities")
             {
-                child.gameObject.SetActive(true);
-                if(child.gameObject.name == "Entities")
+                foreach (Transform grandchild in child)
                 {
-                    foreach (Transform grandchild in child)
-                    {
-                        grandchild.gameObject.SetActive(true);
-                    }
+                    grandchild.gameObject.SetActive(true);
+                    fader = grandchild.gameObject.GetComponent<FaderScript>();
+                    fader.SetDescending(false);
                 }
             }
-            lnum = nextLayer;
+        }
+    }
+
+    private void DescendLayer(uint nextLayer)
+    {
+        FaderScript fader;
+        foreach (Transform child in currentLayer.transform)
+        {
+            fader = child.GetComponent<FaderScript>();
+            if (fader)
+            {
+                fader.BeginFadeOut(true);
+            }
+            else
+            {
+                if (child.gameObject.name == "Entities")
+                {
+                    foreach (Transform grandChild in child)
+                    {
+                        fader = grandChild.GetComponent<FaderScript>();
+                        if (fader)
+                        {
+                            fader.BeginFadeOut(true);
+                        }
+                    }
+                }
+                else
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        currentLayer = layers[nextLayer];
+        currentLayer.SetActive(true);
+        foreach (Transform child in currentLayer.transform)
+        {
+            child.gameObject.SetActive(true);
+            if (child.gameObject.name == "Entities")
+            {
+                foreach (Transform grandchild in child)
+                {
+                    grandchild.gameObject.SetActive(true);
+                }
+            }
         }
     }
 
     public uint GetCurrentLayer()
     {
-        return lnum;
+        return currentLayerNumber;
     }
 }
