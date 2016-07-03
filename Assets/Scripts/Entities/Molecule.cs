@@ -11,7 +11,7 @@ public class Molecule : MonoBehaviour {
     {
         if (wildMolecule)
         {
-            transform.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * 3.5f);
+            transform.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * 2.25f);
         }
     }
 	void OnTriggerEnter2D (Collider2D obj) {
