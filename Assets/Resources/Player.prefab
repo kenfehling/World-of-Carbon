@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9768064b4fcd064479e369b75a20d17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibilityTime: 5
 --- !u!114 &11437710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardEnthalpyChange: 0
   formula: C
+  wildMolecule: 0
 --- !u!114 &11476384
 MonoBehaviour:
   m_ObjectHideFlags: 1

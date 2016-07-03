@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LoseCarbons : MonoBehaviour {
 
-    public float invincibilityTime = 2.0f;
+    public float invincibilityTime = 8.0f;
 
     private PlayerManager player;
     private float timer;
@@ -16,6 +16,15 @@ public class LoseCarbons : MonoBehaviour {
     void Update()
     {
         timer -= Time.deltaTime;
+        if(timer > 0.0f)
+        {
+            GetComponentInChildren<SpriteRenderer>().material.color = Color.Lerp(Color.red, Color.white, Time.deltaTime/2);
+        }
+
+        if (timer < 0.0f)
+        {
+            GetComponentInChildren<SpriteRenderer>().material.color = Color.Lerp(Color.white, Color.red, Time.deltaTime / 2);
+        }
     }
 	
 	void OnCollisionEnter2D(Collision2D col)

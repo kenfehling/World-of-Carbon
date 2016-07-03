@@ -58,6 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardEnthalpyChange: 0
   formula: C
+  wildMolecule: 0
+  speed: 10
 --- !u!212 &21242984
 SpriteRenderer:
   m_ObjectHideFlags: 1
