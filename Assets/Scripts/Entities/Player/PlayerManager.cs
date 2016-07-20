@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     private float pressure;
     private int numOfOxides;
     private int numOfCarbons;
-    private CloudCollector cloud;
+
     void Start()
     {
         //Stores reference to default child, destroys the child's rigidbody
@@ -22,8 +22,15 @@ public class PlayerManager : MonoBehaviour {
         }
 
         source = gameObject.AddComponent<AudioSource>();
-        cloud = gameObject.GetComponentInChildren<CloudCollector>();
         source.loop = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            IncrementCarbons();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -66,11 +73,6 @@ public class PlayerManager : MonoBehaviour {
         this.composition = composition;
     }
 
-    public CloudCollector GetCloud()
-    {
-        return cloud;
-    }
-
     public float GetTemperature()
     {
         return temperature;
@@ -104,14 +106,12 @@ public class PlayerManager : MonoBehaviour {
     public void IncrementCarbons()
     {
         ++numOfCarbons;
-        cloud.IncNumOfCarbons();
         GameObject.Find("Carbon Display").GetComponent<CarbonDisplay>().setNumOfCarbons(numOfCarbons);
     }
 
     public void DecrementCarbons()
     {
         --numOfCarbons;
-        cloud.DecNumOfCarbons();
         GameObject.Find("Carbon Display").GetComponent<CarbonDisplay>().setNumOfCarbons(numOfCarbons);
     }
 

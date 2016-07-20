@@ -7,7 +7,7 @@ public class FaderScript : MonoBehaviour {
     private Color targetColor;
     private Color currentColor;
     private Vector3 two = new Vector3(2.0f, 2.0f, 2.0f);
-    private float fadeInSpeed = 4.0f;
+    private float fadeInSpeed = 1.5f;
     private bool fadingIn;
     private bool fadingOut;
 
@@ -26,7 +26,7 @@ public class FaderScript : MonoBehaviour {
             
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, Time.deltaTime * fadeInSpeed);
 
-            if(transform.localScale.x > 0.989f)
+            if(transform.localScale.x > 0.998f)
             {
                 gameObject.GetComponent<Collider2D>().enabled = true;
 
@@ -49,7 +49,7 @@ public class FaderScript : MonoBehaviour {
             }
 
             transform.localScale = Vector3.Lerp(transform.localScale, two, Time.deltaTime * fadeInSpeed);
-            if (transform.localScale.x > 1.989f)
+            if (transform.localScale.x > 1.998f)
             {
                 if (rend)
                 {
