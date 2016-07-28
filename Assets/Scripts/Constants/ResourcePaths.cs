@@ -11,6 +11,7 @@ public class ResourcePaths {
 	private static string WorldObjectsRoot = "World Objects/Old";
 	private static string MoleculesRoot = "Molecules/";
     private static string ParticleEffectsRoot = "Particle Effects/";
+    private static string UIRoot = "UI/";
     private static string MiscRoot = "Misc/";
 
     //Audio roots
@@ -35,6 +36,9 @@ public class ResourcePaths {
 
     //Player
     public static string Player = "Player";
+
+    //UI Elements
+    public static string DragLine = UIRoot + "Drag Line";
 
 	// Obstacles
 	public static string SampleMolecule = WorldObjectsRoot + "Sample Molecule";
