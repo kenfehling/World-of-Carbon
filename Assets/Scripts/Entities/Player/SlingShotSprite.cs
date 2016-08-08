@@ -24,10 +24,7 @@ public class SlingShotSprite : MonoBehaviour {
 
     void Update()
     {
-        if (TapHandler.playerTapped)
-        {
-            lineCylinder.SetActive(true);
-        }
+        lineCylinder.SetActive(TapHandler.playerTapped);
 
         if (lineCylinder.activeSelf)
         {
@@ -56,7 +53,7 @@ public class SlingShotSprite : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-        if (!TapHandler.playerTapped)
+        if (TapHandler.playerTapped)
         {
             releasePoint = Input.mousePosition;
             difference.x = clickPoint.x - releasePoint.x;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HPZone
   - Wall
+  - UI
   layers:
   - Default
   - TransparentFX

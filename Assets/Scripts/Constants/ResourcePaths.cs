@@ -12,6 +12,8 @@ public class ResourcePaths {
 	private static string MoleculesRoot = "Molecules/";
     private static string ParticleEffectsRoot = "Particle Effects/";
     private static string UIRoot = "UI/";
+    private static string UIComponentsRoot = UIRoot + "Components/";
+    private static string UIImagesRoot = UIComponentsRoot + "Images/";
     private static string MiscRoot = "Misc/";
 
     //Audio roots
@@ -56,5 +58,7 @@ public class ResourcePaths {
     public static string DiamondMol = MoleculesRoot + "Diamond";
 
     //Effects
-    public static string transExplosion = ParticleEffectsRoot + "TransExplosion";
+    public static string TransExplosion = ParticleEffectsRoot + "TransExplosion";
+
+    //UI Elements
 }
