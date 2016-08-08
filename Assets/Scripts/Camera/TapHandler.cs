@@ -6,8 +6,14 @@ public class TapHandler : MonoBehaviour {
     [HideInInspector]public static bool playerTapped;
     public float maxTapTime;
 
+    private UIHandler ui;
     private RaycastHit2D raycastHit;
     private float timer;
+
+    void Start()
+    {
+        ui = FindObjectOfType<UIHandler>();
+    }
 
     void Update()
     {
@@ -18,7 +24,6 @@ public class TapHandler : MonoBehaviour {
             raycastHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (raycastHit.collider != null)
             {
-                Debug.Log(raycastHit.transform.gameObject.name);
                 if (raycastHit.transform.gameObject.name == "Player")
                 {
                     playerTapped = true;
@@ -30,13 +35,20 @@ public class TapHandler : MonoBehaviour {
         {
             if (raycastHit.collider != null)
             {
-                Debug.Log(raycastHit.transform.gameObject + " tapped!");
+                ui.ActivateUIElement(raycastHit.transform.gameObject.name);
+                playerTapped = false;
+            }
+            else
+            {
+                ui.DeactivateActiveUIElement();
             }
         }
-        else if(timer <= 0.0f)
+
+        if (timer <= 0.0f && Input.GetMouseButtonUp(0))
         {
+            ui.DeactivateActiveUIElement();
             playerTapped = false;
-        }
+        }        
     }
     
     void OnMouseUp()
