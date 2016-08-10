@@ -25,7 +25,9 @@ public class GameManager : MonoBehaviour {
 
     // Will be set in game world before everything is run
     public GameObject mainCamera;
-
+    
+    // Temporary addition for music since other levels weren't considered before
+    public AudioClip[] layerTracks;
 	// Use this for initialization
 	void Start () {
 		// Instantiate internal managers
@@ -41,6 +43,10 @@ public class GameManager : MonoBehaviour {
         art = gameObject.GetComponent<LayerManager>();
 		reactionTable = new ReactionTable();
 
+        if(layerTracks.Length > 0)
+        {
+            music.clips = layerTracks;
+        }
         //Find camera if not explicitly done in the Editor (this is a failsafe.. shouldn't rely on this)
         if (!mainCamera)
         {
