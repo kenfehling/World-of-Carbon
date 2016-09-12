@@ -6,6 +6,7 @@ public class UIFader : MonoBehaviour {
 
     public float fadeTime = 1.0f;
 
+    private Text title, description;
     private Image image;
     private RectTransform rectTransform;
     private Vector2 size;
@@ -18,8 +19,10 @@ public class UIFader : MonoBehaviour {
 	void Start () {
         image = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
-        image.SetNativeSize();
-        size = rectTransform.sizeDelta;
+
+        if(size == Vector2.zero)
+            size = rectTransform.sizeDelta;
+
         timer = fadeTime;
         state = State.idle;
         rectTransform.sizeDelta = Vector2.zero;
@@ -55,7 +58,8 @@ public class UIFader : MonoBehaviour {
             }
         }
 
-        timer -= Time.deltaTime;
+        if(timer > 0.0f)
+            timer -= Time.deltaTime;
 	}
 
     public void BeginFadeOut()
@@ -78,7 +82,5 @@ public class UIFader : MonoBehaviour {
     public void SetSprite(Sprite sprite)
     {
         image.sprite = sprite;
-        image.SetNativeSize();
-        size = sprite.bounds.size * sprite.pixelsPerUnit;
     }
 }

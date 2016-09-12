@@ -14,6 +14,7 @@ public class ResourcePaths {
     private static string UIRoot = "UI/";
     private static string UIComponentsRoot = UIRoot + "Components/";
     private static string UIImagesRoot = UIComponentsRoot + "Images/";
+    private static string UITHUDRoot = UIComponentsRoot + "THUD/";
     private static string MiscRoot = "Misc/";
 
     //Audio roots
@@ -61,4 +62,23 @@ public class ResourcePaths {
     public static string TransExplosion = ParticleEffectsRoot + "TransExplosion";
 
     //UI Elements
+    public static string[] THUDElements = {"Player", "CO2"};
+
+    //Player
+    private static string PlayerTHUDRoot = UITHUDRoot + "Player/";
+    public static string PlayerTHUDImage = PlayerTHUDRoot + "Player";
+    public static string PlayerTHUDTitle = PlayerTHUDRoot + "PlayerTitle";
+    public static string PlayerTHUDDescription = PlayerTHUDRoot + "PlayerDescription";
+
+    //CO2
+    private static string CO2THUDRoot = UITHUDRoot + "CO2/";
+    public static string CO2THUDImage = CO2THUDRoot + "CO2";
+    public static string CO2THUDTitle = CO2THUDRoot + "CO2Title";
+    public static string CO2THUDDescription = CO2THUDRoot + "CO2Description";
+
+    //Oxide
+    private static string OxideTHUDRoot = UITHUDRoot + "Oxide/";
+    public static string OxideTHUDImage = OxideTHUDRoot + "Oxide";
+    public static string OxideTHUDTitle = OxideTHUDRoot + "OxideTitle";
+    public static string OxideTHUDDescription = OxideTHUDRoot + "OxideDescription";
 }

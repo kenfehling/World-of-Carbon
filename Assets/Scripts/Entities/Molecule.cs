@@ -7,6 +7,7 @@ public class Molecule : MonoBehaviour {
 	public float standardEnthalpyChange;
 	public string formula;
     public bool wildMolecule = true;
+
     void Update()
     {
         if (wildMolecule)
@@ -14,6 +15,7 @@ public class Molecule : MonoBehaviour {
             transform.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * 2.25f);
         }
     }
+
 	void OnTriggerEnter2D (Collider2D obj) {
 		var molecule = obj.gameObject.GetComponent<Molecule> ();
 		if(molecule != null)
