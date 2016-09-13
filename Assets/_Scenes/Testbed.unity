@@ -364,6 +364,53 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000014025561234, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3de01cd2de2618f4192150df3e769eba,
+        type: 3}
+    - target: {fileID: 224000010660923976, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1150
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010660923976, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012957763406, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012957763406, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 574
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012957763406, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 265.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012957763406, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013542132968, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013542132968, guid: 574ed345f2a99ef40992fab43460df2b,
+        type: 2}
+      propertyPath: m_Text
+      value: "This doesn't belong in the game anymore,\nyet is still being used to
+        test THUD functionality!\n  PogChamp"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 574ed345f2a99ef40992fab43460df2b, type: 2}
   m_IsPrefabParent: 0

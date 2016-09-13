@@ -41,9 +41,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 1
-  size: {x: 0, y: 0}
-  timer: 0
-  state: 0
 --- !u!114 &114000013528462016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,7 +60,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bd2b2a061e1e40e4c990c4b85e952be6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10442abc79436f045a672e0ad6600de6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

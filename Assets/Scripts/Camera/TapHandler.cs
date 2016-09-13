@@ -17,7 +17,8 @@ public class TapHandler : MonoBehaviour {
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        if(timer > 0.0f)
+            timer -= Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -33,7 +34,7 @@ public class TapHandler : MonoBehaviour {
         }
         else if (Input.GetMouseButtonUp(0) && timer > 0.0f)
         {
-            if (raycastHit.collider != null)
+            if (raycastHit.collider != null && !ui.IsTHUDOpen())
             {
                 ui.ActivateUIElement(raycastHit.transform.gameObject.name);
                 playerTapped = false;

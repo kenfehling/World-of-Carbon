@@ -83,9 +83,11 @@ public class GameManager : MonoBehaviour {
     //All of the reaction data and entries will be initialized and populated here
     private void PopulateReactionTable()
     {
-        reactionTable.SetUpTable(new string[] { "C", "O2", "N2", "CO2"});
-        ReactionTableEntry reaction1 = new ReactionTableEntry(new string[] { "CO2" });
-        reactionTable.RegisterReaction("C", "O2", reaction1);
+        reactionTable.SetUpTable(new string[] { "C", "O2", "CO2", "CH4", "CaCO3"});
+        ReactionTableEntry reaction1 = new ReactionTableEntry(new string[] {"CO2", "H2O"}, ReactionTableEntry.Move.none, ReactionTableEntry.Temperature.lo, ReactionTableEntry.Pressure.lo);
+        ReactionTableEntry reaction2 = new ReactionTableEntry(new string[] {"CaCO3"}, ReactionTableEntry.Move.none, ReactionTableEntry.Temperature.med, ReactionTableEntry.Pressure.med);
+        reactionTable.RegisterReaction("CH4", "O2", reaction1);
+        reactionTable.RegisterReaction("CO2", "CaO", reaction2);
     }
 
 	// where should this functionality really go?

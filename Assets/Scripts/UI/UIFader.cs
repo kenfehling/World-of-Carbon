@@ -83,4 +83,9 @@ public class UIFader : MonoBehaviour {
     {
         image.sprite = sprite;
     }
+
+    public bool isVisible()
+    {
+        return state == State.visible || state == State.fadingIn;
+    }
 }

@@ -7,8 +7,8 @@ public class PlayerManager : MonoBehaviour {
     private SoundManager soundManager;
     private AudioSource source;
     private string composition;
-    private float temperature;
-    private float pressure;
+    private ReactionTableEntry.Pressure pressure;
+    private ReactionTableEntry.Temperature temperature;
     private int numOfOxides;
     private int numOfCarbons;
 
@@ -23,6 +23,10 @@ public class PlayerManager : MonoBehaviour {
 
         source = gameObject.AddComponent<AudioSource>();
         source.loop = false;
+
+        composition = "CH4";
+        pressure = ReactionTableEntry.Pressure.lo;
+        temperature = ReactionTableEntry.Temperature.lo;
     }
 
     void Update()
@@ -73,22 +77,22 @@ public class PlayerManager : MonoBehaviour {
         this.composition = composition;
     }
 
-    public float GetTemperature()
+    public ReactionTableEntry.Temperature GetTemperature()
     {
         return temperature;
     }
 
-    public void SetTemperature(float temperature)
+    public void SetTemperature(ReactionTableEntry.Temperature temperature)
     {
         this.temperature = temperature;
     }
 
-    public float GetPressure()
+    public ReactionTableEntry.Pressure GetPressure()
     {
         return pressure;
     }
 
-    public void SetPressure(float pressure)
+    public void SetPressure(ReactionTableEntry.Pressure pressure)
     {
         this.pressure = pressure;
     }

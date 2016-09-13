@@ -17,13 +17,28 @@ public class Molecule : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D (Collider2D obj) {
-		var molecule = obj.gameObject.GetComponent<Molecule> ();
+        PlayerManager player = obj.GetComponent<PlayerManager>();
+        Molecule molecule = obj.gameObject.GetComponent<Molecule>();
+
 		if(molecule != null)
 		{
-			var reaction = GameManager.reactionTable.GetReaction (this.formula, molecule.formula);
+            ReactionTableEntry reaction = null;
+
+            if (!player)
+                reaction = GameManager.reactionTable.GetReaction(this.formula, molecule.formula);
+            else
+                reaction = GameManager.reactionTable.GetReaction(this.formula, player.GetComposition());
+
 			if (reaction != null) {
-				foreach (string s in reaction.products)
-					Debug.Log ("Create " + s);
+                if (player)
+                {
+                    if(reaction.pressure == player.GetPressure() && reaction.temperature == player.GetTemperature())
+                        player.SetComposition(reaction.products[0]);
+                }
+                else
+                {
+                    //Non-Player Reaction
+                }
 			}
 		}
 	}

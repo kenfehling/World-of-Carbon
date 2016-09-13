@@ -5,8 +5,6 @@ using System.Collections;
 public class UIHandler : MonoBehaviour {
 
     [SerializeField]
-    private GameObject[] UIElements;
-    [SerializeField]
     private Image THUDImage;
     [SerializeField]
     private Text THUDTitle, THUDDescription;
@@ -17,6 +15,11 @@ public class UIHandler : MonoBehaviour {
         THUDImageFader = THUDImage.GetComponent<UIFader>();
         THUDTitleFader = THUDTitle.GetComponent<UIFader>();
         THUDDescriptionFader = THUDDescription.GetComponent<UIFader>();
+    }
+
+    public bool IsTHUDOpen()
+    {
+        return THUDImageFader.isVisible();
     }
 
     public void ActivateUIElement(string name)
@@ -31,12 +34,12 @@ public class UIHandler : MonoBehaviour {
 
     public void DeactivateActiveUIElement()
     {
-        if (THUDImageFader && THUDTitleFader && THUDDescriptionFader)
-        {
+        if (THUDImageFader)
             THUDImageFader.BeginFadeOut();
+        if (THUDTitleFader)
             THUDTitleFader.BeginFadeOut();
+        if(THUDDescriptionFader)
             THUDDescriptionFader.BeginFadeOut();
-        }
     }
 
     private void ActivateTHUDElement(string name)
