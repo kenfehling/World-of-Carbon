@@ -80,4 +80,22 @@ public class ResourcePaths {
         public static string OxideTHUDImage = OxideTHUDRoot + "Oxide";
         public static string OxideTHUDTitle = OxideTHUDRoot + "OxideTitle";
         public static string OxideTHUDDescription = OxideTHUDRoot + "OxideDescription";
+
+        //Red Molecule
+        private static string RedMolTHUDRoot = UITHUDRoot + "RedMol/";
+        public static string RedMolTHUDImage = RedMolTHUDRoot + "RedMol";
+        public static string RedMolTHUDTitle = RedMolTHUDRoot + "RedMolTitle";
+        public static string RedMolTHUDDescription = RedMolTHUDRoot + "RedMolDescription";
+
+        //Blue Molecule
+        private static string BlueMolTHUDRoot = UITHUDRoot + "BlueMol/";
+        public static string BlueMolTHUDImage = BlueMolTHUDRoot + "BlueMol";
+        public static string BlueMolTHUDTitle = BlueMolTHUDRoot + "BlueMolTitle";
+        public static string BlueMolTHUDDescription = BlueMolTHUDRoot + "BlueMolDescription";
+
+        //Yellow Molecule
+        private static string YelMolTHUDRoot = UITHUDRoot + "YelMol/";
+        public static string YelMolTHUDImage = YelMolTHUDRoot + "YelMol";
+        public static string YelMolTHUDTitle = YelMolTHUDRoot + "YelMolTitle";
+        public static string YelMolTHUDDescription = YelMolTHUDRoot + "YelMolDescription";
 }

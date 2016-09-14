@@ -70,6 +70,31 @@ public class UIHandler : MonoBehaviour {
             tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDDescription))).GetComponent<Text>();
         }
 
+        else if (name == "RedMolecule")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.RedMolTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.RedMolTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.RedMolTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "BlueMolecule")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.BlueMolTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.BlueMolTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.BlueMolTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "YelMolecule")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDDescription))).GetComponent<Text>();
+        }
+
+
         if (found)
         {
             THUDImageFader.SetSprite(tempImg.sprite);
