@@ -332,6 +332,8 @@ GameObject:
   - 95: {fileID: 262890532}
   - 60: {fileID: 262890535}
   - 58: {fileID: 262890534}
+  - 114: {fileID: 262890536}
+  - 114: {fileID: 262890537}
   m_Layer: 0
   m_Name: YelMolecule
   m_TagString: Untagged
@@ -465,6 +467,31 @@ PolygonCollider2D:
       - {x: -0.36499998, y: -0.66999996}
       - {x: -0.21499999, y: -0.57}
       - {x: -0.044999998, y: -0.42}
+--- !u!114 &262890536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262890530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &262890537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262890530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardEnthalpyChange: 0
+  formula: O2
+  wildMolecule: 0
 --- !u!1 &500332083
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +886,8 @@ GameObject:
   - 95: {fileID: 1246231913}
   - 60: {fileID: 1246231916}
   - 58: {fileID: 1246231915}
+  - 114: {fileID: 1246231917}
+  - 114: {fileID: 1246231918}
   m_Layer: 0
   m_Name: BlueMolecule
   m_TagString: Untagged
@@ -992,6 +1021,31 @@ PolygonCollider2D:
       - {x: -0.36499998, y: -0.66999996}
       - {x: -0.21499999, y: -0.57}
       - {x: -0.044999998, y: -0.42}
+--- !u!114 &1246231917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246231911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1246231918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246231911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardEnthalpyChange: 0
+  formula: O2
+  wildMolecule: 0
 --- !u!1 &1304334950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1056,7 @@ GameObject:
   - 4: {fileID: 1304334951}
   - 212: {fileID: 1304334952}
   - 114: {fileID: 1304334953}
-  - 65: {fileID: 1304334954}
+  - 61: {fileID: 1304334954}
   m_Layer: 0
   m_Name: The Lab (layer 1)color
   m_TagString: Untagged
@@ -1067,18 +1121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1304334954
-BoxCollider:
+--- !u!61 &1304334954
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304334950}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 67.989, y: 0}
   serializedVersion: 2
-  m_Size: {x: 104.12999, y: 69.91999, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1945443, y: 69.91999}
 --- !u!1 &1333363937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: nextLayer
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
@@ -1507,6 +1563,8 @@ GameObject:
   - 95: {fileID: 1826967298}
   - 60: {fileID: 1826967302}
   - 58: {fileID: 1826967301}
+  - 114: {fileID: 1826967303}
+  - 114: {fileID: 1826967304}
   m_Layer: 0
   m_Name: RedMolecule
   m_TagString: Untagged
@@ -1640,6 +1698,31 @@ PolygonCollider2D:
       - {x: -0.36499998, y: -0.66999996}
       - {x: -0.21499999, y: -0.57}
       - {x: -0.044999998, y: -0.42}
+--- !u!114 &1826967303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826967297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1826967304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826967297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardEnthalpyChange: 0
+  formula: O2
+  wildMolecule: 0
 --- !u!1 &2060406318
 GameObject:
   m_ObjectHideFlags: 0

@@ -56,7 +56,7 @@ public class ResourcePaths {
 	public static string NitrogenMolecule = MoleculesRoot + "N2";
 	public static string CarbonDioxideMolecule = MoleculesRoot + "CO2";
     public static string FreeCarbonMolecule = MoleculesRoot + "Free Carbon";
-    public static string DiamondMol = MoleculesRoot + "Diamond";
+    public static string DiamondMol = MoleculesRoot + "Diamond1";
 
     //Effects
     public static string TransExplosion = ParticleEffectsRoot + "TransExplosion";
