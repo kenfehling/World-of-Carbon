@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: d54c2f8c4227f0648a233a12f8a02d8c
-timeCreated: 1475682686
+timeCreated: 1475688997
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tropo_pieces_0
+    21300002: tropo_pieces_1
+    21300004: tropo_pieces_2
+    21300006: tropo_pieces_3
+    21300008: tropo_pieces_4
+    21300010: tropo_pieces_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +36,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +44,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +57,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tropo_pieces_0
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 45
+        width: 310
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tropo_pieces_1
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 47
+        width: 215
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tropo_pieces_2
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 96
+        width: 375
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tropo_pieces_3
+      rect:
+        serializedVersion: 2
+        x: 1987
+        y: 52
+        width: 267
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tropo_pieces_4
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 71
+        width: 559
+        height: 569
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tropo_pieces_5
+      rect:
+        serializedVersion: 2
+        x: 3073
+        y: 171
+        width: 455
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
