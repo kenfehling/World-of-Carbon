@@ -75,7 +75,8 @@ public class FaderScript : MonoBehaviour {
 
     public void BeginFadeOut()
     {
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        if (gameObject.GetComponent<Collider2D>() != null)
+            gameObject.GetComponent<Collider2D>().enabled = false;
 
         rend.color = Color.white;
         targetColor = Color.clear;
