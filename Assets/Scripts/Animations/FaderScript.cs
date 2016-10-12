@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class FaderScript : MonoBehaviour {
+    [SerializeField]
+    private Vector3 finalScale = new Vector3(1.0f, 1.0f, 1.0f);
 
     private SpriteRenderer rend;
     private Color targetColor;
@@ -24,18 +26,19 @@ public class FaderScript : MonoBehaviour {
                 rend.color = currentColor;
             }
             
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, Time.deltaTime * fadeInSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, finalScale, Time.deltaTime * fadeInSpeed);
 
             if(transform.localScale.x > 0.998f)
             {
-                gameObject.GetComponent<Collider2D>().enabled = true;
+                if (gameObject.GetComponent<Collider2D>() != null)
+                    gameObject.GetComponent<Collider2D>().enabled = true;
 
                 if (rend)
                 {
                     currentColor = targetColor;
                     rend.color = currentColor;
                 }
-                transform.localScale = Vector3.one;
+                transform.localScale = finalScale;
                 fadingIn = false;
             }
         }
