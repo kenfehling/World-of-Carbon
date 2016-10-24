@@ -15,6 +15,7 @@ public class FaderScript : MonoBehaviour {
 
     void Start () {
         rend = GetComponent<SpriteRenderer>();
+
 	}
 	
 	void Update () {
@@ -25,13 +26,15 @@ public class FaderScript : MonoBehaviour {
                 currentColor = Color.Lerp(currentColor, targetColor, Time.deltaTime * fadeInSpeed);
                 rend.color = currentColor;
             }
+
+            if (gameObject.GetComponent<Collider2D>() != null)
+                gameObject.GetComponent<Collider2D>().enabled = true;
             
             transform.localScale = Vector3.Lerp(transform.localScale, finalScale, Time.deltaTime * fadeInSpeed);
 
             if(transform.localScale.x > 0.998f)
             {
-                if (gameObject.GetComponent<Collider2D>() != null)
-                    gameObject.GetComponent<Collider2D>().enabled = true;
+                
 
                 if (rend)
                 {

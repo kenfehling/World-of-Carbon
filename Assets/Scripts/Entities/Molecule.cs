@@ -4,8 +4,8 @@ using System.Collections;
 public class Molecule : MonoBehaviour {
 
 	// To be set by designer in object inspector of molecule prefabs
-	public float standardEnthalpyChange;
 	public string formula;
+    public bool highPressure;
     public bool wildMolecule = true;
 
     void Update()
@@ -17,29 +17,19 @@ public class Molecule : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D (Collider2D obj) {
-        PlayerManager player = obj.GetComponent<PlayerManager>();
-        Molecule molecule = obj.gameObject.GetComponent<Molecule>();
+        Molecule player = obj.gameObject.GetComponentInChildren<Molecule>();
+        if (player != null)
+        {
+            string combined = string.Concat(player.formula, formula);
+            ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
 
-		if(molecule != null)
-		{
-            ReactionTableEntry reaction = null;
-
-            if (!player)
-                reaction = GameManager.reactionTable.GetReaction(this.formula, molecule.formula);
-            else
-                reaction = GameManager.reactionTable.GetReaction(this.formula, player.GetComposition());
-
-			if (reaction != null) {
-                if (player)
-                {
-                    if(reaction.pressure == player.GetPressure() && reaction.temperature == player.GetTemperature())
-                        player.SetComposition(reaction.products[0]);
-                }
-                else
-                {
-                    //Non-Player Reaction
-                }
-			}
-		}
+            Debug.Log(combined);
+            Debug.Log(rt.table[combined]);
+            //Lookup the combined string in the table;
+            if (rt.table[combined] != "")
+            {
+                Debug.Log("Reaction!");
+            }
+        }
 	}
 }
