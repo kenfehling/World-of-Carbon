@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour {
     private ReactionTableEntry.Temperature temperature;
     private int numOfOxides;
     private int numOfCarbons;
+    private Color carbonTint;
 
     void Start()
     {
@@ -134,5 +135,11 @@ public class PlayerManager : MonoBehaviour {
         SpriteRenderer sRend = GetComponentInChildren<SpriteRenderer>();
         Sprite diamond = Resources.Load<Sprite>(ResourcePaths.DiamondMol);
         sRend.sprite = diamond;
+    }
+
+    public void ChangeTint(Color tint)
+    {
+        SpriteRenderer sRend = GetComponentInChildren<SpriteRenderer>();
+        sRend.material.color = tint;
     }
 }

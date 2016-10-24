@@ -137,6 +137,18 @@ Prefab:
       propertyPath: timeToHold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 21260904, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21260904, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21260904, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
   m_IsPrefabParent: 0
@@ -478,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!114 &262890537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!61 &500332087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1045,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1246231918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!61 &1304334954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1366,6 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!4 &1407851991 stripped
 Transform:
   m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
@@ -1735,6 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1826967304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,3 +2454,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
