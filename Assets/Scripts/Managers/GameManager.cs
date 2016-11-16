@@ -94,8 +94,12 @@ public class GameManager : MonoBehaviour {
         //The way this works is that collisions between molecules concatenate the MoleculeIDs, and that
         //is mapped to a product in the reaction table.
 
-        reactionTable.table["CH4O2"] = "H2O";
         reactionTable.table["CO2"] = "CO2";
+        reactionTable.table["CH4O2"] = "H2O";
+        reactionTable.table["CO2H2O"] = "O2";
+        reactionTable.table["CO2H2O-W"] = "H2CO3";
+        
+        
 
     }
 
