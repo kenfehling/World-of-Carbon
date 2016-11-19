@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000011058143338}
   - 114: {fileID: 114000014183132562}
   m_Layer: 5
-  m_Name: CO2Description
+  m_Name: CO32-Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,29 +61,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a "CO2" molecule.
+  m_Text: 'This is a "CO32-" molecule.
 
-    Temperature: M
+    Temperature: LO
 
     Pressure: LO
 
-    Can dissolve in water at Medium Temperatures
+    Turns into Bicarbonate with the help of a Hydrogen Ion: H+
 
-    Turns into Oxygen with the help of Water: H2O (LO Temperature and LO Pressure)
+    Turns into Magnesium Carbonate with the help of Mg2+
 
-    Turns into Carbonic Acid with the help of Water: H2O (LO Temperature and LO Pressure)
+    Turns into Carbon Dioxide with the help of a Metal Oxide: MgO, SiO2, Al2O3, CaO,
+    Fe2O3, Na2O, or K2O
 
-    Turns into Calcium Carbonate with the help of Calcium Oxide: CaO (LO Temperature
-    and LO Pressure)
-
-    Turns into Methanal with the help of Water: H2O and Sunlight (M Temperature and
-    LO Pressure)
-
-    Turns into Calcium Carbonate with the help of Calcium: Ca2+ Oxide: CaO and Medium
-    pressure (LO Temperature and M Pressure)
-
-    Turns into Graphite with the help of High Temperature and Pressure (H Temperature
-    and H Pressure)'
+'
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000011058143338}
   - 114: {fileID: 114000014183132562}
   m_Layer: 5
-  m_Name: CO2Description
+  m_Name: H2SDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,29 +61,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a "CO2" molecule.
+  m_Text: 'This is a "H2S" molecule.
 
-    Temperature: M
+    Temperature: LO
 
     Pressure: LO
 
-    Can dissolve in water at Medium Temperatures
+    Turns into Pyrite with the help of Iron: Fe2+
 
-    Turns into Oxygen with the help of Water: H2O (LO Temperature and LO Pressure)
-
-    Turns into Carbonic Acid with the help of Water: H2O (LO Temperature and LO Pressure)
-
-    Turns into Calcium Carbonate with the help of Calcium Oxide: CaO (LO Temperature
-    and LO Pressure)
-
-    Turns into Methanal with the help of Water: H2O and Sunlight (M Temperature and
-    LO Pressure)
-
-    Turns into Calcium Carbonate with the help of Calcium: Ca2+ Oxide: CaO and Medium
-    pressure (LO Temperature and M Pressure)
-
-    Turns into Graphite with the help of High Temperature and Pressure (H Temperature
-    and H Pressure)'
+'
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1
