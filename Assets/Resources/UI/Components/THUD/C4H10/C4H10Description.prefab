@@ -69,7 +69,7 @@ MonoBehaviour:
 
     Turns into Sulfur Trioxide with the help of Oxygen: O2
 
-    Turns into Carbon Dioxide with the help of Oxygen: O2'
+    Turns into Carbon Dioxide with the help of Oxygen: O2 '
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1
