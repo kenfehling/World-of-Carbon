@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
         art = gameObject.GetComponent<LayerManager>();
 		reactionTable = new ReactionTable();
 
+        PopulateReactionTable();
+      
         if(layerTracks.Length > 0)
         {
             music.clips = layerTracks;
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour {
 
         // Start first level
         state = GameState.loading;
-        PopulateReactionTable();
+        
 
         //This is just so the old "Gameplay" scene doesn't break
         #pragma warning disable 0618 // Type or member is obsolete
@@ -80,14 +82,25 @@ public class GameManager : MonoBehaviour {
         return soundManager.GetComponent<SoundManager>();
     }
 
+    public ReactionTable getReactionTable()
+    {
+        return reactionTable;
+    }
+
     //All of the reaction data and entries will be initialized and populated here
     private void PopulateReactionTable()
     {
-        reactionTable.SetUpTable(new string[] { "C", "O2", "CO2", "CH4", "CaCO3"});
-        ReactionTableEntry reaction1 = new ReactionTableEntry(new string[] {"CO2", "H2O"}, ReactionTableEntry.Move.none, ReactionTableEntry.Temperature.lo, ReactionTableEntry.Pressure.lo);
-        ReactionTableEntry reaction2 = new ReactionTableEntry(new string[] {"CaCO3"}, ReactionTableEntry.Move.none, ReactionTableEntry.Temperature.med, ReactionTableEntry.Pressure.med);
-        reactionTable.RegisterReaction("CH4", "O2", reaction1);
-        reactionTable.RegisterReaction("CO2", "CaO", reaction2);
+        //Setup the table!
+        //The way this works is that collisions between molecules concatenate the MoleculeIDs, and that
+        //is mapped to a product in the reaction table.
+
+        reactionTable.table["CO2"] = "CO2";
+        reactionTable.table["CH4O2"] = "H2O";
+        reactionTable.table["CO2H2O"] = "O2";
+        reactionTable.table["CO2H2O-W"] = "H2CO3";
+        
+        
+
     }
 
 	// where should this functionality really go?

@@ -9,6 +9,7 @@ public class HoldInPlace : MonoBehaviour {
     private Vector3 rotationVector;
     private Collider2D col;
     private float timer;
+    private float rotControl;
 
 	void OnEnable () {
         col = GetComponent<Collider2D>();
@@ -25,7 +26,7 @@ public class HoldInPlace : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             col.enabled = true;
-            GetComponent<FlyTo>().enabled = false;
+            //GetComponent<FlyTo>().enabled = false;
             enabled = false;
         }
 	}
