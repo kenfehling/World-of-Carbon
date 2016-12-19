@@ -6,7 +6,6 @@ public class PlayerManager : MonoBehaviour {
     private GameObject child;
     private SoundManager soundManager;
     private AudioSource source;
-    private string composition;
     private ReactionTableEntry.Pressure pressure;
     private ReactionTableEntry.Temperature temperature;
     private int numOfOxides;
@@ -25,7 +24,6 @@ public class PlayerManager : MonoBehaviour {
         source = gameObject.AddComponent<AudioSource>();
         source.loop = false;
 
-        composition = "CH4";
         pressure = ReactionTableEntry.Pressure.lo;
         temperature = ReactionTableEntry.Temperature.lo;
     }
@@ -65,17 +63,6 @@ public class PlayerManager : MonoBehaviour {
     public bool IsOxidePresent()
     {
         return numOfOxides > 0 ? true : false;
-    }
-
-    //Basic getters and setters
-    public string GetComposition()
-    {
-        return composition;
-    }
-
-    public void SetComposition(string composition)
-    {
-        this.composition = composition;
     }
 
     public ReactionTableEntry.Temperature GetTemperature()

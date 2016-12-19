@@ -5,7 +5,8 @@ public class Molecule : MonoBehaviour {
 
 	// To be set by designer in object inspector of molecule prefabs
 	public string formula;
-    public bool highPressure;
+    public string pressure;
+    public string temperature;
     public bool wildMolecule = true;
 
     void Update()
@@ -44,7 +45,7 @@ public class Molecule : MonoBehaviour {
                 SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
                 soundManager.playCombineSound(aSrc);
 
-                player.formula = combined;
+                player.formula = rt.table[combined];
                 Destroy(this.gameObject);
             }
         }

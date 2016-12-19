@@ -8,11 +8,12 @@ public class CarbonDisplay : MonoBehaviour {
     private string displayText;
     private int numOfCarbons;
 
+    //TODO: CHANGE TO FORMULA
 	// Use this for initialization
 	void Start () {
         text = gameObject.GetComponent<Text>();
 
-        displayText = "Number of Carbons: ";
+        displayText = "Formula: ";
         numOfCarbons = 1;
         updateDisplay();
 	}
