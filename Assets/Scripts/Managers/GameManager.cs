@@ -103,9 +103,6 @@ public class GameManager : MonoBehaviour {
 
         reactionTable.table["CO2H2O"] = "O2";
 
-        reactionTable.table["CH4O2"] = "H2O";
-        
-
         reactionTable.table["O2SO"] = "SO2";
         reactionTable.table["SOO2"] = "SO2";
         reactionTable.table["SO2O2"] = "SO3";
