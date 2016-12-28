@@ -5,8 +5,8 @@ public class Molecule : MonoBehaviour {
 
 	// To be set by designer in object inspector of molecule prefabs
 	public string formula;
-    public string pressure;
-    public string temperature;
+    public string pressure = "";
+    public string temperature = "";
     public bool wildMolecule = true;
 
     void Update()
@@ -30,12 +30,17 @@ public class Molecule : MonoBehaviour {
         if (player != null)
         {
             string combined = string.Concat(player.formula, formula);
+            combined = string.Concat(combined, player.temperature);
+            combined = string.Concat(combined, player.pressure);
+            
             ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
 
             Debug.Log(combined);
-            Debug.Log(rt.table[combined]);
+
+            if (rt.table[combined] != null)
+                Debug.Log(rt.table[combined]);
             //Lookup the combined string in the table;
-            if (rt.table[combined] != "")
+            if (rt.table[combined] != null)
             {
                 Debug.Log("Reaction!");
                 Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
