@@ -51,6 +51,9 @@ public class Molecule : MonoBehaviour {
                 soundManager.playCombineSound(aSrc);
 
                 player.formula = rt.table[combined];
+
+                //Update the formula display
+                GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>().setFormula(player.formula);
                 Destroy(this.gameObject);
             }
         }

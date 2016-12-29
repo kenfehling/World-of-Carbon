@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour {
 
         reactionTable.table["CO2H2OMt"] = "CH2O";
 
-        reactionTable.table["CO2CAO"] = "CACO3";
+        reactionTable.table["CO2CAO"] = "CaCO3";
 
         reactionTable.table["CO2H2OMt"] = "CH2O";
 
@@ -125,23 +125,23 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["HCO3-H2O"]  = "CO32-";
         
         reactionTable.table["H2CO3H2O"] = "HCO3-";
-        reactionTable.table["CACO3H2O"] = "HCO3-";
-        reactionTable.table["CACO3CO2"] = "HCO3-";
+        reactionTable.table["CaCO3H2O"] = "HCO3-";
+        reactionTable.table["CaCO3CO2"] = "HCO3-";
 
         //Transition Water->Mantle
-        reactionTable.table["CO2CA2+LtMp"] = "MantleCACO3";
-        reactionTable.table["CO2CAOLtMp"]  = "MantleCACO3";
+        reactionTable.table["CO2CA2+LtMp"] = "MantleCaCO3";
+        reactionTable.table["CO2CAOLtMp"]  = "MantleCaCO3";
         
         
         //Mantle
-        reactionTable.table["MantleCACO3MtMp"] = "MantleCO2";
+        reactionTable.table["MantleCaCO3MtMp"] = "MantleCO2";
         reactionTable.table["MantleCO2H2O"]    = "MantleH2CO3";
 
         reactionTable.table["MantleH2CO3MtMp"] = "MantleHCO3-";
         reactionTable.table["MantleHCO3-LtHp"] = "CO32-";
-        reactionTable.table["MantleHCO3-CAO"]  = "MantleCACO3";
+        reactionTable.table["MantleHCO3-CAO"]  = "MantleCaCO3";
         reactionTable.table["CO32-MG2+"]       = "MGCO3";
-        reactionTable.table["MantleCACO3MtMp"] = "MantleCO2";
+        reactionTable.table["MantleCaCO3MtMp"] = "MantleCO2";
 
         reactionTable.table["MantleCO2HtHp"] = "CGraphite";
 
