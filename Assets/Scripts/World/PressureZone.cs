@@ -5,32 +5,22 @@ public class PressureZone : MonoBehaviour {
 
     private PlayerManager player;
     public uint nextLayer;
-    public int carbonsNeeded;
+    public string formulaNeeded;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerManager>())
+        if (other.tag.Equals("Player"))
         {
-            if (!player)
+            player = other.gameObject.GetComponent<PlayerManager>();
+            Molecule pmol = other.gameObject.GetComponentInChildren<Molecule>();
+            Debug.Log(pmol.formula);
+            if(pmol.formula == formulaNeeded)
             {
-                player = other.GetComponent<PlayerManager>();
-            }
-
-            if(player.GetNumOfCarbons() >= carbonsNeeded)
-            {
-
-                if (nextLayer == 3)
-                {
-                    player.BecomeDiamond();
-                }
-                else
-                {
-                    player.GetComponent<HoldInPlace>().enabled = true;
-                    player.GetComponent<FlyTo>().setTarget(transform.position);
-                    player.GetComponent<FlyTo>().enabled = true;
+                    player.gameObject.GetComponent<HoldInPlace>().enabled = true;
+                    player.gameObject.GetComponent<FlyTo>().setTarget(transform.position);
+                    player.gameObject.GetComponent<FlyTo>().enabled = true;
                     GameManager.art.SwitchLayer(nextLayer);
                     GameManager.music.moveDownLayer();
-                }
             }
         }
     }

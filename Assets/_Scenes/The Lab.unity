@@ -99,11 +99,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 419388, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -41.2
+      value: -15.81
       objectReference: {fileID: 0}
     - target: {fileID: 419388, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 20.1
+      value: -24.6
       objectReference: {fileID: 0}
     - target: {fileID: 419388, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -128,10 +128,6 @@ Prefab:
     - target: {fileID: 419388, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187290, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
@@ -179,7 +175,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 743313016}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!95 &262890532
 Animator:
   serializedVersion: 3
@@ -316,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: C
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -330,7 +326,6 @@ GameObject:
   - 4: {fileID: 500332084}
   - 212: {fileID: 500332085}
   - 114: {fileID: 500332086}
-  - 61: {fileID: 500332087}
   m_Layer: 0
   m_Name: The Lab (layer 2)_top
   m_TagString: Untagged
@@ -345,8 +340,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500332083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.1, y: 0.1, z: 0}
-  m_LocalScale: {x: 1.3404769, y: 1.2439733, z: 1}
+  m_LocalPosition: {x: -19.9, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1689346724}
@@ -396,20 +391,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalScale: {x: 1, y: 1, z: 1}
---- !u!61 &500332087
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 500332083}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 28.289997, y: 66.53999}
 --- !u!1 &743313015
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +399,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 743313016}
-  - 114: {fileID: 743313017}
   m_Layer: 0
   m_Name: Layer 1
   m_TagString: Untagged
@@ -437,6 +417,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 850011325}
   - {fileID: 2060406319}
   - {fileID: 1304334951}
   - {fileID: 1826967300}
@@ -445,18 +426,6 @@ Transform:
   - {fileID: 1407851991}
   m_Father: {fileID: 1027741731}
   m_RootOrder: 0
---- !u!114 &743313017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 743313015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91afe013faaa93240bd44631928bb8ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumCarbons: 0
 --- !u!1001 &761586164
 Prefab:
   m_ObjectHideFlags: 0
@@ -649,6 +618,7 @@ GameObject:
   - 23: {fileID: 850011327}
   - 61: {fileID: 850011326}
   - 114: {fileID: 850011329}
+  - 114: {fileID: 850011330}
   m_Layer: 0
   m_Name: PTZone
   m_TagString: Untagged
@@ -662,14 +632,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850011324}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.220001, y: 23.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.427614, y: 22.926931, z: 0}
   m_LocalScale: {x: 7.818819, y: 15.463322, z: 1}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children:
   - {fileID: 859215545}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 743313016}
+  m_RootOrder: 0
 --- !u!61 &850011326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -733,6 +703,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressure: Lp
   temperature: 
+--- !u!114 &850011330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 850011324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &859215541
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +826,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 1511743664
+  randomSeed: -794768354
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -2701,7 +2683,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 743313016}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!95 &1246231913
 Animator:
   serializedVersion: 3
@@ -2838,7 +2820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: C
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -2872,7 +2854,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 743313016}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!212 &1304334952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2958,7 +2940,7 @@ Transform:
   m_GameObject: {fileID: 1333363937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2076135, y: -0.57306796, z: 0}
-  m_LocalScale: {x: 1.1802385, y: 1.2437356, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1689346724}
@@ -3192,7 +3174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: carbonsNeeded
@@ -3202,9 +3184,29 @@ Prefab:
       propertyPath: nextLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: C
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1541167733 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_PrefabInternal: {fileID: 1541167732}
+--- !u!114 &1541167734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541167733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca71765860a3545bc074519345a87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1689346723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3215,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1689346724}
-  - 114: {fileID: 1689346725}
   m_Layer: 0
   m_Name: Layer 2
   m_TagString: Untagged
@@ -3236,18 +3237,6 @@ Transform:
   - {fileID: 1333363938}
   m_Father: {fileID: 1027741731}
   m_RootOrder: 1
---- !u!114 &1689346725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1689346723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91afe013faaa93240bd44631928bb8ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumCarbons: 0
 --- !u!1 &1826967297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,7 +3320,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 743313016}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!58 &1826967301
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3418,7 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: C
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -3452,7 +3441,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 743313016}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!212 &2060406320
 SpriteRenderer:
   m_ObjectHideFlags: 0

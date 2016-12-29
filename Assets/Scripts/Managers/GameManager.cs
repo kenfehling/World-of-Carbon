@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour {
         //Lt = Low Temp, Mt = Med Temp, Ht = Hi Temp
         //Lp = Low Pres, Mp = Med Pres, Hp = Hi Pres
 
+        //Lab Tutorial
+        reactionTable.table["CC"] = "C";
         //Air
         reactionTable.table["CO2"] = "CO2";
         reactionTable.table["O2C"] = "CO2";
@@ -115,7 +117,7 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["HCO3-H+"]  = "H2CO3";
         reactionTable.table["CO32-H+"]  = "HCO3-";
 
-        reactionTable.table["CO2H2OMt"] = "CH2O";
+        reactionTable.table["CO2H2OMt"] = "CH2O"; // To get to Bathypelagic
 
         reactionTable.table["CO2CAO"] = "CaCO3";
 

@@ -26,7 +26,7 @@ public class HoldInPlace : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             col.enabled = true;
-            //GetComponent<FlyTo>().enabled = false;
+            GetComponent<FlyTo>().enabled = false;
             enabled = false;
         }
 	}

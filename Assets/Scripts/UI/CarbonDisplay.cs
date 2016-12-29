@@ -22,7 +22,7 @@ public class CarbonDisplay : MonoBehaviour {
 
         displayText = "Formula: ";
         numOfCarbons = 1;
-        currentFormula = "";
+        currentFormula = GameObject.FindObjectOfType<PlayerManager>().GetFormula();
         updateDisplay();
 
 	}

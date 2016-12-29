@@ -54,6 +54,11 @@ public class FaderScript : MonoBehaviour {
                 rend.color = currentColor;
             }
 
+            else
+            {
+                gameObject.SetActive(false);
+            }
+
             transform.localScale = Vector3.Lerp(transform.localScale, two, Time.deltaTime * fadeInSpeed);
             if (transform.localScale.x > 1.998f)
             {
@@ -84,8 +89,12 @@ public class FaderScript : MonoBehaviour {
         if (gameObject.GetComponent<Collider2D>() != null)
             gameObject.GetComponent<Collider2D>().enabled = false;
 
-        rend.color = Color.white;
-        targetColor = Color.clear;
+        if (gameObject.GetComponent<SpriteRenderer>() != null)
+        {
+            rend.color = Color.white;
+            targetColor = Color.clear;
+            
+        }
         fadingOut = true;
     }
 

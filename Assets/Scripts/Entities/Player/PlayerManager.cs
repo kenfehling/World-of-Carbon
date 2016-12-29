@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour {
     private AudioSource source;
     private ReactionTableEntry.Pressure pressure;
     private ReactionTableEntry.Temperature temperature;
+    private Molecule molecule;
     private int numOfOxides;
     private int numOfCarbons;
     private Color carbonTint;
@@ -26,6 +27,7 @@ public class PlayerManager : MonoBehaviour {
 
         pressure = ReactionTableEntry.Pressure.lo;
         temperature = ReactionTableEntry.Temperature.lo;
+        molecule = child.GetComponent<Molecule>();
     }
 
     void Update()
@@ -58,6 +60,11 @@ public class PlayerManager : MonoBehaviour {
         Destroy(child.GetComponent<Rigidbody2D>());
         //Store the reference to the new child
         this.child = child;
+    }
+
+    public string GetFormula()
+    {
+        return molecule.formula;
     }
 
     public bool IsOxidePresent()
