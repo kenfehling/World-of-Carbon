@@ -25,13 +25,34 @@ public class PTZone : MonoBehaviour {
             zoneColor.r += 0.5f;
 
         if (temperature == "Lt")
-            zoneColor.b += 0.5f;
+        {
+            ps.startLifetime = 5.0f;
+            ps.startSpeed = 0.5f;
+            ParticleSystem.MinMaxCurve rate = ps.emission.rate;
+            rate.mode = ParticleSystemCurveMode.Constant;
+            rate.constantMax = 50.0f;
+            rate.constantMin = 50.0f;
+        }
 
         if (temperature == "Mt")
-            zoneColor.g += 0.5f;
+        {
+            ps.startLifetime = 2.0f;
+            ps.startSpeed = 2.0f;
+            ParticleSystem.MinMaxCurve rate = ps.emission.rate;
+            rate.mode = ParticleSystemCurveMode.Constant;
+            rate.constantMax = 50.0f;
+            rate.constantMin = 50.0f;
+        }
 
         if (temperature == "Ht")
-            zoneColor.r += 0.5f;
+       {
+            ps.startLifetime = 0.7f;
+            ps.startSpeed = 6.0f;
+            ParticleSystem.MinMaxCurve rate = ps.emission.rate;
+            rate.mode = ParticleSystemCurveMode.Constant;
+            rate.constantMax = 50.0f;
+            rate.constantMin = 50.0f;
+        }
         ps.startColor = zoneColor;
 	}
 	

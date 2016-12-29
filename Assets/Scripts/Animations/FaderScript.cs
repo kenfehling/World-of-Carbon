@@ -5,6 +5,9 @@ public class FaderScript : MonoBehaviour {
     [SerializeField]
     private Vector3 finalScale = new Vector3(1.0f, 1.0f, 1.0f);
 
+    [SerializeField]
+    private Color finalColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
     private SpriteRenderer rend;
     private Color targetColor;
     private Color currentColor;
@@ -15,7 +18,7 @@ public class FaderScript : MonoBehaviour {
 
     void Start () {
         rend = GetComponent<SpriteRenderer>();
-
+        targetColor = finalColor;
 	}
 	
 	void Update () {

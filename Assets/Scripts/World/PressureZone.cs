@@ -19,8 +19,9 @@ public class PressureZone : MonoBehaviour {
                     player.gameObject.GetComponent<HoldInPlace>().enabled = true;
                     player.gameObject.GetComponent<FlyTo>().setTarget(transform.position);
                     player.gameObject.GetComponent<FlyTo>().enabled = true;
-                    GameManager.art.SwitchLayer(nextLayer);
                     GameManager.music.moveDownLayer();
+                    GameManager.art.SwitchLayer(nextLayer);
+                    
             }
         }
     }
