@@ -51,23 +51,11 @@ public class UIHandler : MonoBehaviour {
         if (name == "Player")
         {
             found = true;
+            CarbonDisplay cd = GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>();
+            cd.fadeoutTimer = cd.stayTime;
             tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDImage))).GetComponent<Image>();
             tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDTitle))).GetComponent<Text>();
             tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDDescription))).GetComponent<Text>();
-        }
-        else if(name == "CO2")
-        {
-            found = true;
-            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDImage))).GetComponent<Image>();
-            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDTitle))).GetComponent<Text>();
-            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDDescription))).GetComponent<Text>();
-        }
-        else if(name == "Oxide")
-        {
-            found = true;
-            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDImage))).GetComponent<Image>();
-            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDTitle))).GetComponent<Text>();
-            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDDescription))).GetComponent<Text>();
         }
 
         else if (name == "RedMolecule")
@@ -92,6 +80,86 @@ public class UIHandler : MonoBehaviour {
             tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDImage))).GetComponent<Image>();
             tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDTitle))).GetComponent<Text>();
             tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.YelMolTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "CO2")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "O2" || name == "Oxide")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.OxideTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "H2O")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.H2OTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.H2OTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.H2OTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "SO")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.SOTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.SOTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.SOTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "H+")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HPlusTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HPlusTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HPlusTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "CAO")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CAOTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CAOTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CAOTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "NO3-")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.NO3MinusTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.NO3MinusTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.NO3MinusTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "HCO3-")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HCO3MinusTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HCO3MinusTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.HCO3MinusTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "CA2+")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Ca2PlusTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Ca2PlusTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Ca2PlusTHUDDescription))).GetComponent<Text>();
+        }
+
+        else if (name == "MG2+")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Mg2PlusTHUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Mg2PlusTHUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.Mg2PlusTHUDDescription))).GetComponent<Text>();
         }
 
 

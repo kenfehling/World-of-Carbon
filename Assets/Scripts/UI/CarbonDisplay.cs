@@ -32,7 +32,7 @@ public class CarbonDisplay : MonoBehaviour {
         if(fadeoutTimer > 0.0f)
         {
             fadeoutTimer -= Time.deltaTime;
-            fadeColor.a -= 0.25f* Time.deltaTime;
+            fadeColor.a -= 0.15f* Time.deltaTime;
             
         }
         text.material.color = fadeColor;

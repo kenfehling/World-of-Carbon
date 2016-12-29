@@ -24,38 +24,42 @@ public class Molecule : MonoBehaviour {
         transform.Rotate(new Vector3(0.0f, 0.0f, -20.0f) * Time.fixedDeltaTime);
     }
 
-	void OnTriggerEnter2D (Collider2D obj) {
-        Molecule player = obj.gameObject.GetComponentInChildren<Molecule>();
-        PlayerManager pMan = obj.gameObject.GetComponent<PlayerManager>();
-        if (player != null)
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (obj.tag.Equals("Player"))
         {
-            string combined = string.Concat(player.formula, formula);
-            combined = string.Concat(combined, player.temperature);
-            combined = string.Concat(combined, player.pressure);
-            
-            ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
-
-            Debug.Log(combined);
-
-            if (rt.table[combined] != null)
-                Debug.Log(rt.table[combined]);
-            //Lookup the combined string in the table;
-            if (rt.table[combined] != null)
+            Molecule player = obj.gameObject.GetComponentInChildren<Molecule>();
+            PlayerManager pMan = obj.gameObject.GetComponent<PlayerManager>();
+            if (player != null)
             {
-                Debug.Log("Reaction!");
-                Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
-                
-                //Play combine sound
-                AudioSource aSrc = pMan.GetAudioSource();
-                SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
-                soundManager.playCombineSound(aSrc);
+                string combined = string.Concat(player.formula, formula);
+                combined = string.Concat(combined, player.temperature);
+                combined = string.Concat(combined, player.pressure);
 
-                player.formula = rt.table[combined];
+                ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
 
-                //Update the formula display
-                GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>().setFormula(player.formula);
-                Destroy(this.gameObject);
+                Debug.Log(combined);
+
+                if (rt.table[combined] != null)
+                    Debug.Log(rt.table[combined]);
+                //Lookup the combined string in the table;
+                if (rt.table[combined] != null)
+                {
+                    Debug.Log("Reaction!");
+                    Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
+
+                    //Play combine sound
+                    AudioSource aSrc = pMan.GetAudioSource();
+                    SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
+                    soundManager.playCombineSound(aSrc);
+
+                    player.formula = rt.table[combined];
+
+                    //Update the formula display
+                    GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>().setFormula(player.formula);
+                    Destroy(this.gameObject);
+                }
             }
         }
-	}
+    }
 }

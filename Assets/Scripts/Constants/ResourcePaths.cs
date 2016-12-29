@@ -69,18 +69,6 @@ public class ResourcePaths {
         public static string PlayerTHUDTitle = PlayerTHUDRoot + "PlayerTitle";
         public static string PlayerTHUDDescription = PlayerTHUDRoot + "PlayerDescription";
 
-        //CO2
-        private static string CO2THUDRoot = UITHUDRoot + "CO2/";
-        public static string CO2THUDImage = CO2THUDRoot + "CO2";
-        public static string CO2THUDTitle = CO2THUDRoot + "CO2Title";
-        public static string CO2THUDDescription = CO2THUDRoot + "CO2Description";
-
-        //Oxide
-        private static string OxideTHUDRoot = UITHUDRoot + "Oxide/";
-        public static string OxideTHUDImage = OxideTHUDRoot + "Oxide";
-        public static string OxideTHUDTitle = OxideTHUDRoot + "OxideTitle";
-        public static string OxideTHUDDescription = OxideTHUDRoot + "OxideDescription";
-
         //Red Molecule
         private static string RedMolTHUDRoot = UITHUDRoot + "RedMol/";
         public static string RedMolTHUDImage = RedMolTHUDRoot + "RedMol";
@@ -98,4 +86,64 @@ public class ResourcePaths {
         public static string YelMolTHUDImage = YelMolTHUDRoot + "YelMol";
         public static string YelMolTHUDTitle = YelMolTHUDRoot + "YelMolTitle";
         public static string YelMolTHUDDescription = YelMolTHUDRoot + "YelMolDescription";
+
+        //CO2
+        private static string CO2THUDRoot = UITHUDRoot + "CO2/";
+        public static string CO2THUDImage = CO2THUDRoot + "CO2";
+        public static string CO2THUDTitle = CO2THUDRoot + "CO2Title";
+        public static string CO2THUDDescription = CO2THUDRoot + "CO2Description";
+
+        //O2
+        private static string OxideTHUDRoot = UITHUDRoot + "O2/";
+        public static string OxideTHUDImage = OxideTHUDRoot + "O2";
+        public static string OxideTHUDTitle = OxideTHUDRoot + "O2Title";
+        public static string OxideTHUDDescription = OxideTHUDRoot + "O2Description";
+
+        //H2O
+        private static string H2OTHUDRoot = UITHUDRoot + "H2O/";
+        public static string H2OTHUDImage = H2OTHUDRoot + "H2O";
+        public static string H2OTHUDTitle = H2OTHUDRoot + "H2OTitle";
+        public static string H2OTHUDDescription = H2OTHUDRoot + "H2ODescription";
+        
+        //SO
+        private static string SOTHUDRoot = UITHUDRoot + "SO/";
+        public static string SOTHUDImage = SOTHUDRoot + "SO";
+        public static string SOTHUDTitle = SOTHUDRoot + "SOTitle";
+        public static string SOTHUDDescription = SOTHUDRoot + "SODescription";
+
+        //HPlus
+        private static string HPlusTHUDRoot = UITHUDRoot + "H+/";
+        public static string HPlusTHUDImage = HPlusTHUDRoot + "H+";
+        public static string HPlusTHUDTitle = HPlusTHUDRoot + "H+Title";
+        public static string HPlusTHUDDescription = HPlusTHUDRoot + "H+Description";
+
+        //HCO3-
+        private static string HCO3MinusTHUDRoot = UITHUDRoot + "HCO3-/";
+        public static string HCO3MinusTHUDImage = HCO3MinusTHUDRoot + "HCO3-";
+        public static string HCO3MinusTHUDTitle = HCO3MinusTHUDRoot + "HCO3-Title";
+        public static string HCO3MinusTHUDDescription = HCO3MinusTHUDRoot + "HCO3-Description";
+
+        //NO3Minus
+        private static string NO3MinusTHUDRoot = UITHUDRoot + "NO3-/";
+        public static string NO3MinusTHUDImage = NO3MinusTHUDRoot + "NO3-";
+        public static string NO3MinusTHUDTitle = NO3MinusTHUDRoot + "NO3-Title";
+        public static string NO3MinusTHUDDescription = NO3MinusTHUDRoot + "NO3-Description";
+
+        //CAO
+        private static string CAOTHUDRoot = UITHUDRoot + "CAO/";
+        public static string CAOTHUDImage = CAOTHUDRoot + "CAO";
+        public static string CAOTHUDTitle = CAOTHUDRoot + "CAOTitle";
+        public static string CAOTHUDDescription = CAOTHUDRoot + "CAODescription";
+
+        //Ca2Plus
+        private static string Ca2PlusTHUDRoot = UITHUDRoot + "Ca2+/";
+        public static string Ca2PlusTHUDImage = Ca2PlusTHUDRoot + "Ca2+";
+        public static string Ca2PlusTHUDTitle = Ca2PlusTHUDRoot + "Ca2+Title";
+        public static string Ca2PlusTHUDDescription = Ca2PlusTHUDRoot + "Ca2+Description";
+
+        //Mg2Plus
+        private static string Mg2PlusTHUDRoot = UITHUDRoot + "Mg2+/";
+        public static string Mg2PlusTHUDImage = Mg2PlusTHUDRoot + "Mg2+";
+        public static string Mg2PlusTHUDTitle = Mg2PlusTHUDRoot + "Mg2+Title";
+        public static string Mg2PlusTHUDDescription = Mg2PlusTHUDRoot + "Mg2+Description";
 }
