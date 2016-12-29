@@ -73,7 +73,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: H+
+  m_Text: H ion
 --- !u!222 &222000013444210670
 CanvasRenderer:
   m_ObjectHideFlags: 1
