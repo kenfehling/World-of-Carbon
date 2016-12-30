@@ -63,6 +63,26 @@ public class PTZone : MonoBehaviour {
             Molecule pmol = other.gameObject.GetComponentInChildren<Molecule>();
             pmol.pressure = pressure;
             pmol.temperature = temperature;
+
+            string combined = string.Concat(pmol.formula, string.Concat(temperature, pressure));
+
+            ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
+            //Lookup the combined string in the table;
+            if (rt.table[combined] != null)
+            {
+                Debug.Log("Reaction!");
+                Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
+
+                //Play combine sound
+                AudioSource aSrc = other.gameObject.GetComponent<PlayerManager>().GetAudioSource();
+                SoundManager soundManager = GameObject.Find("GameManager").GetComponent<GameManager>().getSoundManager();
+                soundManager.playCombineSound(aSrc);
+
+                pmol.formula = rt.table[combined];
+
+                //Update the formula display
+                GameObject.Find("Formula Display").gameObject.GetComponent<CarbonDisplay>().setFormula(pmol.formula);
+            }
         }
     }
 

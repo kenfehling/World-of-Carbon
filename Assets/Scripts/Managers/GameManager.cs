@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["CO2"] = "CO2";
         reactionTable.table["O2C"] = "CO2";
 
-        reactionTable.table["CO2H2O"] = "O2";
+        reactionTable.table["CO2H2O"] = "O2"; //Transition to Stratosphere
 
         reactionTable.table["O2SO"]  = "SO2";
         reactionTable.table["SOO2"]  = "SO2";
@@ -113,19 +113,17 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["CO2Mt"] = "WaterCO2";
 
         //Water
-        reactionTable.table["WaterCO2"] = "H2CO3";
+        reactionTable.table["WaterCO2H2O"] = "H2CO3";
         reactionTable.table["HCO3-H+"]  = "H2CO3";
-        reactionTable.table["CO32-H+"]  = "HCO3-";
 
-        reactionTable.table["CO2H2OMt"] = "CH2O"; // To get to Bathypelagic
+        reactionTable.table["H2CO3MtMp"] = "CO2"; 
 
-        reactionTable.table["CO2CAO"] = "CaCO3";
+        reactionTable.table["CO2CAO"] = "CaCO3"; //To get to Hedalpelagic
 
-        reactionTable.table["CO2H2OMt"] = "CH2O";
-
-        reactionTable.table["H2CO3MtMp"] = "CO2";
-        reactionTable.table["HCO3-H2O"]  = "CO32-";
+        reactionTable.table["CO2H2OMt"] = "CH2O"; 
         
+        reactionTable.table["HCO3-H2O"] = "CO32-";
+        reactionTable.table["CO32-H+"]  = "HCO3-"; //To get to Bathypelagic
         reactionTable.table["H2CO3H2O"] = "HCO3-";
         reactionTable.table["CaCO3H2O"] = "HCO3-";
         reactionTable.table["CaCO3CO2"] = "HCO3-";

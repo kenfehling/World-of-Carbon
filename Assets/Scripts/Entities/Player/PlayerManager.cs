@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour {
     private AudioSource source;
     private ReactionTableEntry.Pressure pressure;
     private ReactionTableEntry.Temperature temperature;
-    private Molecule molecule;
+    public string startFormula;
     private int numOfOxides;
     private int numOfCarbons;
     private Color carbonTint;
@@ -27,7 +27,8 @@ public class PlayerManager : MonoBehaviour {
 
         pressure = ReactionTableEntry.Pressure.lo;
         temperature = ReactionTableEntry.Temperature.lo;
-        molecule = child.GetComponent<Molecule>();
+        Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Molecule>());
+        startFormula = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Molecule>().formula;
     }
 
     void Update()
@@ -64,7 +65,7 @@ public class PlayerManager : MonoBehaviour {
 
     public string GetFormula()
     {
-        return molecule.formula;
+        return startFormula;
     }
 
     public bool IsOxidePresent()

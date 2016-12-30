@@ -35,10 +35,10 @@ public class Molecule : MonoBehaviour {
                 string combined = string.Concat(player.formula, formula);
                 combined = string.Concat(combined, player.temperature);
                 combined = string.Concat(combined, player.pressure);
-
+                Debug.Log(combined);
                 ReactionTable rt = GameObject.Find("GameManager").GetComponent<GameManager>().getReactionTable();
 
-                Debug.Log(combined);
+                
 
                 if (rt.table[combined] != null)
                     Debug.Log(rt.table[combined]);
@@ -56,7 +56,7 @@ public class Molecule : MonoBehaviour {
                     player.formula = rt.table[combined];
 
                     //Update the formula display
-                    GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>().setFormula(player.formula);
+                    GameObject.Find("Formula Display").gameObject.GetComponent<CarbonDisplay>().setFormula(player.formula);
                     Destroy(this.gameObject);
                 }
             }

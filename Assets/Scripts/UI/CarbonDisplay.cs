@@ -8,22 +8,29 @@ public class CarbonDisplay : MonoBehaviour {
     private string displayText;
     private int numOfCarbons;
     private string currentFormula;
-
+    
+    public string targetFormulaText;
     public float stayTime = 8.0f;
     public float fadeoutTimer;
 
     public Color fadeColor;
-    //TODO: CHANGE TO FORMULA
+
+    public bool notification;
+
 	// Use this for initialization
 	void Start () {
         text = gameObject.GetComponent<Text>();
         fadeColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         fadeoutTimer = stayTime;
 
-        displayText = "Formula: ";
+        if(!notification)
+            displayText = "Formula: " + currentFormula;
+
         numOfCarbons = 1;
         currentFormula = GameObject.FindObjectOfType<PlayerManager>().GetFormula();
-        updateDisplay();
+
+        if(!notification)
+            updateDisplay();
 
 	}
 
@@ -41,7 +48,12 @@ public class CarbonDisplay : MonoBehaviour {
 
     private void updateDisplay()
     {
-        text.text = displayText + currentFormula;
+        if (!notification)
+            text.text = displayText + currentFormula;
+
+        else
+            text.text = targetFormulaText;
+
     }
 	
 	public void setNumOfCarbons(int numOfCarbons)
@@ -49,17 +61,22 @@ public class CarbonDisplay : MonoBehaviour {
         this.numOfCarbons = numOfCarbons;
         updateDisplay();
     }
+    
+    public void Notify()
+    {
+        updateDisplay();
+    }
 
     public void setFormula(string formula)
     {
         if(formula.Contains("Mantle"))
         {
-            formula = formula.Substring(5);
+            formula = formula.Substring(6);
         }
 
         if (formula.Contains("Water"))
         {
-            formula = formula.Substring(4);
+            formula = formula.Substring(5);
         }
 
         currentFormula = formula;
