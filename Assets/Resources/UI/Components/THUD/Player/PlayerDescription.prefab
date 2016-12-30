@@ -61,7 +61,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is you!
+  m_Text: 'This is you! Your current formula is on the top-left.
+
+    Double-tap on other molecules to get more info about them.
+
+'
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1

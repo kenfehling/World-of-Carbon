@@ -52,7 +52,7 @@ public class UIHandler : MonoBehaviour {
         {
             found = true;
             CarbonDisplay cd = GameObject.FindObjectOfType<CarbonDisplay>().GetComponent<CarbonDisplay>();
-            cd.fadeoutTimer = cd.stayTime;
+            cd.setFormula("");
             tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDImage))).GetComponent<Image>();
             tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDTitle))).GetComponent<Text>();
             tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.PlayerTHUDDescription))).GetComponent<Text>();

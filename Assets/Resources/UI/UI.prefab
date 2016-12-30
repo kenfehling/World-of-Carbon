@@ -10,8 +10,8 @@ GameObject:
   - 224: {fileID: 22424422}
   - 222: {fileID: 22222316}
   - 114: {fileID: 11493872}
-  - 114: {fileID: 11406186}
   - 114: {fileID: 114000012429994082}
+  - 114: {fileID: 114000010860385792}
   m_Layer: 5
   m_Name: Notification
   m_TagString: UI
@@ -38,22 +38,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11406186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c826b959295b12d479c822e4920961bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetFormulaText: 'Need to be: CH2O'
-  stayTime: 8
-  fadeoutTimer: 5
-  fadeColor: {r: 0, g: 0, b: 0, a: 0}
-  notification: 1
 --- !u!114 &11450712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,6 +346,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000010860385792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff89a06d910f4894abd51b74819e687b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 
+  stayTime: 8
+  fadeoutTimer: 0
+  fadeColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114000011160640892
 MonoBehaviour:
   m_ObjectHideFlags: 1
