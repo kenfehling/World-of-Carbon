@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class PressureZone : MonoBehaviour {
 
     private PlayerManager player;
     public uint nextLayer;
+    public int nextLevel;
     public string formulaNeeded;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -20,8 +21,15 @@ public class PressureZone : MonoBehaviour {
                     player.gameObject.GetComponent<FlyTo>().setTarget(transform.position);
                     player.gameObject.GetComponent<FlyTo>().enabled = true;
                     GameManager.music.moveDownLayer();
-                    GameManager.art.SwitchLayer(nextLayer);
+
+                    if(nextLayer != 3)
+                        GameManager.art.SwitchLayer(nextLayer);
                     
+                    else
+                    {
+                        SceneManager.LoadScene(nextLevel);
+                    }
+
             }
         }
     }

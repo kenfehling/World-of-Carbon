@@ -50,7 +50,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d70aa05f53e61d74383a6a978fd12f8c, type: 3}
-    m_FontSize: 28
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -61,11 +61,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a "H2O" molecule
-
-    Air: Turns into Oxygen (O2) with the help of CO2
-
-    Water: Turns into Carbonic Acid (H2CO3) with the help of CO2 '
+  m_Text: "This is a \"H2O\" molecule\nAir: Turns into Oxygen (O2) with the help of
+    CO2\nWater: Turns into Carbonic Acid (H2CO3) with the help of CO2 \nTurns into
+    CO32- with the help of HCO3-"
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1
