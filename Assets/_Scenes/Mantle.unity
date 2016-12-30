@@ -416,6 +416,19 @@ Prefab:
       propertyPath: nextLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: CDiamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: message
+      value: 'Need to be: C (Diamond)'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_IsPrefabParent: 0
@@ -678,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &777636540
 Transform:
   m_ObjectHideFlags: 0
@@ -2867,7 +2880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1122428147
 Transform:
   m_ObjectHideFlags: 0

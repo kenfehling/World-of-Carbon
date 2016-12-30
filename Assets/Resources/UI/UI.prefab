@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: 1, b: 1, a: 1}
-  fadeInSpeed: 5
+  fadeInSpeed: 8
 --- !u!114 &114000011160640892
 MonoBehaviour:
   m_ObjectHideFlags: 1
