@@ -50,7 +50,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d70aa05f53e61d74383a6a978fd12f8c, type: 3}
-    m_FontSize: 28
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -67,11 +67,7 @@ MonoBehaviour:
 
     Pressure: LO
 
-    Turns into Water with the help of Oxygen: O2
-
-    Turns into Carbon Dioxide with the help of Oxygen: O2
-
-'
+    Air: Turns into Carbon Dioxide with the help of Oxygen: O2'
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1

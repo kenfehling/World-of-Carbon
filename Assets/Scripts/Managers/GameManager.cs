@@ -99,15 +99,20 @@ public class GameManager : MonoBehaviour {
 
         //Lab Tutorial
         reactionTable.table["CC"] = "C";
+
         //Air
         reactionTable.table["CO2"] = "CO2";
         reactionTable.table["O2C"] = "CO2";
+        reactionTable.table["O2CH4"] = "CO2";
 
         reactionTable.table["CO2H2O"] = "O2"; //Transition to Stratosphere
+        reactionTable.table["H2OCO2"] = "O2"; //Transition to Stratosphere
 
         reactionTable.table["O2SO"]  = "SO2";
         reactionTable.table["SOO2"]  = "SO2";
         reactionTable.table["SO2O2"] = "SO3";
+
+        reactionTable.table["SO2CH4"] = "H2O"; //Transition to Troposphere
 
         //Transition Air->Water
         reactionTable.table["CO2Mt"] = "WaterCO2";
@@ -118,11 +123,11 @@ public class GameManager : MonoBehaviour {
 
         reactionTable.table["H2CO3MtMp"] = "CO2"; 
 
-        reactionTable.table["CO2CAO"] = "CaCO3"; //To get to Hedalpelagic
+        reactionTable.table["CO2CAO"] = "CaCO3";
 
-        reactionTable.table["CO2H2OMt"] = "CH2O"; 
-        
-        reactionTable.table["HCO3-H2O"] = "CO32-";
+        reactionTable.table["CO2H2OMt"] = "CH2O";
+
+        reactionTable.table["HCO3-H2O"] = "CO32-"; //To get to Hedalpelagic
         reactionTable.table["CO32-H+"]  = "HCO3-"; //To get to Bathypelagic
         reactionTable.table["H2CO3H2O"] = "HCO3-";
         reactionTable.table["CaCO3H2O"] = "HCO3-";

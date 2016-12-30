@@ -90,6 +90,14 @@ public class UIHandler : MonoBehaviour {
             tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CO2THUDDescription))).GetComponent<Text>();
         }
 
+        else if (name == "CH4")
+        {
+            found = true;
+            tempImg = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CH4THUDImage))).GetComponent<Image>();
+            tempTitle = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CH4THUDTitle))).GetComponent<Text>();
+            tempDescription = ((GameObject)Instantiate(Resources.Load(ResourcePaths.CH4THUDDescription))).GetComponent<Text>();
+        }
+
         else if (name == "O2" || name == "Oxide")
         {
             found = true;
