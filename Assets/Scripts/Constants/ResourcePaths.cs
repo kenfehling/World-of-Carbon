@@ -93,6 +93,12 @@ public class ResourcePaths {
         public static string CO2THUDTitle = CO2THUDRoot + "CO2Title";
         public static string CO2THUDDescription = CO2THUDRoot + "CO2Description";
 
+        //4H
+        private static string HTHUDRoot = UITHUDRoot + "4H/";
+        public static string HTHUDImage = HTHUDRoot + "4H";
+        public static string HTHUDTitle = HTHUDRoot + "4HTitle";
+        public static string HTHUDDescription = HTHUDRoot + "4HDescription";
+
         //CH4
         private static string CH4THUDRoot = UITHUDRoot + "CH4/";
         public static string CH4THUDImage = CH4THUDRoot + "CH4";

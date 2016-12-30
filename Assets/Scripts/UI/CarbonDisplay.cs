@@ -23,10 +23,16 @@ public class CarbonDisplay : MonoBehaviour {
         fadeColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         fadeoutTimer = stayTime;
 
-        currentFormula = GameObject.FindObjectOfType<PlayerManager>().GetFormula();
+        currentFormula = GameObject.FindObjectOfType<PlayerManager>().gameObject.GetComponentInChildren<Molecule>().formula;
+        if (currentFormula.Contains("Mantle"))
+        {
+            currentFormula = currentFormula.Substring(6);
+        }
 
-        if(!notification)
-            displayText = "Formula: " + currentFormula;
+        if (currentFormula.Contains("Water"))
+        {
+            currentFormula = currentFormula.Substring(5);
+        }
 
         numOfCarbons = 1;
 
@@ -50,7 +56,7 @@ public class CarbonDisplay : MonoBehaviour {
     private void updateDisplay()
     {
         if (!notification)
-            text.text = displayText + currentFormula;
+            text.text = "Formula: " + currentFormula;
 
         else
             text.text = targetFormulaText;

@@ -101,18 +101,12 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["CC"] = "C";
 
         //Air
-        reactionTable.table["CO2"] = "CO2";
-        reactionTable.table["O2C"] = "CO2";
-        reactionTable.table["O2CH4"] = "CO2";
+        reactionTable.table["CO2"] = "CO2"; //Transition to Troposphere
+        reactionTable.table["O2C"] = "CO2"; //Transition to Troposphere
+        reactionTable.table["CH4O2"] = "CO2"; //Transition to Troposphere
+        reactionTable.table["C4H"] = "CH4"; //Transition to Stratosphere
 
-        reactionTable.table["CO2H2O"] = "O2"; //Transition to Stratosphere
-        reactionTable.table["H2OCO2"] = "O2"; //Transition to Stratosphere
-
-        reactionTable.table["O2SO"]  = "SO2";
-        reactionTable.table["SOO2"]  = "SO2";
-        reactionTable.table["SO2O2"] = "SO3";
-
-        reactionTable.table["SO2CH4"] = "H2O"; //Transition to Troposphere
+        reactionTable.table["CO2H2O"] = "O2"; 
 
         //Transition Air->Water
         reactionTable.table["CO2Mt"] = "WaterCO2";
@@ -122,8 +116,6 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["HCO3-H+"]  = "H2CO3";
 
         reactionTable.table["H2CO3MtMp"] = "CO2"; 
-
-        reactionTable.table["CO2CAO"] = "CaCO3";
 
         reactionTable.table["CO2H2OMt"] = "CH2O";
 
@@ -145,7 +137,7 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["MantleHCO3-LtHp"] = "CO32-";
         reactionTable.table["MantleHCO3-CAO"]  = "MantleCaCO3";
         reactionTable.table["CO32-MG2+"]       = "MGCO3"; //Transition to Core
-
+        reactionTable.table["MantleCO2HtHp"] = "CGraphite";
         reactionTable.table["CGraphiteHtHp"] = "CDiamond";
 
         reactionTable.table["MGCO3HtHp"] = "CDiamond";
