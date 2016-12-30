@@ -62,8 +62,9 @@ public class CarbonDisplay : MonoBehaviour {
         updateDisplay();
     }
     
-    public void Notify()
+    public void Notify(string note)
     {
+        currentFormula = note;
         updateDisplay();
     }
 
