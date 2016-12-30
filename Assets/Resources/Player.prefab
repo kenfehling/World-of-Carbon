@@ -32,6 +32,7 @@ GameObject:
   - 58: {fileID: 5849296}
   - 114: {fileID: 11416440}
   - 114: {fileID: 11400258}
+  - 114: {fileID: 114000012491311226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -46,7 +47,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.81, y: -24.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.89634806, y: 0.7432945, z: 2.2109754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8288aaa662dbde14993c7d90e731064e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startFormula: 
 --- !u!114 &11469852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: C
+  formula: MantleCaCO3
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -226,3 +228,20 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187290}
   m_IsPrefabParent: 1
+--- !u!114 &114000012491311226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198b6dd29d22e0641a7021d94194cd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carbonForms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
