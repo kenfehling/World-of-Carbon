@@ -27,7 +27,7 @@ public class PressureZone : MonoBehaviour {
                     
                     else
                     {
-                        SceneManager.LoadScene(nextLevel);
+                        GameManager.FindObjectOfType<TransitionFade>().StartFade(nextLevel);
                     }
 
             }

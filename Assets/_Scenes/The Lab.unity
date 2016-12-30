@@ -595,24 +595,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 22424422, guid: bcebe4abe99ff8843844795bae0151b1, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012731913666, guid: bcebe4abe99ff8843844795bae0151b1,
+    - target: {fileID: 114000010917061300, guid: bcebe4abe99ff8843844795bae0151b1,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000011714375904, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013515562022, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Formula: '
+      propertyPath: fadeInSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcebe4abe99ff8843844795bae0151b1, type: 2}
