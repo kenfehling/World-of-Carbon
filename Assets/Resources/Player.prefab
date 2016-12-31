@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21260904}
   - 114: {fileID: 11469852}
   - 50: {fileID: 5024590}
+  - 95: {fileID: 95000010683540692}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -47,7 +48,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.21, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.89634806, y: 0.7432945, z: 2.2109754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: C
+  formula: MantleCaCO3
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -228,6 +229,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187290}
   m_IsPrefabParent: 1
+--- !u!95 &95000010683540692
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000012491311226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,8 +258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carbonForms:
-  - {fileID: 21300000, guid: 9a931a0c715274de8813a1376c9dee8a, type: 3}
-  - {fileID: 21300000, guid: 34f2201dd59434486a5616de35af4440, type: 3}
-  - {fileID: 21300000, guid: 1b034f3c08ba145b09cd0c43c8f5ebe3, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 72fe3114f893eb14cac1525451f2c501, type: 3}
+  - {fileID: 21300000, guid: d888ddeeb4195f34e9c7f1ffd5f0420b, type: 3}
+  - {fileID: 21300000, guid: 28a77a65c7ca0b8478ed1c434a4b588a, type: 3}
+  - {fileID: 21300000, guid: 94f53380964e04f44ab421be22f96733, type: 3}
+  - {fileID: 21300000, guid: a83da95a9c47f6f4a97fcc3173971531, type: 3}
+  carbonAnimations:
+  - {fileID: 9100000, guid: a103608ded18c954db8d920138b01b21, type: 2}
+  - {fileID: 9100000, guid: e18fb385fabc0474c87236b87384f161, type: 2}
+  - {fileID: 9100000, guid: 14f90a928cb84d345af0a4eab2cdca8b, type: 2}
+  - {fileID: 9100000, guid: 14f90a928cb84d345af0a4eab2cdca8b, type: 2}
   - {fileID: 0}

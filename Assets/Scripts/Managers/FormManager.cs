@@ -4,8 +4,12 @@ using System.Text.RegularExpressions;
 public class FormManager : MonoBehaviour {
     [SerializeField]
     private Sprite[] carbonForms = new Sprite[5];
+    [SerializeField]
+    private RuntimeAnimatorController[] carbonAnimations = new RuntimeAnimatorController[5];
+
 
     private SpriteRenderer moleculeSprite;
+    private Animator moleculeAnimator;
     private Molecule pMol;
     private string currentForm;
 
@@ -16,6 +20,7 @@ public class FormManager : MonoBehaviour {
 
         currentForm = pMol.formula;
         moleculeSprite = GetComponentInChildren<SpriteRenderer>();
+        moleculeAnimator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -33,12 +38,14 @@ public class FormManager : MonoBehaviour {
         {
             Debug.Log("You are C");
             moleculeSprite.sprite = carbonForms[0];
+            moleculeAnimator.runtimeAnimatorController = carbonAnimations[0];
         }
 
         else if (currentForm == "CO2")
         {
             Debug.Log("You are CO2");
             moleculeSprite.sprite = carbonForms[1];
+            moleculeAnimator.runtimeAnimatorController = carbonAnimations[1];
 
         }
 
@@ -46,14 +53,23 @@ public class FormManager : MonoBehaviour {
         {
             Debug.Log("You are CO3");
             moleculeSprite.sprite = carbonForms[2];
+            moleculeAnimator.runtimeAnimatorController = carbonAnimations[2];
 
         }
 
-        else if (currentForm.IndexOf("CDiamond") != -1)
+        else if (currentForm == "CGraphite")
+        {
+            Debug.Log("You are Graphite");
+            moleculeSprite.sprite = carbonForms[3];
+            moleculeAnimator.runtimeAnimatorController = carbonAnimations[3];
+
+        }
+
+        else if (currentForm == "CDiamond")
         {
             Debug.Log("You are Diamond!");
-            moleculeSprite.sprite = carbonForms[3];
-
+            moleculeSprite.sprite = carbonForms[4];
+            moleculeAnimator.runtimeAnimatorController = carbonAnimations[4];
         }
 	}
 }
