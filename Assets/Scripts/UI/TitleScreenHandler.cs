@@ -12,4 +12,10 @@ public class TitleScreenHandler : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void PlayCredits()
+    {
+        Handheld.PlayFullScreenMovie("Credits.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
+
+    }
 }
