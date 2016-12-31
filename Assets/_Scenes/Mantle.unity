@@ -679,6 +679,102 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &734927604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1122428147}
+    m_Modifications:
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: carbonsNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_Name
+      value: HighPressureZone (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: message
+      value: Volcano! Leads to Stratosphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000011645002838, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.7744608
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1.403274
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: warpLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &734927605 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_PrefabInternal: {fileID: 734927604}
 --- !u!1 &777636539
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &777636540
 Transform:
   m_ObjectHideFlags: 0
@@ -716,6 +812,7 @@ Transform:
   - {fileID: 1079102704}
   - {fileID: 1516464833}
   - {fileID: 1124525714}
+  - {fileID: 2018825136}
   m_Father: {fileID: 1677606668}
   m_RootOrder: 0
 --- !u!114 &777636541
@@ -2899,6 +2996,9 @@ Transform:
   - {fileID: 847860387}
   - {fileID: 813707729}
   - {fileID: 1625026304}
+  - {fileID: 1152010266}
+  - {fileID: 1570093025}
+  - {fileID: 734927605}
   m_Father: {fileID: 1677606668}
   m_RootOrder: 2
 --- !u!114 &1122428148
@@ -2980,6 +3080,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1001 &1152010265
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1122428147}
+    m_Modifications:
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -13.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: carbonsNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_Name
+      value: HighPressureZone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: message
+      value: Volcano! Leads to Stratosphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000011645002838, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.7744608
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1.403274
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: warpLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1152010266 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_PrefabInternal: {fileID: 1152010265}
 --- !u!4 &1227453371 stripped
 Transform:
   m_PrefabParentObject: {fileID: 415006, guid: 8c83e0596deced8479ee7bae351cb243, type: 2}
@@ -3206,6 +3402,102 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
   m_PrefabInternal: {fileID: 1387015297}
+--- !u!1001 &1570093024
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1122428147}
+    m_Modifications:
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: carbonsNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_Name
+      value: HighPressureZone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: message
+      value: Volcano! Leads to Stratosphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000011645002838, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.7744608
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1.403274
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: warpLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1570093025 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_PrefabInternal: {fileID: 1570093024}
 --- !u!1001 &1621636032
 Prefab:
   m_ObjectHideFlags: 0
@@ -3844,6 +4136,98 @@ MonoBehaviour:
   - {fileID: 777636539}
   - {fileID: 947033923}
   - {fileID: 1122428146}
+--- !u!1001 &2018825135
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 777636540}
+    m_Modifications:
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -13.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: carbonsNeeded
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_Name
+      value: HighPressureZone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 127126, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: m_TagString
+      value: HPZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: formulaNeeded
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: message
+      value: Geyser! Leads to Bathypelagic Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000011645002838, guid: f827f7309177c7c4491dff09026e4ba3,
+        type: 2}
+      propertyPath: m_Radius
+      value: 3.8456373
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1.1713276
+      objectReference: {fileID: 0}
+    - target: {fileID: 19810464, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: nextLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+      propertyPath: warpLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &2018825136 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 420258, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
+  m_PrefabInternal: {fileID: 2018825135}
 --- !u!1001 &2023076454
 Prefab:
   m_ObjectHideFlags: 0

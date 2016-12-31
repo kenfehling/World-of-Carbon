@@ -58,6 +58,10 @@ public class GameManager : MonoBehaviour {
         // Start first level
         state = GameState.loading;
         
+        if(Tracker.MustJump())
+        {
+            Tracker.JumpToTransfer();
+        }
 
         //This is just so the old "Gameplay" scene doesn't break
         #pragma warning disable 0618 // Type or member is obsolete

@@ -6,6 +6,7 @@ public class PressureZone : MonoBehaviour {
     private PlayerManager player;
     public uint nextLayer;
     public int nextLevel;
+    public uint warpLayer;
     public string formulaNeeded;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -15,21 +16,27 @@ public class PressureZone : MonoBehaviour {
             player = other.gameObject.GetComponent<PlayerManager>();
             Molecule pmol = other.gameObject.GetComponentInChildren<Molecule>();
             Debug.Log(pmol.formula);
-            if(pmol.formula == formulaNeeded)
+            if(pmol.formula == formulaNeeded && nextLayer < 3)
             {
                     player.gameObject.GetComponent<HoldInPlace>().enabled = true;
                     player.gameObject.GetComponent<FlyTo>().setTarget(transform.position);
                     player.gameObject.GetComponent<FlyTo>().enabled = true;
                     GameManager.music.moveDownLayer();
 
-                    if(nextLayer != 3)
+                    if(nextLayer < 3)
                         GameManager.art.SwitchLayer(nextLayer);
                     
-                    else
+                    else if(nextLayer == 3)
                     {
                         GameManager.FindObjectOfType<TransitionFade>().StartFade(nextLevel);
                     }
 
+            }
+
+            else if(nextLayer > 3)
+            {
+                Tracker.SetTransferLayer(warpLayer);
+                GameManager.FindObjectOfType<TransitionFade>().StartFade(nextLevel);
             }
         }
     }

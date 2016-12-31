@@ -10,14 +10,26 @@ public class LayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        currentLayer = layers[0];
 
-        currentLayer.SetActive(true);
-
-        for(int i=1; i<layers.Length; i++)
+        if(!Tracker.MustJump())
         {
-            layers[i].SetActive(false);
+            currentLayer = layers[0];
+            currentLayer.SetActive(true);
+
+            for(int i=1; i<layers.Length; i++)
+            {
+                layers[i].SetActive(false);
+            }
         }
+
+
+        else
+        {
+            currentLayer = layers[Tracker.layerTransfer];
+            currentLayer.SetActive(true);
+        }
+
+       
 	}
 	
 	// Update is called once per frame
