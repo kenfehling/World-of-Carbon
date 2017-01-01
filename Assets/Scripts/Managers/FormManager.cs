@@ -36,14 +36,12 @@ public class FormManager : MonoBehaviour {
         Debug.Log(currentForm);
         if(currentForm == "C")
         {
-            Debug.Log("You are C");
             moleculeSprite.sprite = carbonForms[0];
             moleculeAnimator.runtimeAnimatorController = carbonAnimations[0];
         }
 
         else if (currentForm == "CO2")
         {
-            Debug.Log("You are CO2");
             moleculeSprite.sprite = carbonForms[1];
             moleculeAnimator.runtimeAnimatorController = carbonAnimations[1];
 
@@ -51,7 +49,6 @@ public class FormManager : MonoBehaviour {
 
         else if (currentForm == "CO3")
         {
-            Debug.Log("You are CO3");
             moleculeSprite.sprite = carbonForms[2];
             moleculeAnimator.runtimeAnimatorController = carbonAnimations[2];
 
@@ -59,7 +56,6 @@ public class FormManager : MonoBehaviour {
 
         else if (currentForm == "CGraphite")
         {
-            Debug.Log("You are Graphite");
             moleculeSprite.sprite = carbonForms[3];
             moleculeAnimator.runtimeAnimatorController = carbonAnimations[3];
 
@@ -67,7 +63,6 @@ public class FormManager : MonoBehaviour {
 
         else if (currentForm == "CDiamond")
         {
-            Debug.Log("You are Diamond!");
             moleculeSprite.sprite = carbonForms[4];
             moleculeAnimator.runtimeAnimatorController = carbonAnimations[4];
         }

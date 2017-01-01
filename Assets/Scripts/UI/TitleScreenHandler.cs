@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class TitleScreenHandler : MonoBehaviour {
 
 	// Use this for initialization
@@ -16,6 +16,17 @@ public class TitleScreenHandler : MonoBehaviour {
     public void PlayCredits()
     {
         Handheld.PlayFullScreenMovie("Credits.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
+
+    }
+
+    public void StartTheGame()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void StartTheTutorial()
+    {
+        SceneManager.LoadScene(1);
 
     }
 }
