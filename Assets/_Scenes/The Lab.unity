@@ -1715,7 +1715,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: nextLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19934430, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -2091,7 +2091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &743313016
 Transform:
   m_ObjectHideFlags: 0

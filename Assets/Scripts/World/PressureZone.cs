@@ -16,7 +16,7 @@ public class PressureZone : MonoBehaviour {
             player = other.gameObject.GetComponent<PlayerManager>();
             Molecule pmol = other.gameObject.GetComponentInChildren<Molecule>();
             Debug.Log(pmol.formula);
-            if(pmol.formula == formulaNeeded && nextLayer < 3)
+            if(pmol.formula == formulaNeeded && nextLayer <= 3)
             {
                     player.gameObject.GetComponent<HoldInPlace>().enabled = true;
                     player.gameObject.GetComponent<FlyTo>().setTarget(transform.position);

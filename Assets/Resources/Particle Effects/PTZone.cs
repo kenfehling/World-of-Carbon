@@ -63,7 +63,7 @@ public class PTZone : MonoBehaviour {
             if (rt.table[combined] != null)
             {
                 Debug.Log("Reaction!");
-                Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
+                Instantiate(Resources.Load(ResourcePaths.TransExplosion), other.transform.position, Quaternion.identity);
 
                 //Play combine sound
                 AudioSource aSrc = other.gameObject.GetComponent<PlayerManager>().GetAudioSource();

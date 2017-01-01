@@ -110,13 +110,12 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["CH4O2"] = "CO2"; //Transition to Troposphere
         reactionTable.table["C4H"] = "CH4"; //Transition to Stratosphere
 
-        reactionTable.table["CO2H2O"] = "O2"; 
-
         //Transition Air->Water
         reactionTable.table["CO2Mt"] = "WaterCO2";
 
         //Water
         reactionTable.table["WaterCO2H2O"] = "H2CO3";
+        reactionTable.table["CO2H2O"] = "H2CO3";
         reactionTable.table["HCO3-H+"]  = "H2CO3";
 
         reactionTable.table["H2CO3MtMp"] = "CO2"; 

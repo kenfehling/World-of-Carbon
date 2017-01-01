@@ -1,9 +1,49 @@
 fileFormatVersion: 2
 guid: f454e7f63b35c8e4694ba9efd7a890ba
-timeCreated: 1483296472
+timeCreated: 1483298833
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: air_medium(new)_0
+    21300002: air_medium(new)_1
+    21300004: air_medium(new)_2
+    21300006: air_medium(new)_3
+    21300008: air_medium(new)_4
+    21300010: air_medium(new)_5
+    21300012: air_medium(new)_6
+    21300014: air_medium(new)_7
+    21300016: air_medium(new)_8
+    21300018: air_medium(new)_9
+    21300020: air_medium(new)_10
+    21300022: air_medium(new)_11
+    21300024: air_medium(new)_12
+    21300026: air_medium(new)_13
+    21300028: air_medium(new)_14
+    21300030: air_medium(new)_15
+    21300032: air_medium(new)_16
+    21300034: air_medium(new)_17
+    21300036: air_medium(new)_18
+    21300038: air_medium(new)_19
+    21300040: air_medium(new)_20
+    21300042: air_medium(new)_21
+    21300044: air_medium(new)_22
+    21300046: air_medium(new)_23
+    21300048: air_medium(new)_24
+    21300050: air_medium(new)_25
+    21300052: air_medium(new)_26
+    21300054: air_medium(new)_27
+    21300056: air_medium(new)_28
+    21300058: air_medium(new)_29
+    21300060: air_medium(new)_30
+    21300062: air_medium(new)_31
+    21300064: air_medium(new)_32
+    21300066: air_medium(new)_33
+    21300068: air_medium(new)_34
+    21300070: air_medium(new)_35
+    21300072: air_medium(new)_36
+    21300074: air_medium(new)_37
+    21300076: air_medium(new)_38
+    21300078: air_medium(new)_39
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +78,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +91,527 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: air_medium(new)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2624
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2624
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2624
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2624
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2624
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2368
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2368
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2368
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2368
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2368
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2112
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2112
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2112
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2112
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2112
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1856
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1856
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1856
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1856
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1856
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1600
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1600
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1600
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1600
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1344
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1344
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1344
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_28
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1344
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1344
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1088
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1088
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1088
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1088
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 832
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_37
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 832
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 832
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: air_medium(new)_39
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 832
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
