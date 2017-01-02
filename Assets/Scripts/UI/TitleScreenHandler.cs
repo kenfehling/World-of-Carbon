@@ -7,7 +7,8 @@ public class TitleScreenHandler : MonoBehaviour {
     public uint currentMenu = 0;
 	// Use this for initialization
 	void Start () {
-        Handheld.PlayFullScreenMovie("CarbonTitleSeq.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+            Handheld.PlayFullScreenMovie("CarbonTitleSeq.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
 	}
 	
 	// Update is called once per frame

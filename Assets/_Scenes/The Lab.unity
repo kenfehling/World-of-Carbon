@@ -2707,66 +2707,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010917061300, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: fadeInSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011313339800, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011313339800, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000010590882708, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000010590882708, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -43
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000010590882708, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 629
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000010590882708, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 321
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010523352004, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010523352004, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013058968738, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -51
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013058968738, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 638
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013058968738, guid: bcebe4abe99ff8843844795bae0151b1,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 124
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcebe4abe99ff8843844795bae0151b1, type: 2}
   m_IsPrefabParent: 0

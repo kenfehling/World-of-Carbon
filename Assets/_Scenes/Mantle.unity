@@ -7894,7 +7894,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1688269666}
-  layerTracks: []
+  layerTracks:
+  - {fileID: 8300000, guid: b95ee7da7c2cd234a93f3006c299ff06, type: 3}
+  - {fileID: 8300000, guid: b7df64d78de56614e86d7f016358d514, type: 3}
+  - {fileID: 8300000, guid: 99cf92b5172937843b12c754b8c5d6ae, type: 3}
 --- !u!4 &1996406099
 Transform:
   m_ObjectHideFlags: 0

@@ -6,10 +6,12 @@ public class ColorTracker : MonoBehaviour {
 
     public static ColorTracker _instance = null;
 	
-    public static ColorTracker Instance
+    void Start()
     {
-        get
-        {
+
+    }
+    void Awake()
+    {
             if(_instance == null)
             {
                 _instance = GameObject.FindObjectOfType<ColorTracker>();
@@ -21,23 +23,18 @@ public class ColorTracker : MonoBehaviour {
 
                 }
             }
-
-            return _instance;
-        }
-        
+            Debug.Log(this.GetInstanceID());
+         
     }
 
     private static string color = "BW";
 
 
 	
-	void Awake () {
-        Debug.Log(this.GetInstanceID());
-	}
 
     void Update()
     {
-        Debug.Log(color);
+
     }
     public static void SetMolColor(string t_color)
     {
