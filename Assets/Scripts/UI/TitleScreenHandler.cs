@@ -45,6 +45,12 @@ public class TitleScreenHandler : MonoBehaviour {
         SceneManager.LoadScene(1);
 
     }
+
+    public void ReturnTitle()
+    {
+        SceneManager.LoadScene(0);
+
+    }
     
     public void SetColor(string color)
     {
