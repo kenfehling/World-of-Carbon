@@ -15,6 +15,7 @@ public class ResourcePaths {
     private static string UIComponentsRoot = UIRoot + "Components/";
     private static string UIImagesRoot = UIComponentsRoot + "Images/";
     private static string UITHUDRoot = UIComponentsRoot + "THUD/";
+    private static string TutorialRoot = UIComponentsRoot + "Tutorial/";
     private static string MiscRoot = "Misc/";
 
     //Audio roots

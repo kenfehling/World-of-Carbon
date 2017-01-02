@@ -194,4 +194,15 @@ public class UIHandler : MonoBehaviour {
             THUDDescriptionFader.BeginFadeIn();
         }
     }
+
+    public void ActivateAll(Image tempImg, Text tempTitle, Text tempDescription)
+    {
+        THUDImageFader.SetSprite(tempImg.sprite);
+        THUDTitle.text = tempTitle.text;
+        THUDDescription.text = tempDescription.text;
+
+        THUDImageFader.BeginFadeIn();
+        THUDTitleFader.BeginFadeIn();
+        THUDDescriptionFader.BeginFadeIn();
+    }
 }
