@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour {
         reactionTable.table["MantleHCO3-LtHp"] = "CO32-";
         reactionTable.table["MantleHCO3-CAO"]  = "MantleCaCO3";
         reactionTable.table["CO32-MG2+"]       = "MGCO3"; //Transition to Core
-        reactionTable.table["MantleCO2HtHp"] = "CGraphite";
+        reactionTable.table["MantleCO2MtMp"] = "CGraphite";
         reactionTable.table["CGraphiteHtHp"] = "CDiamond";
 
         reactionTable.table["MGCO3HtHp"] = "CDiamond";

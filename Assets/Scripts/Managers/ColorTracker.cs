@@ -18,21 +18,27 @@ public class ColorTracker : MonoBehaviour {
                 {
                     GameObject container = new GameObject("ColorTracker");
                     _instance = container.AddComponent<ColorTracker>();
+
                 }
             }
 
             return _instance;
         }
+        
     }
 
     private static string color = "BW";
 
 
-	// Update is called once per frame
-	void Update () {
 	
+	void Awake () {
+        Debug.Log(this.GetInstanceID());
 	}
 
+    void Update()
+    {
+        Debug.Log(color);
+    }
     public static void SetMolColor(string t_color)
     {
         color = t_color;
