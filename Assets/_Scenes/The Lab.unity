@@ -129,32 +129,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012491311226, guid: e2529177b12a54f02a548f4aceab490d,
-        type: 2}
-      propertyPath: carbonForms.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 3ad57de60a045c64790bf9933b5ec0de,
-        type: 3}
-    - target: {fileID: 114000012491311226, guid: e2529177b12a54f02a548f4aceab490d,
-        type: 2}
-      propertyPath: carbonAnimations.Array.data[0]
-      value: 
-      objectReference: {fileID: 9100000, guid: 0af1effb84df4034aa1c8b1077f52ebd, type: 2}
-    - target: {fileID: 114000012491311226, guid: e2529177b12a54f02a548f4aceab490d,
-        type: 2}
-      propertyPath: carbonForms.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 597840ae9d7c5904bb9938622ab217af,
-        type: 3}
-    - target: {fileID: 114000012491311226, guid: e2529177b12a54f02a548f4aceab490d,
-        type: 2}
-      propertyPath: carbonAnimations.Array.data[1]
-      value: 
-      objectReference: {fileID: 9100000, guid: b4da255e30053a449a0b5bf2780c849a, type: 2}
-    - target: {fileID: 11469852, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
-      propertyPath: formula
-      value: C
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2529177b12a54f02a548f4aceab490d, type: 2}
   m_IsPrefabParent: 0
@@ -824,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: Y
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -1702,7 +1676,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: formulaNeeded
-      value: CO2
+      value: C
       objectReference: {fileID: 0}
     - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
         type: 2}
@@ -4418,7 +4392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: B
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -5419,7 +5393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497830, guid: f827f7309177c7c4491dff09026e4ba3, type: 2}
       propertyPath: formulaNeeded
-      value: CO2
+      value: C
       objectReference: {fileID: 0}
     - target: {fileID: 114000014071505858, guid: f827f7309177c7c4491dff09026e4ba3,
         type: 2}
@@ -6591,7 +6565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: O2
+  formula: R
   pressure: 
   temperature: 
   wildMolecule: 0

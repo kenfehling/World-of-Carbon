@@ -45,6 +45,24 @@ public class Molecule : MonoBehaviour {
                 //Lookup the combined string in the table;
                 if (rt.table[combined] != null)
                 {
+                    if (formula == "R")
+                    {
+                        obj.gameObject.GetComponent<FormManager>().color = "Red";
+                        ColorTracker.SetMolColor("Red");
+                    }
+
+                    if (formula == "B")
+                    { 
+                        obj.gameObject.GetComponent<FormManager>().color = "Blue";
+                        ColorTracker.SetMolColor("Blue");
+                    }
+
+                    if (formula == "Y")
+                    { 
+                        obj.gameObject.GetComponent<FormManager>().color = "Yellow";
+                        ColorTracker.SetMolColor("Yellow");
+                    }
+
                     Debug.Log("Reaction!");
                     Instantiate(Resources.Load(ResourcePaths.TransExplosion), transform.position, Quaternion.identity);
 

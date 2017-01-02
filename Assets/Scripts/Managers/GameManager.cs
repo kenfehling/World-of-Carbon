@@ -102,7 +102,9 @@ public class GameManager : MonoBehaviour {
         //Lp = Low Pres, Mp = Med Pres, Hp = Hi Pres
 
         //Lab Tutorial
-        reactionTable.table["CC"] = "C";
+        reactionTable.table["CR"] = "C";
+        reactionTable.table["CB"] = "C";
+        reactionTable.table["CY"] = "C";
 
         //Air
         reactionTable.table["CO2"] = "CO2"; //Transition to Troposphere

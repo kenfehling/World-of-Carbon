@@ -48,7 +48,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -48.6, y: 21.4, z: 0}
   m_LocalScale: {x: 0.89634806, y: 0.7432945, z: 2.2109754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d966485e43db4a288bf1026c90425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formula: MantleCaCO3
+  formula: C
   pressure: 
   temperature: 
   wildMolecule: 0
@@ -267,5 +267,42 @@ MonoBehaviour:
   - {fileID: 9100000, guid: a103608ded18c954db8d920138b01b21, type: 2}
   - {fileID: 9100000, guid: e18fb385fabc0474c87236b87384f161, type: 2}
   - {fileID: 9100000, guid: 14f90a928cb84d345af0a4eab2cdca8b, type: 2}
-  - {fileID: 9100000, guid: 14f90a928cb84d345af0a4eab2cdca8b, type: 2}
+  - {fileID: 9100000, guid: 2aab0886484037645919a24f9b9addfb, type: 2}
   - {fileID: 0}
+  redcarbonForms:
+  - {fileID: 21300000, guid: a4b9bc32d3b775d418ba15aaa41f6f98, type: 3}
+  - {fileID: 21300000, guid: 07dca9d41d423f94ea4eea0fa9e815ea, type: 3}
+  - {fileID: 21300000, guid: c7bc95e2b6616e74c8abb826c04b12f7, type: 3}
+  - {fileID: 21300000, guid: ddcef286e91523e46ad64f992a3eef78, type: 3}
+  - {fileID: 21300000, guid: a83da95a9c47f6f4a97fcc3173971531, type: 3}
+  redcarbonAnimations:
+  - {fileID: 9100000, guid: d248d78833d2f184eaf5e0300bc427fb, type: 2}
+  - {fileID: 9100000, guid: 885639db0f19a5047828a2c5c77ad38c, type: 2}
+  - {fileID: 9100000, guid: c78288603824b174da84dd83a0f48b89, type: 2}
+  - {fileID: 9100000, guid: 9689b349f094c7540a5d44b74baf6131, type: 2}
+  - {fileID: 0}
+  bluecarbonForms:
+  - {fileID: 21300000, guid: 0dfb1243f69236f44a61b114a8138280, type: 3}
+  - {fileID: 21300000, guid: a65c0b8cd1a2b7d4c8e0599975583ede, type: 3}
+  - {fileID: 21300000, guid: 2a56f5924a2b4ee4f99172f7431b11b7, type: 3}
+  - {fileID: 21300000, guid: 0e136fb2db7756444bebbbdfb947e256, type: 3}
+  - {fileID: 21300000, guid: a83da95a9c47f6f4a97fcc3173971531, type: 3}
+  bluecarbonAnimations:
+  - {fileID: 9100000, guid: ed9c1776dad984047b3d195a8a315e39, type: 2}
+  - {fileID: 9100000, guid: 28ffb887c662dbc4c8b9fa25a16d38c3, type: 2}
+  - {fileID: 9100000, guid: 9052c23fcbf89b341ac7bb6f6a81524e, type: 2}
+  - {fileID: 9100000, guid: 3e46a9b243122e64bb8f2946a4022ba3, type: 2}
+  - {fileID: 0}
+  bwcarbonForms:
+  - {fileID: 21300000, guid: 3ad57de60a045c64790bf9933b5ec0de, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bwcarbonAnimations:
+  - {fileID: 9100000, guid: 0af1effb84df4034aa1c8b1077f52ebd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  color: BW
