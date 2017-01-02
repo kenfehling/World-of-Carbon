@@ -62,7 +62,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Sometimes the form of your carbon atom will change. The lobes are called
-    p-orbitals represent how the electrons in the atom bond. '
+    p-orbitals, and they represent how the electrons in the atom bond. '
 --- !u!114 &114000014183132562
 MonoBehaviour:
   m_ObjectHideFlags: 1

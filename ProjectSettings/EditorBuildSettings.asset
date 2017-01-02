@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Ocean.unity
   - enabled: 1
     path: Assets/_Scenes/Mantle.unity
+  - enabled: 1
+    path: Assets/_Scenes/VictoryScreen.unity
