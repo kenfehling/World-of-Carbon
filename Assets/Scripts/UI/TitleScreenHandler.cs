@@ -7,8 +7,10 @@ public class TitleScreenHandler : MonoBehaviour {
     public uint currentMenu = 0;
 	// Use this for initialization
 	void Start () {
+#if UNITY_ANDROID
         if(SceneManager.GetActiveScene().buildIndex == 0)
             Handheld.PlayFullScreenMovie("CarbonTitleSeq.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
+#endif
 	}
 	
 	// Update is called once per frame
@@ -18,8 +20,9 @@ public class TitleScreenHandler : MonoBehaviour {
 
     public void PlayCredits()
     {
+#if UNITY_ANDROID
         Handheld.PlayFullScreenMovie("Credits.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
-
+#endif
     }
 
     public void GoToMenu()
